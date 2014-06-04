@@ -91,6 +91,8 @@
 		28D08E16193DBFD800B6B18F /* icon_password@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28D08DCD193DBFD800B6B18F /* icon_password@2x.png */; };
 		28D08E17193DBFD800B6B18F /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 28D08DCE193DBFD800B6B18F /* logo.png */; };
 		28D08E18193DBFD800B6B18F /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28D08DCF193DBFD800B6B18F /* logo@2x.png */; };
+		E8A4A646193F092200954CEC /* QSFeatureListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A4A644193F092100954CEC /* QSFeatureListViewController.m */; };
+		E8A4A647193F092200954CEC /* QSFeatureListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8A4A645193F092200954CEC /* QSFeatureListViewController.xib */; };
 		EBEE0855F6364F1DB52111C9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 821862826D504810AC01F608 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -224,6 +226,9 @@
 		28D08DCE193DBFD800B6B18F /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		28D08DCF193DBFD800B6B18F /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
 		821862826D504810AC01F608 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8A4A643193F092100954CEC /* QSFeatureListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSFeatureListViewController.h; sourceTree = SOURCE_ROOT; };
+		E8A4A644193F092100954CEC /* QSFeatureListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSFeatureListViewController.m; sourceTree = SOURCE_ROOT; };
+		E8A4A645193F092200954CEC /* QSFeatureListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSFeatureListViewController.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -493,6 +498,7 @@
 		28D08DA5193DBFD800B6B18F /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				E8A4A642193F08EA00954CEC /* FeatureList */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -550,6 +556,16 @@
 				28D08DCF193DBFD800B6B18F /* logo@2x.png */,
 			);
 			path = IMG;
+			sourceTree = "<group>";
+		};
+		E8A4A642193F08EA00954CEC /* FeatureList */ = {
+			isa = PBXGroup;
+			children = (
+				E8A4A643193F092100954CEC /* QSFeatureListViewController.h */,
+				E8A4A644193F092100954CEC /* QSFeatureListViewController.m */,
+				E8A4A645193F092200954CEC /* QSFeatureListViewController.xib */,
+			);
+			name = FeatureList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -661,6 +677,7 @@
 				28D08DF4193DBFD800B6B18F /* arrow_indication@2x.png in Resources */,
 				28D08DF7193DBFD800B6B18F /* arrow_title_screen_up.png in Resources */,
 				28D08E12193DBFD800B6B18F /* icon_check@2x.png in Resources */,
+				E8A4A647193F092200954CEC /* QSFeatureListViewController.xib in Resources */,
 				28D08D3D193DBD4200B6B18F /* Images.xcassets in Resources */,
 				28D08E0B193DBFD800B6B18F /* btn_service.png in Resources */,
 				28D08DFF193DBFD800B6B18F /* bt_drawer.png in Resources */,
@@ -729,6 +746,7 @@
 				28D08DE6193DBFD800B6B18F /* NSDate+DIS.m in Sources */,
 				28D08DEF193DBFD800B6B18F /* UILabel+FrameCaculation.m in Sources */,
 				28D08DEA193DBFD800B6B18F /* SBRandomizeUtil.m in Sources */,
+				E8A4A646193F092200954CEC /* QSFeatureListViewController.m in Sources */,
 				28D08DE3193DBFD800B6B18F /* NSArray+Sort.m in Sources */,
 				28D08DD5193DBFD800B6B18F /* QSPopoverMenuTableViewController.m in Sources */,
 				28D08DE7193DBFD800B6B18F /* NSFileManager+DIS.m in Sources */,
