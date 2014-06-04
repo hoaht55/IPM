@@ -7,6 +7,9 @@
 //
 
 #import "QSAppDelegate.h"
+#import "QSLoginViewController_iPad.h"
+#import "QSLoginViewController_iPhone.h"
+#define IS_IPAD [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad
 
 @implementation QSAppDelegate
 
@@ -14,6 +17,14 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    if (IS_IPAD) {
+        QSLoginViewController_iPad * controller = [[QSLoginViewController_iPad alloc]initWithNibName:NSStringFromClass([QSLoginViewController_iPad class]) bundle:nil];
+        self.window.rootViewController = controller;
+    }else
+    {
+        QSLoginViewController_iPhone * controller = [[QSLoginViewController_iPhone alloc]initWithNibName:NSStringFromClass([QSLoginViewController_iPhone class]) bundle: nil];
+        self.window.rootViewController = controller;
+    }
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

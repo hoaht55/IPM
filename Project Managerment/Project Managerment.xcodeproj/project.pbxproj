@@ -91,6 +91,11 @@
 		28D08E16193DBFD800B6B18F /* icon_password@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28D08DCD193DBFD800B6B18F /* icon_password@2x.png */; };
 		28D08E17193DBFD800B6B18F /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 28D08DCE193DBFD800B6B18F /* logo.png */; };
 		28D08E18193DBFD800B6B18F /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28D08DCF193DBFD800B6B18F /* logo@2x.png */; };
+		87F2914C193F07240020335D /* QSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F2914B193F07240020335D /* QSLoginViewController.m */; };
+		87F29155193F07C90020335D /* QSLoginViewController_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F29153193F07C90020335D /* QSLoginViewController_iPad.m */; };
+		87F29156193F07C90020335D /* QSLoginViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87F29154193F07C90020335D /* QSLoginViewController_iPad.xib */; };
+		87F2915C193F08430020335D /* QSLoginViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F2915A193F08430020335D /* QSLoginViewController_iPhone.m */; };
+		87F2915D193F08430020335D /* QSLoginViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87F2915B193F08430020335D /* QSLoginViewController_iPhone.xib */; };
 		EBEE0855F6364F1DB52111C9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 821862826D504810AC01F608 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -224,6 +229,14 @@
 		28D08DCE193DBFD800B6B18F /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		28D08DCF193DBFD800B6B18F /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
 		821862826D504810AC01F608 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		87F2914A193F07240020335D /* QSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSLoginViewController.h; sourceTree = SOURCE_ROOT; };
+		87F2914B193F07240020335D /* QSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSLoginViewController.m; sourceTree = SOURCE_ROOT; };
+		87F29152193F07C90020335D /* QSLoginViewController_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSLoginViewController_iPad.h; sourceTree = SOURCE_ROOT; };
+		87F29153193F07C90020335D /* QSLoginViewController_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSLoginViewController_iPad.m; sourceTree = SOURCE_ROOT; };
+		87F29154193F07C90020335D /* QSLoginViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSLoginViewController_iPad.xib; sourceTree = SOURCE_ROOT; };
+		87F29159193F08430020335D /* QSLoginViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSLoginViewController_iPhone.h; sourceTree = SOURCE_ROOT; };
+		87F2915A193F08430020335D /* QSLoginViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSLoginViewController_iPhone.m; sourceTree = SOURCE_ROOT; };
+		87F2915B193F08430020335D /* QSLoginViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSLoginViewController_iPhone.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -493,6 +506,7 @@
 		28D08DA5193DBFD800B6B18F /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				87F29143193F05790020335D /* Login */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -550,6 +564,37 @@
 				28D08DCF193DBFD800B6B18F /* logo@2x.png */,
 			);
 			path = IMG;
+			sourceTree = "<group>";
+		};
+		87F29143193F05790020335D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				87F29158193F08190020335D /* iPad */,
+				87F29157193F08120020335D /* iPhone */,
+				87F2914A193F07240020335D /* QSLoginViewController.h */,
+				87F2914B193F07240020335D /* QSLoginViewController.m */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		87F29157193F08120020335D /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				87F29159193F08430020335D /* QSLoginViewController_iPhone.h */,
+				87F2915A193F08430020335D /* QSLoginViewController_iPhone.m */,
+				87F2915B193F08430020335D /* QSLoginViewController_iPhone.xib */,
+			);
+			name = iPhone;
+			sourceTree = "<group>";
+		};
+		87F29158193F08190020335D /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				87F29152193F07C90020335D /* QSLoginViewController_iPad.h */,
+				87F29153193F07C90020335D /* QSLoginViewController_iPad.m */,
+				87F29154193F07C90020335D /* QSLoginViewController_iPad.xib */,
+			);
+			name = iPad;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -653,9 +698,11 @@
 				28D08DF9193DBFD800B6B18F /* boundaryLine.png in Resources */,
 				28D08DFD193DBFD800B6B18F /* bt_back.png in Resources */,
 				28D08D35193DBD4200B6B18F /* InfoPlist.strings in Resources */,
+				87F29156193F07C90020335D /* QSLoginViewController_iPad.xib in Resources */,
 				28D08E11193DBFD800B6B18F /* icon_check.png in Resources */,
 				28D08E17193DBFD800B6B18F /* logo.png in Resources */,
 				28D08E18193DBFD800B6B18F /* logo@2x.png in Resources */,
+				87F2915D193F08430020335D /* QSLoginViewController_iPhone.xib in Resources */,
 				28D08E09193DBFD800B6B18F /* btn_report.png in Resources */,
 				28D08E0E193DBFD800B6B18F /* btn_task@2x.png in Resources */,
 				28D08DF4193DBFD800B6B18F /* arrow_indication@2x.png in Resources */,
@@ -733,13 +780,16 @@
 				28D08DD5193DBFD800B6B18F /* QSPopoverMenuTableViewController.m in Sources */,
 				28D08DE7193DBFD800B6B18F /* NSFileManager+DIS.m in Sources */,
 				28D08DF0193DBFD800B6B18F /* UIView+AutoLayout.m in Sources */,
+				87F29155193F07C90020335D /* QSLoginViewController_iPad.m in Sources */,
 				28D08DD0193DBFD800B6B18F /* QSAppDelegate.m in Sources */,
 				28D08DD9193DBFD800B6B18F /* SBTextMenuPopOver.m in Sources */,
 				28D08DE0193DBFD800B6B18F /* DISTakePhotoUtil.m in Sources */,
+				87F2915C193F08430020335D /* QSLoginViewController_iPhone.m in Sources */,
 				28D08DDE193DBFD800B6B18F /* DISSendEmailUtil.m in Sources */,
 				28D08D37193DBD4200B6B18F /* main.m in Sources */,
 				28D08DD6193DBFD800B6B18F /* SBBudgetsTextMenuPopOver.m in Sources */,
 				28D08DE4193DBFD800B6B18F /* NSAttributedString+DIS.m in Sources */,
+				87F2914C193F07240020335D /* QSLoginViewController.m in Sources */,
 				28D08DED193DBFD800B6B18F /* UIColor+DIS.m in Sources */,
 				28D08DE5193DBFD800B6B18F /* NSData+DIS.m in Sources */,
 				28D08DE1193DBFD800B6B18F /* Lib.m in Sources */,
@@ -879,6 +929,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Project Managerment/Project Managerment-Prefix.pch";
 				INFOPLIST_FILE = "Project Managerment/Project Managerment-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -893,6 +944,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Project Managerment/Project Managerment-Prefix.pch";
 				INFOPLIST_FILE = "Project Managerment/Project Managerment-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
