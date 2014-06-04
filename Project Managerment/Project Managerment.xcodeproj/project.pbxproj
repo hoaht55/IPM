@@ -502,8 +502,12 @@
 		28D08DA5193DBFD800B6B18F /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				410C1026193F116E00ACFCDB /* View */,
 				410C1025193F115E00ACFCDB /* View Controller */,
+=======
+				41FAD6C4193DE391009B9146 /* demo */,
+>>>>>>> origin/SprintsList
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -563,6 +567,7 @@
 			path = IMG;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		410C1025193F115E00ACFCDB /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -611,6 +616,13 @@
 				41BB445C193F262500B717C9 /* QSSprintModel.m */,
 			);
 			name = "Business Model";
+=======
+		41FAD6C4193DE391009B9146 /* demo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = demo;
+>>>>>>> origin/SprintsList
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
