@@ -7,6 +7,8 @@
 //
 
 #import "QSAppDelegate.h"
+#import "QSAddSprintViewController.h"
+#import "QSAppPreference.h"
 
 @implementation QSAppDelegate
 
@@ -14,6 +16,11 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    QSAddSprintViewController *viewController = [[QSAddSprintViewController alloc] init];
+    UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    [self.window setRootViewController:navigationController];
+    [[UINavigationBar appearance] setBarTintColor:[QSAppPreference blueColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17.0], NSForegroundColorAttributeName:[UIColor whiteColor]}];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

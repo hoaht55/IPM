@@ -91,6 +91,9 @@
 		28D08E16193DBFD800B6B18F /* icon_password@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28D08DCD193DBFD800B6B18F /* icon_password@2x.png */; };
 		28D08E17193DBFD800B6B18F /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 28D08DCE193DBFD800B6B18F /* logo.png */; };
 		28D08E18193DBFD800B6B18F /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28D08DCF193DBFD800B6B18F /* logo@2x.png */; };
+		41BB445D193F262500B717C9 /* QSSprintModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BB445C193F262500B717C9 /* QSSprintModel.m */; };
+		41BB4461193F26E200B717C9 /* QSAddSprintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BB445F193F26E200B717C9 /* QSAddSprintViewController.m */; };
+		41BB4462193F26E200B717C9 /* QSAddSprintViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41BB4460193F26E200B717C9 /* QSAddSprintViewController.xib */; };
 		EBEE0855F6364F1DB52111C9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 821862826D504810AC01F608 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -223,6 +226,11 @@
 		28D08DCD193DBFD800B6B18F /* icon_password@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_password@2x.png"; sourceTree = "<group>"; };
 		28D08DCE193DBFD800B6B18F /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		28D08DCF193DBFD800B6B18F /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
+		41BB445B193F262500B717C9 /* QSSprintModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSSprintModel.h; sourceTree = SOURCE_ROOT; };
+		41BB445C193F262500B717C9 /* QSSprintModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSSprintModel.m; sourceTree = SOURCE_ROOT; };
+		41BB445E193F26E200B717C9 /* QSAddSprintViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSAddSprintViewController.h; sourceTree = SOURCE_ROOT; };
+		41BB445F193F26E200B717C9 /* QSAddSprintViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSAddSprintViewController.m; sourceTree = SOURCE_ROOT; };
+		41BB4460193F26E200B717C9 /* QSAddSprintViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSAddSprintViewController.xib; sourceTree = SOURCE_ROOT; };
 		821862826D504810AC01F608 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -337,6 +345,7 @@
 		28D08D5A193DBFD800B6B18F /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				41BB445A193F253B00B717C9 /* Business Model */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -493,6 +502,8 @@
 		28D08DA5193DBFD800B6B18F /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				410C1026193F116E00ACFCDB /* View */,
+				410C1025193F115E00ACFCDB /* View Controller */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -550,6 +561,56 @@
 				28D08DCF193DBFD800B6B18F /* logo@2x.png */,
 			);
 			path = IMG;
+			sourceTree = "<group>";
+		};
+		410C1025193F115E00ACFCDB /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				413CC707193F1E450085DA9F /* Sprint */,
+			);
+			name = "View Controller";
+			sourceTree = "<group>";
+		};
+		410C1026193F116E00ACFCDB /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		413CC686193F19300085DA9F /* Iphone */ = {
+			isa = PBXGroup;
+			children = (
+				41BB445E193F26E200B717C9 /* QSAddSprintViewController.h */,
+				41BB445F193F26E200B717C9 /* QSAddSprintViewController.m */,
+				41BB4460193F26E200B717C9 /* QSAddSprintViewController.xib */,
+			);
+			name = Iphone;
+			sourceTree = "<group>";
+		};
+		413CC687193F19430085DA9F /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
+		413CC707193F1E450085DA9F /* Sprint */ = {
+			isa = PBXGroup;
+			children = (
+				413CC686193F19300085DA9F /* Iphone */,
+				413CC687193F19430085DA9F /* iPad */,
+			);
+			name = Sprint;
+			sourceTree = "<group>";
+		};
+		41BB445A193F253B00B717C9 /* Business Model */ = {
+			isa = PBXGroup;
+			children = (
+				41BB445B193F262500B717C9 /* QSSprintModel.h */,
+				41BB445C193F262500B717C9 /* QSSprintModel.m */,
+			);
+			name = "Business Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -674,6 +735,7 @@
 				28D08DF6193DBFD800B6B18F /* arrow_title_screen_down@2x.png in Resources */,
 				28D08E10193DBFD800B6B18F /* icon_calendar@2x.png in Resources */,
 				28D08DDB193DBFD800B6B18F /* QSStatusControl.xib in Resources */,
+				41BB4462193F26E200B717C9 /* QSAddSprintViewController.xib in Resources */,
 				28D08E0A193DBFD800B6B18F /* btn_report@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -744,10 +806,12 @@
 				28D08DE5193DBFD800B6B18F /* NSData+DIS.m in Sources */,
 				28D08DE1193DBFD800B6B18F /* Lib.m in Sources */,
 				28D08DDA193DBFD800B6B18F /* QSStatusControl.m in Sources */,
+				41BB4461193F26E200B717C9 /* QSAddSprintViewController.m in Sources */,
 				28D08DE8193DBFD800B6B18F /* NSObject+DIS.m in Sources */,
 				28D08DD7193DBFD800B6B18F /* SBDatePickerViewController.m in Sources */,
 				28D08DEB193DBFD800B6B18F /* SerialOperationQueue.m in Sources */,
 				28D08DEC193DBFD800B6B18F /* SmallButton.m in Sources */,
+				41BB445D193F262500B717C9 /* QSSprintModel.m in Sources */,
 				28D08DDF193DBFD800B6B18F /* DISSendSMSUtil.m in Sources */,
 				28D08DDC193DBFD800B6B18F /* QSAppPreference.m in Sources */,
 				28D08DD1193DBFD800B6B18F /* BackButton.m in Sources */,
