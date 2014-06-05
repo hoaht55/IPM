@@ -91,6 +91,18 @@
 		28D08E16193DBFD800B6B18F /* icon_password@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28D08DCD193DBFD800B6B18F /* icon_password@2x.png */; };
 		28D08E17193DBFD800B6B18F /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 28D08DCE193DBFD800B6B18F /* logo.png */; };
 		28D08E18193DBFD800B6B18F /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28D08DCF193DBFD800B6B18F /* logo@2x.png */; };
+		77A596F619404C9E00E4104C /* QSProjectViewController_IPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A596F419404C9E00E4104C /* QSProjectViewController_IPhone.m */; };
+		77A596F719404C9E00E4104C /* QSProjectViewController_IPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77A596F519404C9E00E4104C /* QSProjectViewController_IPhone.xib */; };
+		77A596FB19404D4600E4104C /* QSProjectViewController_IPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A596F919404D4600E4104C /* QSProjectViewController_IPad.m */; };
+		77A596FC19404D4600E4104C /* QSProjectViewController_IPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77A596FA19404D4600E4104C /* QSProjectViewController_IPad.xib */; };
+		77F9A6A4193F04F0000BABF4 /* QSProjectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F9A6A2193F04F0000BABF4 /* QSProjectCell.m */; };
+		77F9A6A8193F0531000BABF4 /* QSProjectCell_IPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F9A6A7193F0531000BABF4 /* QSProjectCell_IPhone.m */; };
+		77F9A6AC193F05BE000BABF4 /* QSProjectCell_IPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77F9A6AB193F05BE000BABF4 /* QSProjectCell_IPhone.xib */; };
+		77F9A6AF193F063A000BABF4 /* QSProjectCell_IPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F9A6AE193F063A000BABF4 /* QSProjectCell_IPad.m */; };
+		77F9A6B1193F0651000BABF4 /* QSProjectCell_IPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77F9A6B0193F0651000BABF4 /* QSProjectCell_IPad.xib */; };
+		77F9A6C4193F0786000BABF4 /* QSProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F9A6C2193F0786000BABF4 /* QSProjectViewController.m */; };
+		77F9A6D2193F0A20000BABF4 /* QSProjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F9A6D1193F0A20000BABF4 /* QSProjectModel.m */; };
+		77F9A6D6193F0A9A000BABF4 /* QSProjectService.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F9A6D5193F0A9A000BABF4 /* QSProjectService.m */; };
 		EBEE0855F6364F1DB52111C9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 821862826D504810AC01F608 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -223,6 +235,26 @@
 		28D08DCD193DBFD800B6B18F /* icon_password@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_password@2x.png"; sourceTree = "<group>"; };
 		28D08DCE193DBFD800B6B18F /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		28D08DCF193DBFD800B6B18F /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
+		77A596F319404C9E00E4104C /* QSProjectViewController_IPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSProjectViewController_IPhone.h; sourceTree = SOURCE_ROOT; };
+		77A596F419404C9E00E4104C /* QSProjectViewController_IPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSProjectViewController_IPhone.m; sourceTree = SOURCE_ROOT; };
+		77A596F519404C9E00E4104C /* QSProjectViewController_IPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSProjectViewController_IPhone.xib; sourceTree = SOURCE_ROOT; };
+		77A596F819404D4600E4104C /* QSProjectViewController_IPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSProjectViewController_IPad.h; sourceTree = SOURCE_ROOT; };
+		77A596F919404D4600E4104C /* QSProjectViewController_IPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSProjectViewController_IPad.m; sourceTree = SOURCE_ROOT; };
+		77A596FA19404D4600E4104C /* QSProjectViewController_IPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSProjectViewController_IPad.xib; sourceTree = SOURCE_ROOT; };
+		77F9A6A1193F04F0000BABF4 /* QSProjectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSProjectCell.h; sourceTree = SOURCE_ROOT; };
+		77F9A6A2193F04F0000BABF4 /* QSProjectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSProjectCell.m; sourceTree = SOURCE_ROOT; };
+		77F9A6A6193F0531000BABF4 /* QSProjectCell_IPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSProjectCell_IPhone.h; sourceTree = SOURCE_ROOT; };
+		77F9A6A7193F0531000BABF4 /* QSProjectCell_IPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSProjectCell_IPhone.m; sourceTree = SOURCE_ROOT; };
+		77F9A6AB193F05BE000BABF4 /* QSProjectCell_IPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSProjectCell_IPhone.xib; sourceTree = SOURCE_ROOT; };
+		77F9A6AD193F063A000BABF4 /* QSProjectCell_IPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSProjectCell_IPad.h; sourceTree = SOURCE_ROOT; };
+		77F9A6AE193F063A000BABF4 /* QSProjectCell_IPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSProjectCell_IPad.m; sourceTree = SOURCE_ROOT; };
+		77F9A6B0193F0651000BABF4 /* QSProjectCell_IPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSProjectCell_IPad.xib; sourceTree = SOURCE_ROOT; };
+		77F9A6C1193F0786000BABF4 /* QSProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSProjectViewController.h; sourceTree = SOURCE_ROOT; };
+		77F9A6C2193F0786000BABF4 /* QSProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSProjectViewController.m; sourceTree = SOURCE_ROOT; };
+		77F9A6D0193F0A20000BABF4 /* QSProjectModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSProjectModel.h; sourceTree = SOURCE_ROOT; };
+		77F9A6D1193F0A20000BABF4 /* QSProjectModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSProjectModel.m; sourceTree = SOURCE_ROOT; };
+		77F9A6D4193F0A9A000BABF4 /* QSProjectService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSProjectService.h; sourceTree = SOURCE_ROOT; };
+		77F9A6D5193F0A9A000BABF4 /* QSProjectService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSProjectService.m; sourceTree = SOURCE_ROOT; };
 		821862826D504810AC01F608 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -337,6 +369,8 @@
 		28D08D5A193DBFD800B6B18F /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				77F9A697193F0363000BABF4 /* Service */,
+				77F9A696193F035B000BABF4 /* Model */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -493,6 +527,8 @@
 		28D08DA5193DBFD800B6B18F /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				77F9A699193F0371000BABF4 /* View Controller */,
+				77F9A698193F036B000BABF4 /* View */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -550,6 +586,102 @@
 				28D08DCF193DBFD800B6B18F /* logo@2x.png */,
 			);
 			path = IMG;
+			sourceTree = "<group>";
+		};
+		77F9A696193F035B000BABF4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				77F9A6D0193F0A20000BABF4 /* QSProjectModel.h */,
+				77F9A6D1193F0A20000BABF4 /* QSProjectModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		77F9A697193F0363000BABF4 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				77F9A6D4193F0A9A000BABF4 /* QSProjectService.h */,
+				77F9A6D5193F0A9A000BABF4 /* QSProjectService.m */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		77F9A698193F036B000BABF4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				77F9A69A193F0458000BABF4 /* Projects */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		77F9A699193F0371000BABF4 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				77F9A69B193F0467000BABF4 /* Projects */,
+			);
+			name = "View Controller";
+			sourceTree = "<group>";
+		};
+		77F9A69A193F0458000BABF4 /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				77F9A69D193F0480000BABF4 /* IPad */,
+				77F9A69C193F0472000BABF4 /* IPhone */,
+				77F9A6A1193F04F0000BABF4 /* QSProjectCell.h */,
+				77F9A6A2193F04F0000BABF4 /* QSProjectCell.m */,
+			);
+			name = Projects;
+			sourceTree = "<group>";
+		};
+		77F9A69B193F0467000BABF4 /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				77F9A69F193F048D000BABF4 /* IPhone */,
+				77F9A69E193F0486000BABF4 /* IPad */,
+				77F9A6C1193F0786000BABF4 /* QSProjectViewController.h */,
+				77F9A6C2193F0786000BABF4 /* QSProjectViewController.m */,
+			);
+			name = Projects;
+			sourceTree = "<group>";
+		};
+		77F9A69C193F0472000BABF4 /* IPhone */ = {
+			isa = PBXGroup;
+			children = (
+				77F9A6A6193F0531000BABF4 /* QSProjectCell_IPhone.h */,
+				77F9A6A7193F0531000BABF4 /* QSProjectCell_IPhone.m */,
+				77F9A6AB193F05BE000BABF4 /* QSProjectCell_IPhone.xib */,
+			);
+			name = IPhone;
+			sourceTree = "<group>";
+		};
+		77F9A69D193F0480000BABF4 /* IPad */ = {
+			isa = PBXGroup;
+			children = (
+				77F9A6AD193F063A000BABF4 /* QSProjectCell_IPad.h */,
+				77F9A6AE193F063A000BABF4 /* QSProjectCell_IPad.m */,
+				77F9A6B0193F0651000BABF4 /* QSProjectCell_IPad.xib */,
+			);
+			name = IPad;
+			sourceTree = "<group>";
+		};
+		77F9A69E193F0486000BABF4 /* IPad */ = {
+			isa = PBXGroup;
+			children = (
+				77A596F819404D4600E4104C /* QSProjectViewController_IPad.h */,
+				77A596F919404D4600E4104C /* QSProjectViewController_IPad.m */,
+				77A596FA19404D4600E4104C /* QSProjectViewController_IPad.xib */,
+			);
+			name = IPad;
+			sourceTree = "<group>";
+		};
+		77F9A69F193F048D000BABF4 /* IPhone */ = {
+			isa = PBXGroup;
+			children = (
+				77A596F319404C9E00E4104C /* QSProjectViewController_IPhone.h */,
+				77A596F419404C9E00E4104C /* QSProjectViewController_IPhone.m */,
+				77A596F519404C9E00E4104C /* QSProjectViewController_IPhone.xib */,
+			);
+			name = IPhone;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -641,6 +773,7 @@
 				28D08E0C193DBFD800B6B18F /* btn_service@2x.png in Resources */,
 				28D08E00193DBFD800B6B18F /* bt_drawer@2x.png in Resources */,
 				28D08E06193DBFD800B6B18F /* bt_sort@2x.png in Resources */,
+				77A596F719404C9E00E4104C /* QSProjectViewController_IPhone.xib in Resources */,
 				28D08E05193DBFD800B6B18F /* bt_sort.png in Resources */,
 				28D08E07193DBFD800B6B18F /* btn_close.png in Resources */,
 				28D08E08193DBFD800B6B18F /* btn_close@2x.png in Resources */,
@@ -654,6 +787,7 @@
 				28D08DFD193DBFD800B6B18F /* bt_back.png in Resources */,
 				28D08D35193DBD4200B6B18F /* InfoPlist.strings in Resources */,
 				28D08E11193DBFD800B6B18F /* icon_check.png in Resources */,
+				77F9A6AC193F05BE000BABF4 /* QSProjectCell_IPhone.xib in Resources */,
 				28D08E17193DBFD800B6B18F /* logo.png in Resources */,
 				28D08E18193DBFD800B6B18F /* logo@2x.png in Resources */,
 				28D08E09193DBFD800B6B18F /* btn_report.png in Resources */,
@@ -665,6 +799,7 @@
 				28D08E0B193DBFD800B6B18F /* btn_service.png in Resources */,
 				28D08DFF193DBFD800B6B18F /* bt_drawer.png in Resources */,
 				28D08E04193DBFD800B6B18F /* bt_more_menu@2x.png in Resources */,
+				77A596FC19404D4600E4104C /* QSProjectViewController_IPad.xib in Resources */,
 				28D08E01193DBFD800B6B18F /* bt_more_actions.png in Resources */,
 				28D08DFB193DBFD800B6B18F /* bt_add.png in Resources */,
 				28D08E13193DBFD800B6B18F /* icon_email.png in Resources */,
@@ -675,6 +810,7 @@
 				28D08E10193DBFD800B6B18F /* icon_calendar@2x.png in Resources */,
 				28D08DDB193DBFD800B6B18F /* QSStatusControl.xib in Resources */,
 				28D08E0A193DBFD800B6B18F /* btn_report@2x.png in Resources */,
+				77F9A6B1193F0651000BABF4 /* QSProjectCell_IPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -729,8 +865,10 @@
 				28D08DE6193DBFD800B6B18F /* NSDate+DIS.m in Sources */,
 				28D08DEF193DBFD800B6B18F /* UILabel+FrameCaculation.m in Sources */,
 				28D08DEA193DBFD800B6B18F /* SBRandomizeUtil.m in Sources */,
+				77F9A6D2193F0A20000BABF4 /* QSProjectModel.m in Sources */,
 				28D08DE3193DBFD800B6B18F /* NSArray+Sort.m in Sources */,
 				28D08DD5193DBFD800B6B18F /* QSPopoverMenuTableViewController.m in Sources */,
+				77F9A6A4193F04F0000BABF4 /* QSProjectCell.m in Sources */,
 				28D08DE7193DBFD800B6B18F /* NSFileManager+DIS.m in Sources */,
 				28D08DF0193DBFD800B6B18F /* UIView+AutoLayout.m in Sources */,
 				28D08DD0193DBFD800B6B18F /* QSAppDelegate.m in Sources */,
@@ -742,7 +880,9 @@
 				28D08DE4193DBFD800B6B18F /* NSAttributedString+DIS.m in Sources */,
 				28D08DED193DBFD800B6B18F /* UIColor+DIS.m in Sources */,
 				28D08DE5193DBFD800B6B18F /* NSData+DIS.m in Sources */,
+				77F9A6AF193F063A000BABF4 /* QSProjectCell_IPad.m in Sources */,
 				28D08DE1193DBFD800B6B18F /* Lib.m in Sources */,
+				77F9A6A8193F0531000BABF4 /* QSProjectCell_IPhone.m in Sources */,
 				28D08DDA193DBFD800B6B18F /* QSStatusControl.m in Sources */,
 				28D08DE8193DBFD800B6B18F /* NSObject+DIS.m in Sources */,
 				28D08DD7193DBFD800B6B18F /* SBDatePickerViewController.m in Sources */,
@@ -754,9 +894,13 @@
 				28D08DEE193DBFD800B6B18F /* UIImage+DIS.m in Sources */,
 				28D08DDD193DBFD800B6B18F /* DISPhoneCallUtil.m in Sources */,
 				28D08DE9193DBFD800B6B18F /* NSString+DIS.m in Sources */,
+				77F9A6C4193F0786000BABF4 /* QSProjectViewController.m in Sources */,
 				28D08DD3193DBFD800B6B18F /* QSMatricTitleView.m in Sources */,
+				77A596F619404C9E00E4104C /* QSProjectViewController_IPhone.m in Sources */,
+				77A596FB19404D4600E4104C /* QSProjectViewController_IPad.m in Sources */,
 				28D08DE2193DBFD800B6B18F /* MBProgressHUD+Category.m in Sources */,
 				28D08DD8193DBFD800B6B18F /* SBDISCPicker.m in Sources */,
+				77F9A6D6193F0A9A000BABF4 /* QSProjectService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

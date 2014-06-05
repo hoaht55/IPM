@@ -7,6 +7,8 @@
 //
 
 #import "QSProjectViewController_IPad.h"
+#import "QSProjectModel.h"
+#import "QSProjectCell_IPad.h"
 
 @interface QSProjectViewController_IPad ()
 
@@ -18,7 +20,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -26,13 +27,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([QSProjectCell_IPad class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([QSProjectCell_IPad class])];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 120;
 }
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    QSProjectCell_IPad *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([QSProjectCell_IPad class])];
+    QSProjectModel *model = [self.items objectAtIndex:indexPath.row];
+    [cell setModel:model];
+    [cell setNeedsUpdateConstraints];
+    [cell updateConstraintsIfNeeded];
+    
+    return cell;
+}
 @end

@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QSProjectCell.h"
+@interface QSProjectViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
-@interface QSProjectViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSArray *items;
+@property (strong, nonatomic) QSProjectCell *projectCell;
 
 @end

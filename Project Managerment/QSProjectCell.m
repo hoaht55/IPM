@@ -7,19 +7,50 @@
 //
 
 #import "QSProjectCell.h"
+#import "QSProjectModel.h"
+#import "QSAppPreference.h"
 
 @implementation QSProjectCell
 
 - (void)awakeFromNib
 {
-    // Initialization code
+    [self.name setTextColor:[QSAppPreference blueColor]];
+    [self.name setFont:[QSAppPreference boldFontWithSize:17]];
+    
+    [self.status setTextColor:[QSAppPreference lightGrayColor]];
+    [self.status setFont:[QSAppPreference regularFontWithSize:12]];
+    
+    [self.desc setTextColor:[QSAppPreference dardGrayColor]];
+    [self.desc setFont:[QSAppPreference regularFontWithSize:15]];
+    
+    [self.startDateLabel setTextColor:[QSAppPreference lightGrayColor]];
+    [self.startDateLabel setFont:[QSAppPreference regularFontWithSize:11]];
+    [self.startDate setTextColor:[QSAppPreference dardGrayColor]];
+    [self.startDate setFont:[QSAppPreference boldFontWithSize:15]];
+    
+    
+    [self.endDateLabel setTextColor:[QSAppPreference lightGrayColor]];
+    [self.endDateLabel setFont:[QSAppPreference regularFontWithSize:11]];
+    [self.endDate setTextColor:[QSAppPreference dardGrayColor]];
+    [self.endDate setFont:[QSAppPreference boldFontWithSize:15]];
+    
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
 }
 
+- (void) setModel:(QSProjectModel *)model{
+    
+    _model = model;
+    self.name.text = _model.name;
+    self.status.text = _model.status;
+    self.desc.text = _model.desc;
+    self.startDate.text = _model.startDate;
+    self.endDate.text = _model.endDate;
+    
+}
 @end

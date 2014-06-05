@@ -10,4 +10,10 @@
 
 @interface QSProjectModel : NSObject
 
+@property (weak,nonatomic) NSString *name;
+@property (weak,nonatomic) NSString *status;
+@property (weak,nonatomic) NSString *desc;
+@property (weak,nonatomic) NSString *startDate;
+@property (weak,nonatomic) NSString *endDate;
+
 @end

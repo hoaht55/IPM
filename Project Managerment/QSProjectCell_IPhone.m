@@ -7,11 +7,13 @@
 //
 
 #import "QSProjectCell_IPhone.h"
-
+#import "QSAppPreference.h"
 @implementation QSProjectCell_IPhone
 
 - (id)initWithFrame:(CGRect)frame
 {
+    
+    
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
