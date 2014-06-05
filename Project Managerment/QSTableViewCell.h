@@ -1,13 +1,13 @@
 //
-//  QSSprintModel.m
+//  QSTableViewCell.h
 //  Project Managerment
 //
 //  Created by Mai Viet Anh on 6/5/14.
 //  Copyright (c) 2014 Cừu Lười. All rights reserved.
 //
 
-#import "QSSprintModel.h"
+#import <UIKit/UIKit.h>
 
-@implementation QSSprintModel
+@interface QSTableViewCell : UITableViewCell
 
 @end
