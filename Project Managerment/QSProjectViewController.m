@@ -7,7 +7,11 @@
 //
 
 #import "QSProjectViewController.h"
+<<<<<<< HEAD
 #import "QSProjectModel.h"
+=======
+
+>>>>>>> c60851267268b4cad40f4ca598120ca374f76efe
 @interface QSProjectViewController ()
 
 @end
@@ -23,6 +27,7 @@
     return self;
 }
 
+<<<<<<< HEAD
 - (void ) fakeData{
     
     NSString *name = @"Sale Box";
@@ -48,6 +53,12 @@
 {
     [super viewDidLoad];
     [self fakeData];
+=======
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+>>>>>>> c60851267268b4cad40f4ca598120ca374f76efe
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,6 +67,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+<<<<<<< HEAD
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.items.count;
 }
@@ -65,4 +77,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     @throw [NSException exceptionWithName:@"Exception" reason:@"Implement in subclass" userInfo:nil];
 }
+=======
+>>>>>>> c60851267268b4cad40f4ca598120ca374f76efe
 @end

@@ -7,13 +7,17 @@
 //
 
 #import "QSProjectCell.h"
+<<<<<<< HEAD
 #import "QSProjectModel.h"
 #import "QSAppPreference.h"
+=======
+>>>>>>> c60851267268b4cad40f4ca598120ca374f76efe
 
 @implementation QSProjectCell
 
 - (void)awakeFromNib
 {
+<<<<<<< HEAD
     [self.name setTextColor:[QSAppPreference blueColor]];
     [self.name setFont:[QSAppPreference boldFontWithSize:17]];
     
@@ -35,12 +39,16 @@
     [self.endDate setFont:[QSAppPreference boldFontWithSize:15]];
     
     
+=======
+    // Initialization code
+>>>>>>> c60851267268b4cad40f4ca598120ca374f76efe
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
 
+<<<<<<< HEAD
 }
 
 - (void) setModel:(QSProjectModel *)model{
@@ -53,4 +61,9 @@
     self.endDate.text = _model.endDate;
     
 }
+=======
+    // Configure the view for the selected state
+}
+
+>>>>>>> c60851267268b4cad40f4ca598120ca374f76efe
 @end

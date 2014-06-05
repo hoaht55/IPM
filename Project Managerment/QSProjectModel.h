@@ -10,10 +10,13 @@
 
 @interface QSProjectModel : NSObject
 
+<<<<<<< HEAD
 @property (weak,nonatomic) NSString *name;
 @property (weak,nonatomic) NSString *status;
 @property (weak,nonatomic) NSString *desc;
 @property (weak,nonatomic) NSString *startDate;
 @property (weak,nonatomic) NSString *endDate;
 
+=======
+>>>>>>> c60851267268b4cad40f4ca598120ca374f76efe
 @end

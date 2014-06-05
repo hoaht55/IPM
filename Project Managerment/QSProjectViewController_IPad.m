@@ -7,8 +7,11 @@
 //
 
 #import "QSProjectViewController_IPad.h"
+<<<<<<< HEAD
 #import "QSProjectModel.h"
 #import "QSProjectCell_IPad.h"
+=======
+>>>>>>> c60851267268b4cad40f4ca598120ca374f76efe
 
 @interface QSProjectViewController_IPad ()
 
@@ -20,6 +23,10 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+<<<<<<< HEAD
+=======
+        // Custom initialization
+>>>>>>> c60851267268b4cad40f4ca598120ca374f76efe
     }
     return self;
 }
@@ -27,12 +34,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+<<<<<<< HEAD
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([QSProjectCell_IPad class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([QSProjectCell_IPad class])];
+=======
+    // Do any additional setup after loading the view from its nib.
+>>>>>>> c60851267268b4cad40f4ca598120ca374f76efe
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+<<<<<<< HEAD
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 120;
@@ -47,4 +59,9 @@
     
     return cell;
 }
+=======
+    // Dispose of any resources that can be recreated.
+}
+
+>>>>>>> c60851267268b4cad40f4ca598120ca374f76efe
 @end

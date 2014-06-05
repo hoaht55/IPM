@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<<<<<<< HEAD
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="5053" systemVersion="13B42" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+=======
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+>>>>>>> c60851267268b4cad40f4ca598120ca374f76efe
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QSProjectViewController_IPad">
             <connections>
+<<<<<<< HEAD
                 <outlet property="tableView" destination="X6u-hL-QAk" id="Gto-70-vAV"/>
+=======
+>>>>>>> c60851267268b4cad40f4ca598120ca374f76efe
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,6 +21,7 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+<<<<<<< HEAD
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="X6u-hL-QAk">
                     <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
@@ -32,6 +40,9 @@
                 <constraint firstItem="X6u-hL-QAk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="smv-vo-dlw"/>
                 <constraint firstItem="X6u-hL-QAk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="zVD-Yg-gi3"/>
             </constraints>
+=======
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+>>>>>>> c60851267268b4cad40f4ca598120ca374f76efe
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
         </view>
     </objects>

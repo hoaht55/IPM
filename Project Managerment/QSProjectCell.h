@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+<<<<<<< HEAD
 @class QSProjectModel;
 
 @interface QSProjectCell : UITableViewCell
@@ -21,4 +22,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *narrowImage;
 
 @property (strong, nonatomic) QSProjectModel *model;
+=======
+
+@interface QSProjectCell : UITableViewCell
+
+>>>>>>> c60851267268b4cad40f4ca598120ca374f76efe
 @end
