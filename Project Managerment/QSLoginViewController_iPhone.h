@@ -9,5 +9,4 @@
 #import "QSLoginViewController.h"
 
 @interface QSLoginViewController_iPhone : QSLoginViewController
-
 @end

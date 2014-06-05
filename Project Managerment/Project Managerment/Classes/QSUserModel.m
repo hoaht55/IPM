@@ -9,5 +9,4 @@
 #import "QSUserModel.h"
 
 @implementation QSUserModel
-
 @end

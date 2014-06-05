@@ -7,6 +7,7 @@
 //
 
 #import "QSLoginViewController_iPhone.h"
+#import "QSLoginViewController.h"
 
 @interface QSLoginViewController_iPhone ()
 
@@ -33,11 +34,5 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    [self.view endEditing:YES];
-    [super touchesBegan:touches withEvent:event];
 }
 @end

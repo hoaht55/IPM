@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface QSUserModel : NSObject
-
+@property (nonatomic, strong) NSString * email;
+@property (nonatomic, strong) NSString * password;
 @end

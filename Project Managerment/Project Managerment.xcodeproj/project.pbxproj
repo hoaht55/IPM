@@ -91,11 +91,13 @@
 		28D08E16193DBFD800B6B18F /* icon_password@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28D08DCD193DBFD800B6B18F /* icon_password@2x.png */; };
 		28D08E17193DBFD800B6B18F /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 28D08DCE193DBFD800B6B18F /* logo.png */; };
 		28D08E18193DBFD800B6B18F /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28D08DCF193DBFD800B6B18F /* logo@2x.png */; };
+		66CFCAF1193F5FB8001CF99A /* QSLoginService.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CFCAF0193F5FB8001CF99A /* QSLoginService.m */; };
+		872458FA19401BC8000D916D /* QSLoginViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 872458FC19401BC8000D916D /* QSLoginViewController_iPhone.xib */; };
+		8724590019402773000D916D /* QSUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 872458FF19402773000D916D /* QSUserModel.m */; };
 		87F2914C193F07240020335D /* QSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F2914B193F07240020335D /* QSLoginViewController.m */; };
 		87F29155193F07C90020335D /* QSLoginViewController_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F29153193F07C90020335D /* QSLoginViewController_iPad.m */; };
 		87F29156193F07C90020335D /* QSLoginViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87F29154193F07C90020335D /* QSLoginViewController_iPad.xib */; };
 		87F2915C193F08430020335D /* QSLoginViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F2915A193F08430020335D /* QSLoginViewController_iPhone.m */; };
-		87F2915D193F08430020335D /* QSLoginViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87F2915B193F08430020335D /* QSLoginViewController_iPhone.xib */; };
 		EBEE0855F6364F1DB52111C9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 821862826D504810AC01F608 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -228,7 +230,12 @@
 		28D08DCD193DBFD800B6B18F /* icon_password@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_password@2x.png"; sourceTree = "<group>"; };
 		28D08DCE193DBFD800B6B18F /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		28D08DCF193DBFD800B6B18F /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
+		66CFCAEF193F5FB8001CF99A /* QSLoginService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSLoginService.h; sourceTree = "<group>"; };
+		66CFCAF0193F5FB8001CF99A /* QSLoginService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSLoginService.m; sourceTree = "<group>"; };
 		821862826D504810AC01F608 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		872458FB19401BC8000D916D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/QSLoginViewController_iPhone.xib; sourceTree = "<group>"; };
+		872458FE19402773000D916D /* QSUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSUserModel.h; sourceTree = "<group>"; };
+		872458FF19402773000D916D /* QSUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSUserModel.m; sourceTree = "<group>"; };
 		87F2914A193F07240020335D /* QSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSLoginViewController.h; sourceTree = SOURCE_ROOT; };
 		87F2914B193F07240020335D /* QSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSLoginViewController.m; sourceTree = SOURCE_ROOT; };
 		87F29152193F07C90020335D /* QSLoginViewController_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSLoginViewController_iPad.h; sourceTree = SOURCE_ROOT; };
@@ -236,7 +243,6 @@
 		87F29154193F07C90020335D /* QSLoginViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSLoginViewController_iPad.xib; sourceTree = SOURCE_ROOT; };
 		87F29159193F08430020335D /* QSLoginViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSLoginViewController_iPhone.h; sourceTree = SOURCE_ROOT; };
 		87F2915A193F08430020335D /* QSLoginViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSLoginViewController_iPhone.m; sourceTree = SOURCE_ROOT; };
-		87F2915B193F08430020335D /* QSLoginViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSLoginViewController_iPhone.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -339,19 +345,12 @@
 		28D08D59193DBFD800B6B18F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				28D08D5A193DBFD800B6B18F /* Business */,
+				66CFCAE9193F5F10001CF99A /* Business */,
 				28D08D5B193DBFD800B6B18F /* Data */,
 				28D08D5C193DBFD800B6B18F /* Global */,
 				28D08DA5193DBFD800B6B18F /* Presentation */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		28D08D5A193DBFD800B6B18F /* Business */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Business;
 			sourceTree = "<group>";
 		};
 		28D08D5B193DBFD800B6B18F /* Data */ = {
@@ -566,6 +565,33 @@
 			path = IMG;
 			sourceTree = "<group>";
 		};
+		66CFCAE9193F5F10001CF99A /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				66CFCAEE193F5F94001CF99A /* Business Service */,
+				66CFCAEA193F5F1A001CF99A /* Business Model */,
+			);
+			name = Business;
+			sourceTree = "<group>";
+		};
+		66CFCAEA193F5F1A001CF99A /* Business Model */ = {
+			isa = PBXGroup;
+			children = (
+				872458FE19402773000D916D /* QSUserModel.h */,
+				872458FF19402773000D916D /* QSUserModel.m */,
+			);
+			name = "Business Model";
+			sourceTree = "<group>";
+		};
+		66CFCAEE193F5F94001CF99A /* Business Service */ = {
+			isa = PBXGroup;
+			children = (
+				66CFCAEF193F5FB8001CF99A /* QSLoginService.h */,
+				66CFCAF0193F5FB8001CF99A /* QSLoginService.m */,
+			);
+			name = "Business Service";
+			sourceTree = "<group>";
+		};
 		87F29143193F05790020335D /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -582,7 +608,7 @@
 			children = (
 				87F29159193F08430020335D /* QSLoginViewController_iPhone.h */,
 				87F2915A193F08430020335D /* QSLoginViewController_iPhone.m */,
-				87F2915B193F08430020335D /* QSLoginViewController_iPhone.xib */,
+				872458FC19401BC8000D916D /* QSLoginViewController_iPhone.xib */,
 			);
 			name = iPhone;
 			sourceTree = "<group>";
@@ -702,7 +728,7 @@
 				28D08E11193DBFD800B6B18F /* icon_check.png in Resources */,
 				28D08E17193DBFD800B6B18F /* logo.png in Resources */,
 				28D08E18193DBFD800B6B18F /* logo@2x.png in Resources */,
-				87F2915D193F08430020335D /* QSLoginViewController_iPhone.xib in Resources */,
+				872458FA19401BC8000D916D /* QSLoginViewController_iPhone.xib in Resources */,
 				28D08E09193DBFD800B6B18F /* btn_report.png in Resources */,
 				28D08E0E193DBFD800B6B18F /* btn_task@2x.png in Resources */,
 				28D08DF4193DBFD800B6B18F /* arrow_indication@2x.png in Resources */,
@@ -773,6 +799,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8724590019402773000D916D /* QSUserModel.m in Sources */,
 				28D08DE6193DBFD800B6B18F /* NSDate+DIS.m in Sources */,
 				28D08DEF193DBFD800B6B18F /* UILabel+FrameCaculation.m in Sources */,
 				28D08DEA193DBFD800B6B18F /* SBRandomizeUtil.m in Sources */,
@@ -801,6 +828,7 @@
 				28D08DDF193DBFD800B6B18F /* DISSendSMSUtil.m in Sources */,
 				28D08DDC193DBFD800B6B18F /* QSAppPreference.m in Sources */,
 				28D08DD1193DBFD800B6B18F /* BackButton.m in Sources */,
+				66CFCAF1193F5FB8001CF99A /* QSLoginService.m in Sources */,
 				28D08DEE193DBFD800B6B18F /* UIImage+DIS.m in Sources */,
 				28D08DDD193DBFD800B6B18F /* DISPhoneCallUtil.m in Sources */,
 				28D08DE9193DBFD800B6B18F /* NSString+DIS.m in Sources */,
@@ -844,6 +872,14 @@
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
+		};
+		872458FC19401BC8000D916D /* QSLoginViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				872458FB19401BC8000D916D /* en */,
+			);
+			name = QSLoginViewController_iPhone.xib;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXVariantGroup section */
 
