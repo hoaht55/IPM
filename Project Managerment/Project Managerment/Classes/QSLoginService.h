@@ -10,5 +10,7 @@
 
 @class QSUserModel;
 @interface QSLoginService : NSObject
-- (BOOL)checkkLogin:(QSUserModel *)userModel;
+@property (nonatomic, strong) NSDictionary * userList;
+- (BOOL)checkLogin:(QSUserModel *)userModel;
+- (BOOL)checkEmailExists: (QSUserModel *)userModel;
 @end

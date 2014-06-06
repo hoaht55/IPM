@@ -17,14 +17,17 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    UINavigationController * navigation = [[UINavigationController alloc]init];
     if (IS_IPAD) {
         QSLoginViewController_iPad * controller = [[QSLoginViewController_iPad alloc]initWithNibName:NSStringFromClass([QSLoginViewController_iPad class]) bundle:nil];
-        self.window.rootViewController = controller;
+        [navigation setViewControllers:[NSArray arrayWithObject: controller]];
+
     }else
     {
         QSLoginViewController_iPhone * controller = [[QSLoginViewController_iPhone alloc]initWithNibName:NSStringFromClass([QSLoginViewController_iPhone class]) bundle: nil];
-        self.window.rootViewController = controller;
+        [navigation setViewControllers:[NSArray arrayWithObject: controller]];
     }
+    self.window.rootViewController = navigation;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

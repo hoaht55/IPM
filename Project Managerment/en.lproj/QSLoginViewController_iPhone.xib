@@ -45,8 +45,8 @@
                                     <rect key="frame" x="1" y="12" width="16" height="12"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MS6-qC-z6U">
-                                    <rect key="frame" x="44" y="7" width="226" height="17"/>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MS6-qC-z6U">
+                                    <rect key="frame" x="44" y="7" width="226" height="21"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <textInputTraits key="textInputTraits"/>
@@ -167,8 +167,8 @@
                 </view>
             </subviews>
             <constraints>
-                <constraint firstAttribute="centerX" secondItem="IRv-aU-ZWQ" secondAttribute="centerX" id="9dQ-LZ-ncD"/>
-                <constraint firstAttribute="centerY" secondItem="IRv-aU-ZWQ" secondAttribute="centerY" id="Eza-va-9Qr"/>
+                <constraint firstAttribute="centerX" secondItem="IRv-aU-ZWQ" secondAttribute="centerX" id="dZL-LF-q5Y"/>
+                <constraint firstAttribute="centerY" secondItem="IRv-aU-ZWQ" secondAttribute="centerY" id="vfR-N9-saH"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

@@ -12,12 +12,15 @@
 #import "QSAppPreference.h"
 //define max of length's email and password
 #define MAX_LENGTH_INPUT 20
+#define IS_IPAD [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad
 
 @interface QSLoginViewController () <UITextFieldDelegate>
-
+- (void)addObserver;
+- (void)keyboardDidShowOrHide:(NSNotification *)notification;
 @end
 
 @implementation QSLoginViewController
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,8 +37,15 @@
     // Do any additional setup after loading the view.
     self.loginButton.backgroundColor = [QSAppPreference disableBlueColor];
     [self.notificationLogin setText:@""];
-}
+    [self addObserver];
 
+}
+- (void)addObserver
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShowOrHide:) name:UIKeyboardDidHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShowOrHide:) name:UIKeyboardDidShowNotification object:nil];
+    
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -49,6 +59,7 @@
     [super touchesBegan:touches withEvent:event];
 }
 
+// Check for characters exists on all textfield
 - (void) checkTextField
 {
     if (![self.emailLabel.text isEqualToString:@""] && ![self.passLabel.text isEqualToString:@""]) {
@@ -61,6 +72,7 @@
     }
     [self.notificationLogin setText:@""];
 }
+
 - (IBAction)checkEmailState:(id)sender {
     [self checkTextField];
 }
@@ -69,16 +81,11 @@
     [self checkTextField];
 }
 
-// Check login
-- (BOOL)checkLogin
+- (void)viewDidAppear:(BOOL)animated
 {
-    QSLoginService * service = [[QSLoginService alloc]init];
-    QSUserModel * model = [[QSUserModel alloc]init];
-    [model setEmail: self.emailLabel.text];
-    [model setPassword:self.passLabel.text];
-    return [service checkkLogin:model];
+    [super viewDidAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
 }
-
 
 // Limit length of email and password
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
@@ -91,9 +98,42 @@
 
 // Action when pressed login button
 - (IBAction)loginPressed:(id)sender {
-    if ([self checkLogin]) {
-        NSLog(@"Login Success");
+    QSLoginService * service = [[QSLoginService alloc]init];
+    QSUserModel * model = [[QSUserModel alloc]init];
+    [model setEmail: self.emailLabel.text];
+    [model setPassword:self.passLabel.text];
+    if ([service checkEmailExists:model]) {
+        if ([service checkLogin:model]) {
+            NSLog(@"Login Sucess!");
+            /* With project List View
+            if(!IS_IPAD){
+                QSProjectViewController_iPhone * project = [[QSProjectViewController_iPhone alloc]init];
+                [self.navigationController pushViewController:project animated:YES];
+            }else
+            {
+                QSProjectController_iPad * project = [[QSProjectViewController_iPad alloc]init];
+                [self.navigationController pushViewController:project animated:YES];
+            }
+             */
+        }else
+        [self.notificationLogin setText:@"Password is wrong !"];
     }else
-        [self.notificationLogin setText:@"Email or password is wrong !"];
+        [self.notificationLogin setText:@"Email is not exists !"];
 }
+
+
+- (void)keyboardDidShowOrHide:(NSNotification *)notification
+{
+    if(UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation))
+        if ([notification.name isEqualToString:UIKeyboardDidShowNotification]) {
+            CGRect frame = self.view.frame;
+            frame.origin.y -= 80;
+            self.view.frame = frame;
+        } else {
+            CGRect frame = self.view.frame;
+            frame.origin.y += 80;
+            self.view.frame = frame;
+        }
+}
+
 @end

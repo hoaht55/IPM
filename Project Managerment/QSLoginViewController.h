@@ -17,6 +17,4 @@
 - (IBAction)loginPressed:(id)sender;
 - (IBAction)checkEmailState:(id)sender;
 - (IBAction)checkPassState:(id)sender;
-
-- (BOOL)checkLogin;
 @end
