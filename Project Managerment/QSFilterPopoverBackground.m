@@ -8,13 +8,21 @@
 
 #import "QSFilterPopoverBackground.h"
 
+#define kArrowBase 30.0f
+#define kArrowHeight 20.0f
+#define kBorderInset 8.0f
+
 @implementation QSFilterPopoverBackground
+
+@synthesize arrowDirection  = _arrowDirection;
+@synthesize arrowOffset     = _arrowOffset;
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        self.backgroundColor = [UIColor whiteColor];
     }
     return self;
 }
@@ -27,5 +35,22 @@
     // Drawing code
 }
 */
+
++ (CGFloat)arrowBase
+{
+    return kArrowBase;
+}
+
++ (CGFloat)arrowHeight
+{
+    return kArrowHeight;
+}
+
++ (UIEdgeInsets)contentViewInsets
+{
+    return UIEdgeInsetsMake(kBorderInset, kBorderInset, kBorderInset,       kBorderInset);
+}
+
+
 
 @end

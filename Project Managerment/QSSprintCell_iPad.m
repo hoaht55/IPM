@@ -7,7 +7,7 @@
 //
 
 #import "QSSprintCell_iPad.h"
-
+#import "QSSprintModel.h"
 @implementation QSSprintCell_iPad
 
 - (void)awakeFromNib
@@ -22,4 +22,13 @@
     // Configure the view for the selected state
 }
 
+- (void)setModel:(QSSprintModel *)sprintModel
+{
+    _sprintModel = sprintModel;
+    [self.nameLabel setText:_sprintModel.name];
+    [self.statusLabel setText:_sprintModel.status];
+    [self.descLabel setText:_sprintModel.desc];
+    [self.screenLabel setText:_sprintModel.screen];
+    [self.assigneeLabel setText:_sprintModel.assignee];
+}
 @end

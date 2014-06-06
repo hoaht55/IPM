@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QSSprintModel.h"
 
 @interface QSSprintCell_iPad : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descLabel;
+@property (weak, nonatomic) IBOutlet UILabel *screenLabel;
+@property (weak, nonatomic) IBOutlet UILabel *assigneeLabel;
 
+@property (nonatomic, strong) QSSprintModel *sprintModel;
+
+- (void)setModel:(QSSprintModel *)sprintModel;
 @end

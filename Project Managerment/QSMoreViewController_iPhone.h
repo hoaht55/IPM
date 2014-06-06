@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface QSMoreViewController_iPhone : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, retain) NSIndexPath *checkedIndex;
 
 @end

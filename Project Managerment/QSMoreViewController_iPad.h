@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface QSMoreViewController_iPad : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSArray *array;
 
 @end

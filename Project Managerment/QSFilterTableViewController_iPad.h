@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface QSFilterTableViewController_iPad : UIViewController
+@property (nonatomic, strong) NSArray *array;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

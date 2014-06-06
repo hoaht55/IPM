@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface QSFilterPopoverTableViewController_iPhone : UITableViewController
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end

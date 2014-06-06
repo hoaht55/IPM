@@ -7,6 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0701CD7D194162F600BF8A80 /* QSMoreViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 0701CD7B194162F600BF8A80 /* QSMoreViewController_iPhone.m */; };
+		0701CD7E194162F600BF8A80 /* QSMoreViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0701CD7C194162F600BF8A80 /* QSMoreViewController_iPhone.xib */; };
+		0701CD821941632800BF8A80 /* QSMoreViewCell_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 0701CD801941632800BF8A80 /* QSMoreViewCell_iPhone.m */; };
+		0701CD831941632800BF8A80 /* QSMoreViewCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0701CD811941632800BF8A80 /* QSMoreViewCell_iPhone.xib */; };
+		0701CD87194169D800BF8A80 /* QSFilterViewController_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 0701CD85194169D800BF8A80 /* QSFilterViewController_iPad.m */; };
+		0701CD88194169D800BF8A80 /* QSFilterViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0701CD86194169D800BF8A80 /* QSFilterViewController_iPad.xib */; };
+		0701CD8C19416B7800BF8A80 /* QSSprintCell_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 0701CD8A19416B7800BF8A80 /* QSSprintCell_iPad.m */; };
+		0701CD8D19416B7800BF8A80 /* QSSprintCell_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0701CD8B19416B7800BF8A80 /* QSSprintCell_iPad.xib */; };
+		0701CD911941712000BF8A80 /* QSMoreViewCell_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 0701CD8F1941712000BF8A80 /* QSMoreViewCell_iPad.m */; };
+		0701CD921941712000BF8A80 /* QSMoreViewCell_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0701CD901941712000BF8A80 /* QSMoreViewCell_iPad.xib */; };
+		0701CD9B1941719000BF8A80 /* QSMoreViewController_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 0701CD991941719000BF8A80 /* QSMoreViewController_iPad.m */; };
+		0701CD9C1941719000BF8A80 /* QSMoreViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0701CD9A1941719000BF8A80 /* QSMoreViewController_iPad.xib */; };
+		0701CDA51941756600BF8A80 /* QSFilterTableViewController_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 0701CDA31941756600BF8A80 /* QSFilterTableViewController_iPad.m */; };
+		0701CDA61941756600BF8A80 /* QSFilterTableViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0701CDA41941756600BF8A80 /* QSFilterTableViewController_iPad.xib */; };
+		0701CDAF194175B500BF8A80 /* QSFilterTableViewCell_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 0701CDAD194175B500BF8A80 /* QSFilterTableViewCell_iPad.m */; };
+		0701CDB0194175B500BF8A80 /* QSFilterTableViewCell_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0701CDAE194175B500BF8A80 /* QSFilterTableViewCell_iPad.xib */; };
+		0701CDB419419CA400BF8A80 /* QSFilterTableViewCell_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 0701CDB219419CA400BF8A80 /* QSFilterTableViewCell_iPhone.m */; };
+		0701CDB519419CA400BF8A80 /* QSFilterTableViewCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0701CDB319419CA400BF8A80 /* QSFilterTableViewCell_iPhone.xib */; };
+		0701CDB919419D9A00BF8A80 /* QSFilterTableViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 0701CDB719419D9A00BF8A80 /* QSFilterTableViewController_iPhone.m */; };
+		0701CDBA19419D9A00BF8A80 /* QSFilterTableViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0701CDB819419D9A00BF8A80 /* QSFilterTableViewController_iPhone.xib */; };
+		07295DEE193F2B1000BC1EAD /* QSSprintListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07295DEC193F2B1000BC1EAD /* QSSprintListViewController.m */; };
+		07295DEF193F2B1000BC1EAD /* QSSprintListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07295DED193F2B1000BC1EAD /* QSSprintListViewController.xib */; };
+		07295DF5193F2B7300BC1EAD /* QSSprintCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07295DF3193F2B7300BC1EAD /* QSSprintCell.m */; };
+		07295DF6193F2B7300BC1EAD /* QSSprintCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07295DF4193F2B7300BC1EAD /* QSSprintCell.xib */; };
+		07295DFC193F3AEA00BC1EAD /* QSFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07295DFA193F3AEA00BC1EAD /* QSFilterViewController.m */; };
+		07295DFD193F3AEA00BC1EAD /* QSFilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07295DFB193F3AEA00BC1EAD /* QSFilterViewController.xib */; };
+		07EB6064194016BA008E68A0 /* QSSprintModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EB6063194016BA008E68A0 /* QSSprintModel.m */; };
 		28D08D2B193DBD4200B6B18F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D08D2A193DBD4200B6B18F /* Foundation.framework */; };
 		28D08D2D193DBD4200B6B18F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D08D2C193DBD4200B6B18F /* CoreGraphics.framework */; };
 		28D08D2F193DBD4200B6B18F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D08D2E193DBD4200B6B18F /* UIKit.framework */; };
@@ -91,9 +118,10 @@
 		28D08E16193DBFD800B6B18F /* icon_password@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28D08DCD193DBFD800B6B18F /* icon_password@2x.png */; };
 		28D08E17193DBFD800B6B18F /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 28D08DCE193DBFD800B6B18F /* logo.png */; };
 		28D08E18193DBFD800B6B18F /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28D08DCF193DBFD800B6B18F /* logo@2x.png */; };
-		41BB445D193F262500B717C9 /* QSSprintModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BB445C193F262500B717C9 /* QSSprintModel.m */; };
-		41BB4461193F26E200B717C9 /* QSAddSprintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BB445F193F26E200B717C9 /* QSAddSprintViewController.m */; };
-		41BB4462193F26E200B717C9 /* QSAddSprintViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41BB4460193F26E200B717C9 /* QSAddSprintViewController.xib */; };
+		E8A4A646193F092200954CEC /* QSFeatureListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A4A644193F092100954CEC /* QSFeatureListViewController.m */; };
+		E8A4A647193F092200954CEC /* QSFeatureListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8A4A645193F092200954CEC /* QSFeatureListViewController.xib */; };
+		E8A4A64B193F268A00954CEC /* QSFeatureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A4A649193F268A00954CEC /* QSFeatureCell.m */; };
+		E8A4A64C193F268A00954CEC /* QSFeatureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8A4A64A193F268A00954CEC /* QSFeatureCell.xib */; };
 		EBEE0855F6364F1DB52111C9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 821862826D504810AC01F608 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +136,47 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0701CD7A194162F600BF8A80 /* QSMoreViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSMoreViewController_iPhone.h; sourceTree = SOURCE_ROOT; };
+		0701CD7B194162F600BF8A80 /* QSMoreViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSMoreViewController_iPhone.m; sourceTree = SOURCE_ROOT; };
+		0701CD7C194162F600BF8A80 /* QSMoreViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSMoreViewController_iPhone.xib; sourceTree = SOURCE_ROOT; };
+		0701CD7F1941632800BF8A80 /* QSMoreViewCell_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSMoreViewCell_iPhone.h; sourceTree = SOURCE_ROOT; };
+		0701CD801941632800BF8A80 /* QSMoreViewCell_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSMoreViewCell_iPhone.m; sourceTree = SOURCE_ROOT; };
+		0701CD811941632800BF8A80 /* QSMoreViewCell_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSMoreViewCell_iPhone.xib; sourceTree = SOURCE_ROOT; };
+		0701CD84194169D800BF8A80 /* QSFilterViewController_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSFilterViewController_iPad.h; sourceTree = SOURCE_ROOT; };
+		0701CD85194169D800BF8A80 /* QSFilterViewController_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSFilterViewController_iPad.m; sourceTree = SOURCE_ROOT; };
+		0701CD86194169D800BF8A80 /* QSFilterViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSFilterViewController_iPad.xib; sourceTree = SOURCE_ROOT; };
+		0701CD8919416B7800BF8A80 /* QSSprintCell_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSSprintCell_iPad.h; sourceTree = SOURCE_ROOT; };
+		0701CD8A19416B7800BF8A80 /* QSSprintCell_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSSprintCell_iPad.m; sourceTree = SOURCE_ROOT; };
+		0701CD8B19416B7800BF8A80 /* QSSprintCell_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSSprintCell_iPad.xib; sourceTree = SOURCE_ROOT; };
+		0701CD8E1941712000BF8A80 /* QSMoreViewCell_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSMoreViewCell_iPad.h; sourceTree = SOURCE_ROOT; };
+		0701CD8F1941712000BF8A80 /* QSMoreViewCell_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSMoreViewCell_iPad.m; sourceTree = SOURCE_ROOT; };
+		0701CD901941712000BF8A80 /* QSMoreViewCell_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSMoreViewCell_iPad.xib; sourceTree = SOURCE_ROOT; };
+		0701CD981941718F00BF8A80 /* QSMoreViewController_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSMoreViewController_iPad.h; sourceTree = SOURCE_ROOT; };
+		0701CD991941719000BF8A80 /* QSMoreViewController_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSMoreViewController_iPad.m; sourceTree = SOURCE_ROOT; };
+		0701CD9A1941719000BF8A80 /* QSMoreViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSMoreViewController_iPad.xib; sourceTree = SOURCE_ROOT; };
+		0701CDA21941756600BF8A80 /* QSFilterTableViewController_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSFilterTableViewController_iPad.h; sourceTree = SOURCE_ROOT; };
+		0701CDA31941756600BF8A80 /* QSFilterTableViewController_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSFilterTableViewController_iPad.m; sourceTree = SOURCE_ROOT; };
+		0701CDA41941756600BF8A80 /* QSFilterTableViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSFilterTableViewController_iPad.xib; sourceTree = SOURCE_ROOT; };
+		0701CDAC194175B500BF8A80 /* QSFilterTableViewCell_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSFilterTableViewCell_iPad.h; sourceTree = SOURCE_ROOT; };
+		0701CDAD194175B500BF8A80 /* QSFilterTableViewCell_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSFilterTableViewCell_iPad.m; sourceTree = SOURCE_ROOT; };
+		0701CDAE194175B500BF8A80 /* QSFilterTableViewCell_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSFilterTableViewCell_iPad.xib; sourceTree = SOURCE_ROOT; };
+		0701CDB119419CA400BF8A80 /* QSFilterTableViewCell_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSFilterTableViewCell_iPhone.h; sourceTree = SOURCE_ROOT; };
+		0701CDB219419CA400BF8A80 /* QSFilterTableViewCell_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSFilterTableViewCell_iPhone.m; sourceTree = SOURCE_ROOT; };
+		0701CDB319419CA400BF8A80 /* QSFilterTableViewCell_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSFilterTableViewCell_iPhone.xib; sourceTree = SOURCE_ROOT; };
+		0701CDB619419D9A00BF8A80 /* QSFilterTableViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSFilterTableViewController_iPhone.h; sourceTree = SOURCE_ROOT; };
+		0701CDB719419D9A00BF8A80 /* QSFilterTableViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSFilterTableViewController_iPhone.m; sourceTree = SOURCE_ROOT; };
+		0701CDB819419D9A00BF8A80 /* QSFilterTableViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSFilterTableViewController_iPhone.xib; sourceTree = SOURCE_ROOT; };
+		07295DEB193F2B1000BC1EAD /* QSSprintListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSSprintListViewController.h; sourceTree = SOURCE_ROOT; };
+		07295DEC193F2B1000BC1EAD /* QSSprintListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSSprintListViewController.m; sourceTree = SOURCE_ROOT; };
+		07295DED193F2B1000BC1EAD /* QSSprintListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSSprintListViewController.xib; sourceTree = SOURCE_ROOT; };
+		07295DF2193F2B7300BC1EAD /* QSSprintCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSSprintCell.h; sourceTree = SOURCE_ROOT; };
+		07295DF3193F2B7300BC1EAD /* QSSprintCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSSprintCell.m; sourceTree = SOURCE_ROOT; };
+		07295DF4193F2B7300BC1EAD /* QSSprintCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSSprintCell.xib; sourceTree = SOURCE_ROOT; };
+		07295DF9193F3AEA00BC1EAD /* QSFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSFilterViewController.h; sourceTree = SOURCE_ROOT; };
+		07295DFA193F3AEA00BC1EAD /* QSFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSFilterViewController.m; sourceTree = SOURCE_ROOT; };
+		07295DFB193F3AEA00BC1EAD /* QSFilterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSFilterViewController.xib; sourceTree = SOURCE_ROOT; };
+		07EB6062194016BA008E68A0 /* QSSprintModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSSprintModel.h; sourceTree = SOURCE_ROOT; };
+		07EB6063194016BA008E68A0 /* QSSprintModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSSprintModel.m; sourceTree = SOURCE_ROOT; };
 		2895FE02CA4145339837F79F /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		28D08D27193DBD4200B6B18F /* Project Managerment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project Managerment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		28D08D2A193DBD4200B6B18F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -226,12 +295,13 @@
 		28D08DCD193DBFD800B6B18F /* icon_password@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_password@2x.png"; sourceTree = "<group>"; };
 		28D08DCE193DBFD800B6B18F /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		28D08DCF193DBFD800B6B18F /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
-		41BB445B193F262500B717C9 /* QSSprintModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSSprintModel.h; sourceTree = SOURCE_ROOT; };
-		41BB445C193F262500B717C9 /* QSSprintModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSSprintModel.m; sourceTree = SOURCE_ROOT; };
-		41BB445E193F26E200B717C9 /* QSAddSprintViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSAddSprintViewController.h; sourceTree = SOURCE_ROOT; };
-		41BB445F193F26E200B717C9 /* QSAddSprintViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSAddSprintViewController.m; sourceTree = SOURCE_ROOT; };
-		41BB4460193F26E200B717C9 /* QSAddSprintViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSAddSprintViewController.xib; sourceTree = SOURCE_ROOT; };
 		821862826D504810AC01F608 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8A4A643193F092100954CEC /* QSFeatureListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSFeatureListViewController.h; sourceTree = SOURCE_ROOT; };
+		E8A4A644193F092100954CEC /* QSFeatureListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSFeatureListViewController.m; sourceTree = SOURCE_ROOT; };
+		E8A4A645193F092200954CEC /* QSFeatureListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSFeatureListViewController.xib; sourceTree = SOURCE_ROOT; };
+		E8A4A648193F268A00954CEC /* QSFeatureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSFeatureCell.h; sourceTree = SOURCE_ROOT; };
+		E8A4A649193F268A00954CEC /* QSFeatureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSFeatureCell.m; sourceTree = SOURCE_ROOT; };
+		E8A4A64A193F268A00954CEC /* QSFeatureCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSFeatureCell.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +329,109 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0701CD781941625700BF8A80 /* FilterPopoverView */ = {
+			isa = PBXGroup;
+			children = (
+				0701CDA21941756600BF8A80 /* QSFilterTableViewController_iPad.h */,
+				0701CDA31941756600BF8A80 /* QSFilterTableViewController_iPad.m */,
+				0701CDA41941756600BF8A80 /* QSFilterTableViewController_iPad.xib */,
+				0701CDAC194175B500BF8A80 /* QSFilterTableViewCell_iPad.h */,
+				0701CDAD194175B500BF8A80 /* QSFilterTableViewCell_iPad.m */,
+				0701CDAE194175B500BF8A80 /* QSFilterTableViewCell_iPad.xib */,
+				0701CDB119419CA400BF8A80 /* QSFilterTableViewCell_iPhone.h */,
+				0701CDB219419CA400BF8A80 /* QSFilterTableViewCell_iPhone.m */,
+				0701CDB319419CA400BF8A80 /* QSFilterTableViewCell_iPhone.xib */,
+				0701CDB619419D9A00BF8A80 /* QSFilterTableViewController_iPhone.h */,
+				0701CDB719419D9A00BF8A80 /* QSFilterTableViewController_iPhone.m */,
+				0701CDB819419D9A00BF8A80 /* QSFilterTableViewController_iPhone.xib */,
+			);
+			name = FilterPopoverView;
+			sourceTree = "<group>";
+		};
+		0701CD79194162A000BF8A80 /* MorePopoverView */ = {
+			isa = PBXGroup;
+			children = (
+				0701CD7A194162F600BF8A80 /* QSMoreViewController_iPhone.h */,
+				0701CD7B194162F600BF8A80 /* QSMoreViewController_iPhone.m */,
+				0701CD7C194162F600BF8A80 /* QSMoreViewController_iPhone.xib */,
+				0701CD7F1941632800BF8A80 /* QSMoreViewCell_iPhone.h */,
+				0701CD801941632800BF8A80 /* QSMoreViewCell_iPhone.m */,
+				0701CD811941632800BF8A80 /* QSMoreViewCell_iPhone.xib */,
+				0701CD8E1941712000BF8A80 /* QSMoreViewCell_iPad.h */,
+				0701CD8F1941712000BF8A80 /* QSMoreViewCell_iPad.m */,
+				0701CD901941712000BF8A80 /* QSMoreViewCell_iPad.xib */,
+				0701CD981941718F00BF8A80 /* QSMoreViewController_iPad.h */,
+				0701CD991941719000BF8A80 /* QSMoreViewController_iPad.m */,
+				0701CD9A1941719000BF8A80 /* QSMoreViewController_iPad.xib */,
+			);
+			name = MorePopoverView;
+			sourceTree = "<group>";
+		};
+		0701CDBB1941A0AA00BF8A80 /* FilterResult */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = FilterResult;
+			sourceTree = "<group>";
+		};
+		07295DEA193F2ACC00BC1EAD /* Sprint */ = {
+			isa = PBXGroup;
+			children = (
+				07295DF1193F2B2700BC1EAD /* View Controller */,
+				07295DF0193F2B1F00BC1EAD /* View */,
+			);
+			name = Sprint;
+			sourceTree = "<group>";
+		};
+		07295DF0193F2B1F00BC1EAD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				07295DF2193F2B7300BC1EAD /* QSSprintCell.h */,
+				07295DF3193F2B7300BC1EAD /* QSSprintCell.m */,
+				07295DF4193F2B7300BC1EAD /* QSSprintCell.xib */,
+				0701CD8919416B7800BF8A80 /* QSSprintCell_iPad.h */,
+				0701CD8A19416B7800BF8A80 /* QSSprintCell_iPad.m */,
+				0701CD8B19416B7800BF8A80 /* QSSprintCell_iPad.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		07295DF1193F2B2700BC1EAD /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				07295DEB193F2B1000BC1EAD /* QSSprintListViewController.h */,
+				07295DEC193F2B1000BC1EAD /* QSSprintListViewController.m */,
+				07295DED193F2B1000BC1EAD /* QSSprintListViewController.xib */,
+			);
+			name = "View Controller";
+			sourceTree = "<group>";
+		};
+		07295DF8193F39FC00BC1EAD /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				0701CDBB1941A0AA00BF8A80 /* FilterResult */,
+				07EB606119400D9B008E68A0 /* FilterPopover */,
+				07295DF9193F3AEA00BC1EAD /* QSFilterViewController.h */,
+				07295DFA193F3AEA00BC1EAD /* QSFilterViewController.m */,
+				07295DFB193F3AEA00BC1EAD /* QSFilterViewController.xib */,
+				07EB6062194016BA008E68A0 /* QSSprintModel.h */,
+				07EB6063194016BA008E68A0 /* QSSprintModel.m */,
+				0701CD84194169D800BF8A80 /* QSFilterViewController_iPad.h */,
+				0701CD85194169D800BF8A80 /* QSFilterViewController_iPad.m */,
+				0701CD86194169D800BF8A80 /* QSFilterViewController_iPad.xib */,
+			);
+			name = Filter;
+			sourceTree = "<group>";
+		};
+		07EB606119400D9B008E68A0 /* FilterPopover */ = {
+			isa = PBXGroup;
+			children = (
+				0701CD79194162A000BF8A80 /* MorePopoverView */,
+				0701CD781941625700BF8A80 /* FilterPopoverView */,
+			);
+			name = FilterPopover;
+			sourceTree = "<group>";
+		};
 		28D08D1E193DBD4200B6B18F = {
 			isa = PBXGroup;
 			children = (
@@ -345,7 +518,6 @@
 		28D08D5A193DBFD800B6B18F /* Business */ = {
 			isa = PBXGroup;
 			children = (
-				41BB445A193F253B00B717C9 /* Business Model */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -502,12 +674,9 @@
 		28D08DA5193DBFD800B6B18F /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-				410C1026193F116E00ACFCDB /* View */,
-				410C1025193F115E00ACFCDB /* View Controller */,
-=======
-				41FAD6C4193DE391009B9146 /* demo */,
->>>>>>> origin/SprintsList
+				07295DF8193F39FC00BC1EAD /* Filter */,
+				07295DEA193F2ACC00BC1EAD /* Sprint */,
+				E8A4A642193F08EA00954CEC /* FeatureList */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -567,62 +736,17 @@
 			path = IMG;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
-		410C1025193F115E00ACFCDB /* View Controller */ = {
+		E8A4A642193F08EA00954CEC /* FeatureList */ = {
 			isa = PBXGroup;
 			children = (
-				413CC707193F1E450085DA9F /* Sprint */,
+				E8A4A643193F092100954CEC /* QSFeatureListViewController.h */,
+				E8A4A644193F092100954CEC /* QSFeatureListViewController.m */,
+				E8A4A645193F092200954CEC /* QSFeatureListViewController.xib */,
+				E8A4A648193F268A00954CEC /* QSFeatureCell.h */,
+				E8A4A649193F268A00954CEC /* QSFeatureCell.m */,
+				E8A4A64A193F268A00954CEC /* QSFeatureCell.xib */,
 			);
-			name = "View Controller";
-			sourceTree = "<group>";
-		};
-		410C1026193F116E00ACFCDB /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = View;
-			sourceTree = "<group>";
-		};
-		413CC686193F19300085DA9F /* Iphone */ = {
-			isa = PBXGroup;
-			children = (
-				41BB445E193F26E200B717C9 /* QSAddSprintViewController.h */,
-				41BB445F193F26E200B717C9 /* QSAddSprintViewController.m */,
-				41BB4460193F26E200B717C9 /* QSAddSprintViewController.xib */,
-			);
-			name = Iphone;
-			sourceTree = "<group>";
-		};
-		413CC687193F19430085DA9F /* iPad */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = iPad;
-			sourceTree = "<group>";
-		};
-		413CC707193F1E450085DA9F /* Sprint */ = {
-			isa = PBXGroup;
-			children = (
-				413CC686193F19300085DA9F /* Iphone */,
-				413CC687193F19430085DA9F /* iPad */,
-			);
-			name = Sprint;
-			sourceTree = "<group>";
-		};
-		41BB445A193F253B00B717C9 /* Business Model */ = {
-			isa = PBXGroup;
-			children = (
-				41BB445B193F262500B717C9 /* QSSprintModel.h */,
-				41BB445C193F262500B717C9 /* QSSprintModel.m */,
-			);
-			name = "Business Model";
-=======
-		41FAD6C4193DE391009B9146 /* demo */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = demo;
->>>>>>> origin/SprintsList
+			name = FeatureList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -714,29 +838,44 @@
 				28D08E0C193DBFD800B6B18F /* btn_service@2x.png in Resources */,
 				28D08E00193DBFD800B6B18F /* bt_drawer@2x.png in Resources */,
 				28D08E06193DBFD800B6B18F /* bt_sort@2x.png in Resources */,
+				0701CDB519419CA400BF8A80 /* QSFilterTableViewCell_iPhone.xib in Resources */,
 				28D08E05193DBFD800B6B18F /* bt_sort.png in Resources */,
+				07295DFD193F3AEA00BC1EAD /* QSFilterViewController.xib in Resources */,
 				28D08E07193DBFD800B6B18F /* btn_close.png in Resources */,
 				28D08E08193DBFD800B6B18F /* btn_close@2x.png in Resources */,
+				07295DEF193F2B1000BC1EAD /* QSSprintListViewController.xib in Resources */,
 				28D08E03193DBFD800B6B18F /* bt_more_menu.png in Resources */,
 				28D08E0D193DBFD800B6B18F /* btn_task.png in Resources */,
+				07295DF6193F2B7300BC1EAD /* QSSprintCell.xib in Resources */,
 				28D08E15193DBFD800B6B18F /* icon_password.png in Resources */,
 				28D08DFA193DBFD800B6B18F /* boundaryLine@2x.png in Resources */,
 				28D08DF3193DBFD800B6B18F /* arrow_indication.png in Resources */,
+				0701CD7E194162F600BF8A80 /* QSMoreViewController_iPhone.xib in Resources */,
 				28D08DFC193DBFD800B6B18F /* bt_add@2x.png in Resources */,
 				28D08DF9193DBFD800B6B18F /* boundaryLine.png in Resources */,
+				0701CDB0194175B500BF8A80 /* QSFilterTableViewCell_iPad.xib in Resources */,
+				0701CDA61941756600BF8A80 /* QSFilterTableViewController_iPad.xib in Resources */,
 				28D08DFD193DBFD800B6B18F /* bt_back.png in Resources */,
 				28D08D35193DBD4200B6B18F /* InfoPlist.strings in Resources */,
+				0701CDBA19419D9A00BF8A80 /* QSFilterTableViewController_iPhone.xib in Resources */,
 				28D08E11193DBFD800B6B18F /* icon_check.png in Resources */,
 				28D08E17193DBFD800B6B18F /* logo.png in Resources */,
+				E8A4A64C193F268A00954CEC /* QSFeatureCell.xib in Resources */,
 				28D08E18193DBFD800B6B18F /* logo@2x.png in Resources */,
 				28D08E09193DBFD800B6B18F /* btn_report.png in Resources */,
 				28D08E0E193DBFD800B6B18F /* btn_task@2x.png in Resources */,
+				0701CD8D19416B7800BF8A80 /* QSSprintCell_iPad.xib in Resources */,
+				0701CD9C1941719000BF8A80 /* QSMoreViewController_iPad.xib in Resources */,
 				28D08DF4193DBFD800B6B18F /* arrow_indication@2x.png in Resources */,
+				0701CD831941632800BF8A80 /* QSMoreViewCell_iPhone.xib in Resources */,
 				28D08DF7193DBFD800B6B18F /* arrow_title_screen_up.png in Resources */,
+				0701CD88194169D800BF8A80 /* QSFilterViewController_iPad.xib in Resources */,
 				28D08E12193DBFD800B6B18F /* icon_check@2x.png in Resources */,
+				E8A4A647193F092200954CEC /* QSFeatureListViewController.xib in Resources */,
 				28D08D3D193DBD4200B6B18F /* Images.xcassets in Resources */,
 				28D08E0B193DBFD800B6B18F /* btn_service.png in Resources */,
 				28D08DFF193DBFD800B6B18F /* bt_drawer.png in Resources */,
+				0701CD921941712000BF8A80 /* QSMoreViewCell_iPad.xib in Resources */,
 				28D08E04193DBFD800B6B18F /* bt_more_menu@2x.png in Resources */,
 				28D08E01193DBFD800B6B18F /* bt_more_actions.png in Resources */,
 				28D08DFB193DBFD800B6B18F /* bt_add.png in Resources */,
@@ -747,7 +886,6 @@
 				28D08DF6193DBFD800B6B18F /* arrow_title_screen_down@2x.png in Resources */,
 				28D08E10193DBFD800B6B18F /* icon_calendar@2x.png in Resources */,
 				28D08DDB193DBFD800B6B18F /* QSStatusControl.xib in Resources */,
-				41BB4462193F26E200B717C9 /* QSAddSprintViewController.xib in Resources */,
 				28D08E0A193DBFD800B6B18F /* btn_report@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -800,38 +938,52 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0701CDB919419D9A00BF8A80 /* QSFilterTableViewController_iPhone.m in Sources */,
 				28D08DE6193DBFD800B6B18F /* NSDate+DIS.m in Sources */,
+				0701CDAF194175B500BF8A80 /* QSFilterTableViewCell_iPad.m in Sources */,
 				28D08DEF193DBFD800B6B18F /* UILabel+FrameCaculation.m in Sources */,
 				28D08DEA193DBFD800B6B18F /* SBRandomizeUtil.m in Sources */,
+				0701CD8C19416B7800BF8A80 /* QSSprintCell_iPad.m in Sources */,
+				E8A4A646193F092200954CEC /* QSFeatureListViewController.m in Sources */,
 				28D08DE3193DBFD800B6B18F /* NSArray+Sort.m in Sources */,
 				28D08DD5193DBFD800B6B18F /* QSPopoverMenuTableViewController.m in Sources */,
 				28D08DE7193DBFD800B6B18F /* NSFileManager+DIS.m in Sources */,
 				28D08DF0193DBFD800B6B18F /* UIView+AutoLayout.m in Sources */,
 				28D08DD0193DBFD800B6B18F /* QSAppDelegate.m in Sources */,
 				28D08DD9193DBFD800B6B18F /* SBTextMenuPopOver.m in Sources */,
+				0701CD7D194162F600BF8A80 /* QSMoreViewController_iPhone.m in Sources */,
 				28D08DE0193DBFD800B6B18F /* DISTakePhotoUtil.m in Sources */,
+				0701CD9B1941719000BF8A80 /* QSMoreViewController_iPad.m in Sources */,
 				28D08DDE193DBFD800B6B18F /* DISSendEmailUtil.m in Sources */,
 				28D08D37193DBD4200B6B18F /* main.m in Sources */,
 				28D08DD6193DBFD800B6B18F /* SBBudgetsTextMenuPopOver.m in Sources */,
+				07295DF5193F2B7300BC1EAD /* QSSprintCell.m in Sources */,
+				0701CD87194169D800BF8A80 /* QSFilterViewController_iPad.m in Sources */,
+				07295DEE193F2B1000BC1EAD /* QSSprintListViewController.m in Sources */,
 				28D08DE4193DBFD800B6B18F /* NSAttributedString+DIS.m in Sources */,
 				28D08DED193DBFD800B6B18F /* UIColor+DIS.m in Sources */,
 				28D08DE5193DBFD800B6B18F /* NSData+DIS.m in Sources */,
 				28D08DE1193DBFD800B6B18F /* Lib.m in Sources */,
+				07295DFC193F3AEA00BC1EAD /* QSFilterViewController.m in Sources */,
 				28D08DDA193DBFD800B6B18F /* QSStatusControl.m in Sources */,
-				41BB4461193F26E200B717C9 /* QSAddSprintViewController.m in Sources */,
+				0701CDA51941756600BF8A80 /* QSFilterTableViewController_iPad.m in Sources */,
+				0701CD821941632800BF8A80 /* QSMoreViewCell_iPhone.m in Sources */,
 				28D08DE8193DBFD800B6B18F /* NSObject+DIS.m in Sources */,
 				28D08DD7193DBFD800B6B18F /* SBDatePickerViewController.m in Sources */,
 				28D08DEB193DBFD800B6B18F /* SerialOperationQueue.m in Sources */,
 				28D08DEC193DBFD800B6B18F /* SmallButton.m in Sources */,
-				41BB445D193F262500B717C9 /* QSSprintModel.m in Sources */,
 				28D08DDF193DBFD800B6B18F /* DISSendSMSUtil.m in Sources */,
 				28D08DDC193DBFD800B6B18F /* QSAppPreference.m in Sources */,
+				0701CDB419419CA400BF8A80 /* QSFilterTableViewCell_iPhone.m in Sources */,
 				28D08DD1193DBFD800B6B18F /* BackButton.m in Sources */,
 				28D08DEE193DBFD800B6B18F /* UIImage+DIS.m in Sources */,
 				28D08DDD193DBFD800B6B18F /* DISPhoneCallUtil.m in Sources */,
+				E8A4A64B193F268A00954CEC /* QSFeatureCell.m in Sources */,
 				28D08DE9193DBFD800B6B18F /* NSString+DIS.m in Sources */,
 				28D08DD3193DBFD800B6B18F /* QSMatricTitleView.m in Sources */,
+				07EB6064194016BA008E68A0 /* QSSprintModel.m in Sources */,
 				28D08DE2193DBFD800B6B18F /* MBProgressHUD+Category.m in Sources */,
+				0701CD911941712000BF8A80 /* QSMoreViewCell_iPad.m in Sources */,
 				28D08DD8193DBFD800B6B18F /* SBDISCPicker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
