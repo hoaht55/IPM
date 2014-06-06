@@ -8,7 +8,7 @@
 
 #import "QSLabelTextViewCell.h"
 
-@implementation QSLabelTextViewCell
+@implementation QSLabelTextViewCell 
 
 - (void)awakeFromNib
 {

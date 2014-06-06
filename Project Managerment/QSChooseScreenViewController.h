@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface QSChooseScreenViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet UITableView *screensTable;
+- (void)createNavigationItem;
+- (void)backToAddFeature:(id)sender;
 @end

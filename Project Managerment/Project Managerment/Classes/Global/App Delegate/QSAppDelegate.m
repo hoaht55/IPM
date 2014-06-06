@@ -7,20 +7,29 @@
 //
 
 #import "QSAppDelegate.h"
-#import "QSFeatureListViewController.h"
 #import "QSAppPreference.h"
+#import "QSAddAndEditViewController.h"
+#import "QSAppPreference.h"
+#define IS_IPAD [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad
 @implementation QSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    QSFeatureListViewController *viewController = [[QSFeatureListViewController alloc] init];
-    UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
-    [self.window setRootViewController:navigationController];
-    [[UINavigationBar appearance] setBarTintColor:[QSAppPreference blueColor]];
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17.0], NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    if (IS_IPAD) {
+        QSAddAndEditViewController *viewController = [[QSAddAndEditViewController alloc] initWithNibName:@"QSAddAndEditViewController_iPad" bundle:nil];
+        UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+        [self.window setRootViewController:navigationController];
+    } else {
+        QSAddAndEditViewController *viewController = [[QSAddAndEditViewController alloc] initWithNibName:@"QSAddAndEditViewController_iPhone" bundle:nil];
+        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+        [self.window setRootViewController:navigationController];
+    }
     
+    [[UINavigationBar appearance] setBarTintColor:[QSAppPreference blueColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName:[QSAppPreference boldFontWithSize:17], NSForegroundColorAttributeName:[UIColor whiteColor]}];
+
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

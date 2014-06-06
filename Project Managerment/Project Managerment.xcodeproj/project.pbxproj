@@ -91,8 +91,15 @@
 		28D08E16193DBFD800B6B18F /* icon_password@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28D08DCD193DBFD800B6B18F /* icon_password@2x.png */; };
 		28D08E17193DBFD800B6B18F /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 28D08DCE193DBFD800B6B18F /* logo.png */; };
 		28D08E18193DBFD800B6B18F /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28D08DCF193DBFD800B6B18F /* logo@2x.png */; };
-		E8A4A646193F092200954CEC /* QSFeatureListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A4A644193F092100954CEC /* QSFeatureListViewController.m */; };
-		E8A4A647193F092200954CEC /* QSFeatureListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8A4A645193F092200954CEC /* QSFeatureListViewController.xib */; };
+		E8EF7AB41940250A00776A3E /* QSChooseScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8EF7AB21940250A00776A3E /* QSChooseScreenViewController.m */; };
+		E8EF7AB51940250A00776A3E /* QSChooseScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8EF7AB31940250A00776A3E /* QSChooseScreenViewController.xib */; };
+		E8EF7AC51940722E00776A3E /* QSAddAndEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8EF7AC31940722E00776A3E /* QSAddAndEditViewController.m */; };
+		E8EF7AC61940722E00776A3E /* QSAddAndEditViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8EF7AC41940722E00776A3E /* QSAddAndEditViewController_iPhone.xib */; };
+		E8EF7AC81940728100776A3E /* QSAddAndEditViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8EF7AC71940728100776A3E /* QSAddAndEditViewController_iPad.xib */; };
+		E8EF7ACF19407EAF00776A3E /* QSLabelTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8EF7ACD19407EAF00776A3E /* QSLabelTextFieldCell.m */; };
+		E8EF7AD019407EAF00776A3E /* QSLabelTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8EF7ACE19407EAF00776A3E /* QSLabelTextFieldCell.xib */; };
+		E8EF7AD419407ECF00776A3E /* QSLabelTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8EF7AD219407ECF00776A3E /* QSLabelTextViewCell.m */; };
+		E8EF7AD519407ECF00776A3E /* QSLabelTextViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8EF7AD319407ECF00776A3E /* QSLabelTextViewCell.xib */; };
 		EBEE0855F6364F1DB52111C9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 821862826D504810AC01F608 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -226,9 +233,19 @@
 		28D08DCE193DBFD800B6B18F /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		28D08DCF193DBFD800B6B18F /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
 		821862826D504810AC01F608 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		E8A4A643193F092100954CEC /* QSFeatureListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSFeatureListViewController.h; sourceTree = SOURCE_ROOT; };
-		E8A4A644193F092100954CEC /* QSFeatureListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSFeatureListViewController.m; sourceTree = SOURCE_ROOT; };
-		E8A4A645193F092200954CEC /* QSFeatureListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSFeatureListViewController.xib; sourceTree = SOURCE_ROOT; };
+		E8EF7AB11940250A00776A3E /* QSChooseScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSChooseScreenViewController.h; sourceTree = SOURCE_ROOT; };
+		E8EF7AB21940250A00776A3E /* QSChooseScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSChooseScreenViewController.m; sourceTree = SOURCE_ROOT; };
+		E8EF7AB31940250A00776A3E /* QSChooseScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSChooseScreenViewController.xib; sourceTree = SOURCE_ROOT; };
+		E8EF7AC21940722E00776A3E /* QSAddAndEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSAddAndEditViewController.h; sourceTree = SOURCE_ROOT; };
+		E8EF7AC31940722E00776A3E /* QSAddAndEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSAddAndEditViewController.m; sourceTree = SOURCE_ROOT; };
+		E8EF7AC41940722E00776A3E /* QSAddAndEditViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSAddAndEditViewController_iPhone.xib; sourceTree = SOURCE_ROOT; };
+		E8EF7AC71940728100776A3E /* QSAddAndEditViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSAddAndEditViewController_iPad.xib; sourceTree = SOURCE_ROOT; };
+		E8EF7ACC19407EAF00776A3E /* QSLabelTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSLabelTextFieldCell.h; sourceTree = SOURCE_ROOT; };
+		E8EF7ACD19407EAF00776A3E /* QSLabelTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSLabelTextFieldCell.m; sourceTree = SOURCE_ROOT; };
+		E8EF7ACE19407EAF00776A3E /* QSLabelTextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSLabelTextFieldCell.xib; sourceTree = SOURCE_ROOT; };
+		E8EF7AD119407ECF00776A3E /* QSLabelTextViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSLabelTextViewCell.h; sourceTree = SOURCE_ROOT; };
+		E8EF7AD219407ECF00776A3E /* QSLabelTextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSLabelTextViewCell.m; sourceTree = SOURCE_ROOT; };
+		E8EF7AD319407ECF00776A3E /* QSLabelTextViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSLabelTextViewCell.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -498,7 +515,8 @@
 		28D08DA5193DBFD800B6B18F /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				E8A4A642193F08EA00954CEC /* FeatureList */,
+				E8EF7AB7194065C000776A3E /* View */,
+				E8EF7AB6194065B300776A3E /* ViewController */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -561,11 +579,84 @@
 		E8A4A642193F08EA00954CEC /* FeatureList */ = {
 			isa = PBXGroup;
 			children = (
-				E8A4A643193F092100954CEC /* QSFeatureListViewController.h */,
-				E8A4A644193F092100954CEC /* QSFeatureListViewController.m */,
-				E8A4A645193F092200954CEC /* QSFeatureListViewController.xib */,
+				E8EF7AAC1940211900776A3E /* AddAndEditFeature */,
 			);
 			name = FeatureList;
+			sourceTree = "<group>";
+		};
+		E8EF7AAC1940211900776A3E /* AddAndEditFeature */ = {
+			isa = PBXGroup;
+			children = (
+				E8EF7AB0194024DB00776A3E /* ChooseScreens */,
+				E8EF7AAF194024C700776A3E /* MainAddAndEditFeatureController */,
+			);
+			name = AddAndEditFeature;
+			sourceTree = "<group>";
+		};
+		E8EF7AAF194024C700776A3E /* MainAddAndEditFeatureController */ = {
+			isa = PBXGroup;
+			children = (
+				E8EF7AC21940722E00776A3E /* QSAddAndEditViewController.h */,
+				E8EF7AC31940722E00776A3E /* QSAddAndEditViewController.m */,
+				E8EF7AC41940722E00776A3E /* QSAddAndEditViewController_iPhone.xib */,
+				E8EF7AC71940728100776A3E /* QSAddAndEditViewController_iPad.xib */,
+			);
+			name = MainAddAndEditFeatureController;
+			sourceTree = "<group>";
+		};
+		E8EF7AB0194024DB00776A3E /* ChooseScreens */ = {
+			isa = PBXGroup;
+			children = (
+				E8EF7AB11940250A00776A3E /* QSChooseScreenViewController.h */,
+				E8EF7AB21940250A00776A3E /* QSChooseScreenViewController.m */,
+				E8EF7AB31940250A00776A3E /* QSChooseScreenViewController.xib */,
+			);
+			name = ChooseScreens;
+			sourceTree = "<group>";
+		};
+		E8EF7AB6194065B300776A3E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E8A4A642193F08EA00954CEC /* FeatureList */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		E8EF7AB7194065C000776A3E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E8EF7AC919407DF400776A3E /* FeatureList */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		E8EF7AC919407DF400776A3E /* FeatureList */ = {
+			isa = PBXGroup;
+			children = (
+				E8EF7ACA19407DFE00776A3E /* AddAndEditFeature */,
+			);
+			name = FeatureList;
+			sourceTree = "<group>";
+		};
+		E8EF7ACA19407DFE00776A3E /* AddAndEditFeature */ = {
+			isa = PBXGroup;
+			children = (
+				E8EF7ACB19407E1700776A3E /* MainAddAndEditFeatureCells */,
+			);
+			name = AddAndEditFeature;
+			sourceTree = "<group>";
+		};
+		E8EF7ACB19407E1700776A3E /* MainAddAndEditFeatureCells */ = {
+			isa = PBXGroup;
+			children = (
+				E8EF7ACC19407EAF00776A3E /* QSLabelTextFieldCell.h */,
+				E8EF7ACD19407EAF00776A3E /* QSLabelTextFieldCell.m */,
+				E8EF7ACE19407EAF00776A3E /* QSLabelTextFieldCell.xib */,
+				E8EF7AD119407ECF00776A3E /* QSLabelTextViewCell.h */,
+				E8EF7AD219407ECF00776A3E /* QSLabelTextViewCell.m */,
+				E8EF7AD319407ECF00776A3E /* QSLabelTextViewCell.xib */,
+			);
+			name = MainAddAndEditFeatureCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -657,10 +748,12 @@
 				28D08E0C193DBFD800B6B18F /* btn_service@2x.png in Resources */,
 				28D08E00193DBFD800B6B18F /* bt_drawer@2x.png in Resources */,
 				28D08E06193DBFD800B6B18F /* bt_sort@2x.png in Resources */,
+				E8EF7AD019407EAF00776A3E /* QSLabelTextFieldCell.xib in Resources */,
 				28D08E05193DBFD800B6B18F /* bt_sort.png in Resources */,
 				28D08E07193DBFD800B6B18F /* btn_close.png in Resources */,
 				28D08E08193DBFD800B6B18F /* btn_close@2x.png in Resources */,
 				28D08E03193DBFD800B6B18F /* bt_more_menu.png in Resources */,
+				E8EF7AD519407ECF00776A3E /* QSLabelTextViewCell.xib in Resources */,
 				28D08E0D193DBFD800B6B18F /* btn_task.png in Resources */,
 				28D08E15193DBFD800B6B18F /* icon_password.png in Resources */,
 				28D08DFA193DBFD800B6B18F /* boundaryLine@2x.png in Resources */,
@@ -675,10 +768,11 @@
 				28D08E09193DBFD800B6B18F /* btn_report.png in Resources */,
 				28D08E0E193DBFD800B6B18F /* btn_task@2x.png in Resources */,
 				28D08DF4193DBFD800B6B18F /* arrow_indication@2x.png in Resources */,
+				E8EF7AC81940728100776A3E /* QSAddAndEditViewController_iPad.xib in Resources */,
 				28D08DF7193DBFD800B6B18F /* arrow_title_screen_up.png in Resources */,
 				28D08E12193DBFD800B6B18F /* icon_check@2x.png in Resources */,
-				E8A4A647193F092200954CEC /* QSFeatureListViewController.xib in Resources */,
 				28D08D3D193DBD4200B6B18F /* Images.xcassets in Resources */,
+				E8EF7AC61940722E00776A3E /* QSAddAndEditViewController_iPhone.xib in Resources */,
 				28D08E0B193DBFD800B6B18F /* btn_service.png in Resources */,
 				28D08DFF193DBFD800B6B18F /* bt_drawer.png in Resources */,
 				28D08E04193DBFD800B6B18F /* bt_more_menu@2x.png in Resources */,
@@ -687,6 +781,7 @@
 				28D08E13193DBFD800B6B18F /* icon_email.png in Resources */,
 				28D08E14193DBFD800B6B18F /* icon_email@2x.png in Resources */,
 				28D08DF8193DBFD800B6B18F /* arrow_title_screen_up@2x.png in Resources */,
+				E8EF7AB51940250A00776A3E /* QSChooseScreenViewController.xib in Resources */,
 				28D08DD4193DBFD800B6B18F /* QSMatricTitleView.xib in Resources */,
 				28D08DF6193DBFD800B6B18F /* arrow_title_screen_down@2x.png in Resources */,
 				28D08E10193DBFD800B6B18F /* icon_calendar@2x.png in Resources */,
@@ -746,7 +841,6 @@
 				28D08DE6193DBFD800B6B18F /* NSDate+DIS.m in Sources */,
 				28D08DEF193DBFD800B6B18F /* UILabel+FrameCaculation.m in Sources */,
 				28D08DEA193DBFD800B6B18F /* SBRandomizeUtil.m in Sources */,
-				E8A4A646193F092200954CEC /* QSFeatureListViewController.m in Sources */,
 				28D08DE3193DBFD800B6B18F /* NSArray+Sort.m in Sources */,
 				28D08DD5193DBFD800B6B18F /* QSPopoverMenuTableViewController.m in Sources */,
 				28D08DE7193DBFD800B6B18F /* NSFileManager+DIS.m in Sources */,
@@ -763,13 +857,17 @@
 				28D08DE1193DBFD800B6B18F /* Lib.m in Sources */,
 				28D08DDA193DBFD800B6B18F /* QSStatusControl.m in Sources */,
 				28D08DE8193DBFD800B6B18F /* NSObject+DIS.m in Sources */,
+				E8EF7AD419407ECF00776A3E /* QSLabelTextViewCell.m in Sources */,
 				28D08DD7193DBFD800B6B18F /* SBDatePickerViewController.m in Sources */,
+				E8EF7AB41940250A00776A3E /* QSChooseScreenViewController.m in Sources */,
+				E8EF7ACF19407EAF00776A3E /* QSLabelTextFieldCell.m in Sources */,
 				28D08DEB193DBFD800B6B18F /* SerialOperationQueue.m in Sources */,
 				28D08DEC193DBFD800B6B18F /* SmallButton.m in Sources */,
 				28D08DDF193DBFD800B6B18F /* DISSendSMSUtil.m in Sources */,
 				28D08DDC193DBFD800B6B18F /* QSAppPreference.m in Sources */,
 				28D08DD1193DBFD800B6B18F /* BackButton.m in Sources */,
 				28D08DEE193DBFD800B6B18F /* UIImage+DIS.m in Sources */,
+				E8EF7AC51940722E00776A3E /* QSAddAndEditViewController.m in Sources */,
 				28D08DDD193DBFD800B6B18F /* DISPhoneCallUtil.m in Sources */,
 				28D08DE9193DBFD800B6B18F /* NSString+DIS.m in Sources */,
 				28D08DD3193DBFD800B6B18F /* QSMatricTitleView.m in Sources */,

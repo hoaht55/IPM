@@ -96,4 +96,9 @@
     return font;
 }
 
++ (UIInterfaceOrientation)currentOrientation
+{
+    return [UIApplication sharedApplication].statusBarOrientation;
+}
+
 @end
