@@ -1,18 +1,18 @@
 //
-//  QSFilterTableViewController.m
+//  QSFilterViewCell_iPad.m
 //  Project Managerment
 //
-//  Created by Mai Viet Anh on 6/5/14.
+//  Created by Mai Viet Anh on 6/6/14.
 //  Copyright (c) 2014 Cừu Lười. All rights reserved.
 //
 
-#import "QSFilterTableViewController.h"
+#import "QSFilterViewCell_iPad.h"
 
-@interface QSFilterTableViewController ()
+@interface QSFilterViewCell_iPad ()
 
 @end
 
-@implementation QSFilterTableViewController
+@implementation QSFilterViewCell_iPad
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

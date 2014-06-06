@@ -1,14 +1,14 @@
 //
-//  QSTableViewCell.m
+//  QSFilterTableViewCell_iPad.m
 //  Project Managerment
 //
-//  Created by Mai Viet Anh on 6/5/14.
+//  Created by Mai Viet Anh on 6/6/14.
 //  Copyright (c) 2014 Cừu Lười. All rights reserved.
 //
 
-#import "QSTableViewCell.h"
+#import "QSFilterTableViewCell_iPad.h"
 
-@implementation QSTableViewCell
+@implementation QSFilterTableViewCell_iPad
 
 - (void)awakeFromNib
 {
