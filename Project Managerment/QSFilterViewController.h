@@ -9,13 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "WYPopoverController.h"
 #import "WYStoryboardPopoverSegue.h"
+#import "QSFilterPopoverTableViewController_iPhone.h"
+#import "QSFilterTableViewController_iPhone.h"
+#import "QSFilterService.h"
+
 //@interface QSFilterViewController : UIViewController <UIActionSheetDelegate>
 @interface QSFilterViewController : UIViewController
+//<QSFilterTableViewController_iPhoneDelegate>
+
 @property (nonatomic, weak) UIActionSheet *actionSheet;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) WYPopoverController *popController;
-//@property (nonatomic, strong) UIPopoverController *p;
-@property (nonatomic, strong) UIImageView *arrowImageView;
 
 @end

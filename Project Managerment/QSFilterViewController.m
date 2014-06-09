@@ -15,10 +15,14 @@
 #import "QSFilterTableViewController_iPhone.h"
 #import "QSMoreViewController_iPhone.h"
 
-@interface QSFilterViewController () <UIPopoverControllerDelegate>
+@interface QSFilterViewController () <UIPopoverControllerDelegate, QSFilterTableViewController_iPhoneDelegate>
 
 @property (nonatomic, weak) UIBarButtonItem *filterButton;
-@property (nonatomic, strong) NSArray *sprint;
+@property (nonatomic, strong) NSArray *sprintList;
+@property (nonatomic, strong) NSArray *currentSprint;
+@property (nonatomic, strong) NSString *options;
+@property (nonatomic, strong) QSFilterTableViewController_iPhone *filterView;
+
 
 - (void)createNavigationItem;
 - (void)fakeModel;
@@ -46,9 +50,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self createNavigationItem];
-    
+
+    // set table
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([QSSprintCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([QSSprintCell class])];
+    
+    // comunicate by delegate
+    self.filterView.myDelegate = self;
+    [[self navigationController] pushViewController:self.filterView animated:YES];
+    
+    // add data
     [self fakeModel];
+    
 }
 
 - (void)createNavigationItem
@@ -58,11 +70,11 @@
     self.navigationItem.title = title;
     
     // Button in the right
+    // Button for action
     NSMutableArray *arrayButton = [NSMutableArray array];
     UIImage *bt_more_action = [UIImage imageNamed:@"bt_more_actions"];
-//    UIBarButtonItem *more_action = [[UIBarButtonItem alloc] initWithImage:bt_more_action landscapeImagePhone:bt_more_action style:UIBarButtonItemStylePlain target:self action:@selector(moreAction:)];
     UIBarButtonItem *more_action = [[UIBarButtonItem alloc] initWithImage:bt_more_action landscapeImagePhone:bt_more_action style:UIBarButtonItemStylePlain target:self action:@selector(moreActionPopover:)];
-    
+    // Button for filter
     UIImage *filterImage = [UIImage imageNamed:@"bt_sort"];
     UIBarButtonItem *righItem = [[UIBarButtonItem alloc] initWithImage:filterImage landscapeImagePhone:filterImage style:UIBarButtonItemStylePlain target:self action:@selector(filterPopover:)];
     
@@ -88,16 +100,24 @@
     UIViewController *content = [[UIViewController alloc] init];
     content.view.backgroundColor = [UIColor whiteColor];
     
+    // create table view in popover
     QSFilterTableViewController_iPhone *tableViewInPop = [[QSFilterTableViewController_iPhone alloc] initWithNibName:@"QSFilterTableViewController_iPhone" bundle:nil];
+    //self.filterView = tableViewInPop;
+    tableViewInPop.myDelegate = self;
     
-    //WYPopoverController *popController = [[WYPopoverController alloc] initWithContentViewController:content];
-    WYPopoverController *popController = [[WYPopoverController alloc] initWithContentViewController:tableViewInPop];
-    popController.popoverContentSize = CGSizeMake(300, 180);
-    self.popController = popController;
+    
+    // Open Filter Popover
+    self.popController = [[WYPopoverController alloc] initWithContentViewController:tableViewInPop];
+    self.popController.popoverContentSize = CGSizeMake(300, 180);
     //[self.popController presentPopoverFromBarButtonItem:sender permittedArrowDirections:WYPopoverArrowDirectionDown animated:YES];
     [self.popController presentPopoverFromBarButtonItem:sender permittedArrowDirections:WYPopoverArrowDirectionDown animated:YES];
-}
+    }
 
+- (void)didSelectViewcontroller:(QSFilterTableViewController_iPhone *)controller department:(NSString *)department
+{
+    [controller dismissViewControllerAnimated:YES completion:nil];
+    self.options = department;
+}
 
 - (void)moreActionPopover:(id)sender
 {
@@ -113,15 +133,112 @@
 }
 
 
+- (void)back:(id)sender
+{
+    NSLog(@"Back button touched !!");
+}
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)fakeModel
+{
+    NSMutableArray *array = [NSMutableArray array];
+    for (NSInteger index = 0; index < 4; index++) {
+        QSSprintModel *sprintModel = [[QSSprintModel alloc] init];
+        sprintModel.name = [NSString stringWithFormat:@"Sprint  %li", (long)index];
+        sprintModel.status = @"CONTINUE";
+        sprintModel.desc = @"Apple just unveiled iOS 8 at the Developer's Conference, and it has a lot of exciting features to play around with.";
+        sprintModel.screen = @"4_Role";
+        sprintModel.assignee = @"hungtv";
+        [array addObject:sprintModel];
+    }
+    QSSprintModel * model = [[QSSprintModel alloc]init];
+    model.name = @"Sale Box";
+    model.status = @"IN PROGESS";
+    model.desc = @"Information about Salebox";
+    model.screen = @"screen";
+    model.assignee =@"assignee";
+    [array addObject:model];
+    QSSprintModel * model1 = [[QSSprintModel alloc]init];
+    model1.name = @"List Staff";
+    model1.status = @"COMPLETE";
+    model1.desc = @"View all staff";
+    model1.screen = @"1_Staff_List";
+    model1.assignee =@"abc";
+    [array addObject:model1];
+    
+    self.sprintList = [array copy];
+    self.currentSprint = [array copy];
+    
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.currentSprint.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 140;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    QSSprintCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([QSSprintCell class])];
+    QSSprintModel *sprintModel = [self.currentSprint objectAtIndex:indexPath.row];
+    [cell setModel:sprintModel];
+    return cell;
+}
+
+-(void)sendValue:(NSString *)value
+{
+    [self.popController dismissPopoverAnimated:YES];
+    NSMutableArray * array = [NSMutableArray array];
+    if ([value isEqualToString:@"1"]) {
+        for (NSInteger index = 0; index < self.sprintList.count; index ++) {
+            QSSprintModel * model  = [self.sprintList objectAtIndex:index];
+            if ([model.status isEqualToString:@"IN PROGESS"]) {
+                [array addObject:model];
+            }
+        }
+    }else if ([value isEqualToString:@"2"]) {
+        for (NSInteger index = 0; index < self.sprintList.count; index ++) {
+            QSSprintModel * model  = [self.sprintList objectAtIndex:index];
+            if ([model.status isEqualToString:@"CONTINUE"]) {
+                [array addObject:model];
+            }
+        }
+            
+    }else if ([value isEqualToString:@"3"]) {
+        for (NSInteger index = 0; index < self.sprintList.count; index ++) {
+            QSSprintModel * model  = [self.sprintList objectAtIndex:index];
+            if ([model.status isEqualToString:@"COMPLETE"]) {
+                [array addObject:model];
+            }
+        }
+    }else{
+        array = [self.sprintList copy];
+    
+    }
+    self.currentSprint = [array copy];
+    [self.tableView reloadData];
+    
+}
+@end
+
+
 //- (void)moreAction:(id)sender
 //{
 //    NSString *edit = @"Edit";
 //    NSString *show = @"Show Detail";
 //    NSString *cancel = @"Cancel";
-//    
+//
 //    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:cancel destructiveButtonTitle:nil otherButtonTitles:show,edit, nil];
 //    [actionSheet showInView:self.view];
-//    
+//
 //}
 //
 //
@@ -137,48 +254,3 @@
 //    }
 //}
 
-- (void)back:(id)sender
-{
-    NSLog(@"Back button touched !!");
-}
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void)fakeModel
-{
-    NSMutableArray *array = [NSMutableArray array];
-    for (NSInteger index = 0; index < 20; index++) {
-        QSSprintModel *sprintModel = [[QSSprintModel alloc] init];
-        sprintModel.name = [NSString stringWithFormat:@"Filter  %li", (long)index];
-        sprintModel.status = @"IN PROGESS";
-        sprintModel.desc = @"Apple just unveiled iOS 8 at the Developer's Conference, and it has a lot of exciting features to play around with.";
-        sprintModel.screen = @"4_Role";
-        sprintModel.assignee = @"hungtv";
-        [array addObject:sprintModel];
-    }
-    self.sprint = [array copy];
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return self.sprint.count;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 140;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    QSSprintCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([QSSprintCell class])];
-    QSSprintModel *sprintModel = [self.sprint objectAtIndex:indexPath.row];
-    [cell setModel:sprintModel];
-    return cell;
-}
-
-
-@end

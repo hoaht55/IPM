@@ -33,6 +33,7 @@
 		07295DF6193F2B7300BC1EAD /* QSSprintCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07295DF4193F2B7300BC1EAD /* QSSprintCell.xib */; };
 		07295DFC193F3AEA00BC1EAD /* QSFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07295DFA193F3AEA00BC1EAD /* QSFilterViewController.m */; };
 		07295DFD193F3AEA00BC1EAD /* QSFilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07295DFB193F3AEA00BC1EAD /* QSFilterViewController.xib */; };
+		0774260E1945C18300688697 /* QSFilterService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0774260D1945C18300688697 /* QSFilterService.m */; };
 		07EB6064194016BA008E68A0 /* QSSprintModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EB6063194016BA008E68A0 /* QSSprintModel.m */; };
 		28D08D2B193DBD4200B6B18F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D08D2A193DBD4200B6B18F /* Foundation.framework */; };
 		28D08D2D193DBD4200B6B18F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D08D2C193DBD4200B6B18F /* CoreGraphics.framework */; };
@@ -175,6 +176,8 @@
 		07295DF9193F3AEA00BC1EAD /* QSFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSFilterViewController.h; sourceTree = SOURCE_ROOT; };
 		07295DFA193F3AEA00BC1EAD /* QSFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSFilterViewController.m; sourceTree = SOURCE_ROOT; };
 		07295DFB193F3AEA00BC1EAD /* QSFilterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSFilterViewController.xib; sourceTree = SOURCE_ROOT; };
+		0774260C1945C18300688697 /* QSFilterService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSFilterService.h; sourceTree = SOURCE_ROOT; };
+		0774260D1945C18300688697 /* QSFilterService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSFilterService.m; sourceTree = SOURCE_ROOT; };
 		07EB6062194016BA008E68A0 /* QSSprintModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSSprintModel.h; sourceTree = SOURCE_ROOT; };
 		07EB6063194016BA008E68A0 /* QSSprintModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSSprintModel.m; sourceTree = SOURCE_ROOT; };
 		2895FE02CA4145339837F79F /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -423,6 +426,15 @@
 			name = Filter;
 			sourceTree = "<group>";
 		};
+		0774260B1945C15A00688697 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				0774260C1945C18300688697 /* QSFilterService.h */,
+				0774260D1945C18300688697 /* QSFilterService.m */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
 		07EB606119400D9B008E68A0 /* FilterPopover */ = {
 			isa = PBXGroup;
 			children = (
@@ -518,6 +530,7 @@
 		28D08D5A193DBFD800B6B18F /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				0774260B1945C15A00688697 /* Service */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -961,6 +974,7 @@
 				0701CD87194169D800BF8A80 /* QSFilterViewController_iPad.m in Sources */,
 				07295DEE193F2B1000BC1EAD /* QSSprintListViewController.m in Sources */,
 				28D08DE4193DBFD800B6B18F /* NSAttributedString+DIS.m in Sources */,
+				0774260E1945C18300688697 /* QSFilterService.m in Sources */,
 				28D08DED193DBFD800B6B18F /* UIColor+DIS.m in Sources */,
 				28D08DE5193DBFD800B6B18F /* NSData+DIS.m in Sources */,
 				28D08DE1193DBFD800B6B18F /* Lib.m in Sources */,
