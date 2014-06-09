@@ -10,9 +10,10 @@
 #import "QSLoginService.h"
 #import "QSUserModel.h"
 #import "QSAppPreference.h"
-//define max of length's email and password
+
 #define MAX_LENGTH_INPUT 20
 #define IS_IPAD [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad
+#define IS_LANDCAPES UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)
 
 @interface QSLoginViewController () <UITextFieldDelegate>
 - (void)addObserver;
@@ -38,13 +39,13 @@
     self.loginButton.backgroundColor = [QSAppPreference disableBlueColor];
     [self.notificationLogin setText:@""];
     [self addObserver];
+    self.service = [[QSLoginService alloc]init];
 
 }
 - (void)addObserver
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShowOrHide:) name:UIKeyboardDidHideNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShowOrHide:) name:UIKeyboardDidShowNotification object:nil];
-    
 }
 - (void)didReceiveMemoryWarning
 {
@@ -57,28 +58,6 @@
 {
     [self.view endEditing:YES];
     [super touchesBegan:touches withEvent:event];
-}
-
-// Check for characters exists on all textfield
-- (void) checkTextField
-{
-    if (![self.emailLabel.text isEqualToString:@""] && ![self.passLabel.text isEqualToString:@""]) {
-        [self.loginButton setEnabled:YES];
-        self.loginButton.backgroundColor = [QSAppPreference blueColor];
-    }else
-    {
-        [self.loginButton setEnabled:NO];
-        self.loginButton.backgroundColor = [QSAppPreference disableBlueColor];
-    }
-    [self.notificationLogin setText:@""];
-}
-
-- (IBAction)checkEmailState:(id)sender {
-    [self checkTextField];
-}
-
-- (IBAction)checkPassState:(id)sender {
-    [self checkTextField];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -98,12 +77,11 @@
 
 // Action when pressed login button
 - (IBAction)loginPressed:(id)sender {
-    QSLoginService * service = [[QSLoginService alloc]init];
     QSUserModel * model = [[QSUserModel alloc]init];
     [model setEmail: self.emailLabel.text];
     [model setPassword:self.passLabel.text];
-    if ([service checkEmailExists:model]) {
-        if ([service checkLogin:model]) {
+    if ([self.service checkEmailExists:model]) {
+        if ([self.service checkLogin:model]) {
             NSLog(@"Login Sucess!");
             /* With project List View
             if(!IS_IPAD){
@@ -118,22 +96,45 @@
         }else
         [self.notificationLogin setText:@"Password is wrong !"];
     }else
-        [self.notificationLogin setText:@"Email is not exists !"];
+        [self.notificationLogin setText:@"Email does not exist !"];
+}
+
+// Check for characters exists on all textfield
+- (void) WhenAllTextFieldExistOrNot
+{
+    if (![self.emailLabel.text isEqualToString:@""] && ![self.passLabel.text isEqualToString:@""]) {
+        [self.loginButton setEnabled:YES];
+        self.loginButton.backgroundColor = [QSAppPreference blueColor];
+    }else
+    {
+        [self.loginButton setEnabled:NO];
+        self.loginButton.backgroundColor = [QSAppPreference disableBlueColor];
+    }
+    [self.notificationLogin setText:@""];
+}
+
+- (IBAction)AllFieldsExistedWhenEnterEmail:(id)sender {
+    [self WhenAllTextFieldExistOrNot];
+}
+
+- (IBAction)AllFieldsExistedWhenEnterPass:(id)sender {
+    [self WhenAllTextFieldExistOrNot];
 }
 
 
 - (void)keyboardDidShowOrHide:(NSNotification *)notification
 {
-    if(UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation))
-        if ([notification.name isEqualToString:UIKeyboardDidShowNotification]) {
+    if(IS_LANDCAPES){
+        if ([notification.name isEqualToString:UIKeyboardDidShowNotification]){
             CGRect frame = self.view.frame;
-            frame.origin.y -= 80;
+            frame.origin.y -= 70;
             self.view.frame = frame;
-        } else {
+        }else
+        {
             CGRect frame = self.view.frame;
-            frame.origin.y += 80;
+            frame.origin.y += 70;
             self.view.frame = frame;
         }
+    }
 }
-
 @end

@@ -8,13 +8,15 @@
 
 #import <UIKit/UIKit.h>
 @class QSUserModel;
+@class QSLoginService;
 
 @interface QSLoginViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *emailLabel;
 @property (weak, nonatomic) IBOutlet UITextField *passLabel;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UILabel *notificationLogin;
+@property (strong, nonatomic) QSLoginService * service;
 - (IBAction)loginPressed:(id)sender;
-- (IBAction)checkEmailState:(id)sender;
-- (IBAction)checkPassState:(id)sender;
+- (IBAction)AllFieldsExistedWhenEnterEmail:(id)sender;
+- (IBAction)AllFieldsExistedWhenEnterPass:(id)sender;
 @end

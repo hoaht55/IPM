@@ -51,7 +51,8 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
-                                        <action selector="checkEmailState:" destination="-1" eventType="editingChanged" id="CuU-wP-BAW"/>
+                                        <action selector="AllFieldsExistedWhenEnterEmail:" destination="-1" eventType="editingDidEnd" id="tOe-BO-Ypf"/>
+                                        <action selector="AllFieldsExistedWhenEnterEmail:" destination="-1" eventType="editingChanged" id="veV-WX-Bx8"/>
                                         <outlet property="delegate" destination="-1" id="dNH-9D-aX8"/>
                                     </connections>
                                 </textField>
@@ -89,7 +90,8 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     <connections>
-                                        <action selector="checkPassState:" destination="-1" eventType="editingChanged" id="qOX-gW-znP"/>
+                                        <action selector="AllFieldsExistedWhenEnterPass:" destination="-1" eventType="editingDidEnd" id="PAo-5Z-0a3"/>
+                                        <action selector="AllFieldsExistedWhenEnterPass:" destination="-1" eventType="editingChanged" id="VGa-Yf-Zam"/>
                                         <outlet property="delegate" destination="-1" id="NAg-vD-994"/>
                                     </connections>
                                 </textField>
