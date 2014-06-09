@@ -17,6 +17,8 @@
 
 @implementation QSChooseScreenViewController
 
+@synthesize delegate;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -35,6 +37,8 @@
                   @"1_Staff_List",
                   @"1_Staff_List_Search"];
     [self.screensTable registerClass:[UITableViewCell class] forCellReuseIdentifier:@"screenCell"];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnTableChooseScreen:)];
+    [self.screensTable addGestureRecognizer:tap];
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,11 +49,10 @@
 
 - (void)createNavigationItem
 {
-    UIImage *back = [[UIImage alloc] initWithContentsOfFile:@"IMG/btn_back.png"];
-    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithImage:back style:UIBarButtonItemStylePlain target:self action:@selector(backToAddFeature:)];
-    self.navigationItem.leftBarButtonItem = leftItem;
     NSString *title = @"Screens";
     self.navigationItem.title = title;
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.topItem.title = @"";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -75,7 +78,15 @@
 
 - (void)backToAddFeature:(id)sender
 {
-    NSLog(@"Back");
+    [self.navigationController popToRootViewControllerAnimated:TRUE];
+}
+
+-(void) didTapOnTableChooseScreen:(UIGestureRecognizer*) recognizer {
+    CGPoint tapLocation = [recognizer locationInView:self.screensTable];
+    NSIndexPath *indexPath = [self.screensTable indexPathForRowAtPoint:tapLocation];
+    
+    [delegate sendDataToMainScreen:[self.data objectAtIndex:indexPath.row]];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 @end
 

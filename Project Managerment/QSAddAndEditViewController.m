@@ -12,13 +12,12 @@
 #import "QSLabelTextViewCell.h"
 #import "QSAppPreference.h"
 
-@interface QSAddAndEditViewController () <UITextViewDelegate>
+@interface QSAddAndEditViewController () <UITextViewDelegate, UITextFieldDelegate>
 
 //- (void)addObserver;
-
-
+@property (nonatomic) NSInteger *allisFilled;
 - (void)keyboardDidShowOrHide:(NSNotification *)notification;
-
+@property NSInteger allIsFilled;
 @end
 
 @implementation QSAddAndEditViewController
@@ -35,9 +34,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShowOrHide:) name:UITextFieldTextDidChangeNotification object:nil];
     // Do any additional setup after loading the view from its nib.
+    NSLog(@"%d", _allIsFilled);
     [self.addAndEditTable registerNib:[UINib nibWithNibName:@"QSLabelTextFieldCell" bundle:nil] forCellReuseIdentifier:@"QSLabelTextFieldCell"];
-    [self.addAndEditTable registerNib:[UINib nibWithNibName:@"QSLabelLabelCell" bundle:nil] forCellReuseIdentifier:@"QSLabelLabelCell"];
     [self.addAndEditTable registerNib:[UINib nibWithNibName:@"QSLabelTextViewCell" bundle:nil] forCellReuseIdentifier:@"QSLabelTextViewCell"];
     [self createNavigationItem];    
     //[self addObserver];
@@ -74,7 +74,7 @@
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(save:)];
     [rightButton setTintColor:[UIColor whiteColor]];
     self.navigationItem.rightBarButtonItem = rightButton;
-    [self.navigationItem.rightBarButtonItem setEnabled:YES];
+    [self.navigationItem.rightBarButtonItem setEnabled:NO];
     
     NSString *title = @"Add Feature";
     self.navigationItem.title = title;
@@ -100,14 +100,17 @@
         labelTextFieldCell.inputText.delegate = self;
         if (indexPath.row == 0) {
             [labelTextFieldCell.titleLabel setText:@"Name"];
+            [labelTextFieldCell.inputText setTag:1];
                     } else if (indexPath.row == 2) {
             [labelTextFieldCell.titleLabel setText:@"Auto case"];
+            [labelTextFieldCell.inputText setTag:2];
             [labelTextFieldCell.inputText setKeyboardType:UIKeyboardTypeNumberPad];
         } else if (indexPath.row == 1) {
             [labelTextFieldCell.titleLabel setText:@"Screens"];
             [labelTextFieldCell.inputText setEnabled:NO];
         } else {
             [labelTextFieldCell.titleLabel setText:@"Manual case"];
+            [labelTextFieldCell.inputText setTag:3];
             [labelTextFieldCell.inputText setKeyboardType:UIKeyboardTypeNumberPad];
         }
         return labelTextFieldCell;
@@ -157,6 +160,7 @@
     
     if (indexPath.row == 1) {
         QSChooseScreenViewController *chooseScreen = [[QSChooseScreenViewController alloc] init];
+        chooseScreen.delegate = self;
         [self.navigationController pushViewController:chooseScreen animated:YES];
     } else if (indexPath.row > 2) {
         NSIndexPath *indexPathScroll = [NSIndexPath indexPathForRow:indexPath.row inSection:0];
@@ -168,14 +172,66 @@
     // This will create a "invisible" footer
     return 0.01f;
 }
-- (void)textViewDidBeginEditing:(UITextView *)textView
+
+- (void)textViewDidChange:(UITextView *)textView
 {
-    
-}
-- (void)textFieldDidBeginEditing:(UITextField *)textField
-{
-    if ([textField.text isEqualToString:@""])
-        [self.navigationItem.rightBarButtonItem setEnabled:NO];
+    NSLog(@"test");
 }
 
+
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    if ([self checkALlTextFields]) {
+         [self.navigationItem.rightBarButtonItem setEnabled:YES];
+    } else
+         [self.navigationItem.rightBarButtonItem setEnabled:NO];
+    [self checkTextField:textField];
+    
+}
+
+- (BOOL)checkALlTextFields
+{
+     NSString * text1 = [(UITextField *)[self.view viewWithTag:1] text];
+     NSString * text2 = [(UITextField *)[self.view viewWithTag:2] text];
+     NSString * text3 = [(UITextField *)[self.view viewWithTag:3] text];
+    if (![text1 isEqualToString:@""] && ![text2 isEqualToString:@""]&& ![text3 isEqualToString:@""]) {
+        return YES;
+    }
+    return NO;
+    
+}
+
+- (void)checkTextField:(UITextField *)textField
+{
+    if (_allIsFilled>=0 && _allIsFilled<=4) {
+        if (![textField.text isEqualToString:@""] && _allIsFilled !=4) {
+            _allIsFilled++;
+        } else if (_allIsFilled != 0) {
+            _allIsFilled--;
+        }
+    }
+   
+    if (_allIsFilled == 4) {
+        [self.navigationItem.rightBarButtonItem setEnabled:YES];
+    } else {
+        [self.navigationItem.rightBarButtonItem setEnabled:NO];
+    }
+//    if ([textField.text isEqualToString:@""]) {
+//        _allIsFilled--;
+//        NSLog(@"%d", _allIsFilled);
+//    } else if (_allIsFilled<3 && ![textField.text isEqualToString:@""]) {
+//        _allIsFilled++;
+//        NSLog(@"%d", _allIsFilled);
+//    } else if (_allIsFilled == 3) {
+//        [self.navigationItem.rightBarButtonItem setEnabled:YES];
+//       NSLog(@"%d", _allIsFilled);
+//    }
+    NSLog(@"%d", _allIsFilled);
+}
+
+- (void)sendDataToMainScreen:(NSString *)screen
+{
+    NSLog(@"%@", screen);
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
+    ((QSLabelTextFieldCell *)[self.addAndEditTable cellForRowAtIndexPath:indexPath]).inputText.text = screen;
+}
 @end

@@ -22,7 +22,4 @@
     // Configure the view for the selected state
 }
 
-- (IBAction)filledData:(id)sender {
-    
-}
 @end

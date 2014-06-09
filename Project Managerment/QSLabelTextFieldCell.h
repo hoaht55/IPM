@@ -11,6 +11,6 @@
 @interface QSLabelTextFieldCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UITextField *inputText;
-- (IBAction)filledData:(id)sender;
+
 
 @end

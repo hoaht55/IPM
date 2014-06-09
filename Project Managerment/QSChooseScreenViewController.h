@@ -8,8 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol chooseScreenDelegate <NSObject>
+
+- (void)sendDataToMainScreen:(NSString *)screen;
+
+@end
 @interface QSChooseScreenViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UITableView *screensTable;
+@property (nonatomic, assign) id delegate;
+
 - (void)createNavigationItem;
 - (void)backToAddFeature:(id)sender;
+
 @end
