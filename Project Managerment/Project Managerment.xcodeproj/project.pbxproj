@@ -31,8 +31,8 @@
 		07295DEF193F2B1000BC1EAD /* QSSprintListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07295DED193F2B1000BC1EAD /* QSSprintListViewController.xib */; };
 		07295DF5193F2B7300BC1EAD /* QSSprintCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07295DF3193F2B7300BC1EAD /* QSSprintCell.m */; };
 		07295DF6193F2B7300BC1EAD /* QSSprintCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07295DF4193F2B7300BC1EAD /* QSSprintCell.xib */; };
-		07295DFC193F3AEA00BC1EAD /* QSFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07295DFA193F3AEA00BC1EAD /* QSFilterViewController.m */; };
-		07295DFD193F3AEA00BC1EAD /* QSFilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07295DFB193F3AEA00BC1EAD /* QSFilterViewController.xib */; };
+		07295DFC193F3AEA00BC1EAD /* QSFilterViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 07295DFA193F3AEA00BC1EAD /* QSFilterViewController_iPhone.m */; };
+		07295DFD193F3AEA00BC1EAD /* QSFilterViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07295DFB193F3AEA00BC1EAD /* QSFilterViewController_iPhone.xib */; };
 		0774260E1945C18300688697 /* QSFilterService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0774260D1945C18300688697 /* QSFilterService.m */; };
 		07EB6064194016BA008E68A0 /* QSSprintModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EB6063194016BA008E68A0 /* QSSprintModel.m */; };
 		28D08D2B193DBD4200B6B18F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D08D2A193DBD4200B6B18F /* Foundation.framework */; };
@@ -119,10 +119,6 @@
 		28D08E16193DBFD800B6B18F /* icon_password@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28D08DCD193DBFD800B6B18F /* icon_password@2x.png */; };
 		28D08E17193DBFD800B6B18F /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 28D08DCE193DBFD800B6B18F /* logo.png */; };
 		28D08E18193DBFD800B6B18F /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28D08DCF193DBFD800B6B18F /* logo@2x.png */; };
-		E8A4A646193F092200954CEC /* QSFeatureListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A4A644193F092100954CEC /* QSFeatureListViewController.m */; };
-		E8A4A647193F092200954CEC /* QSFeatureListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8A4A645193F092200954CEC /* QSFeatureListViewController.xib */; };
-		E8A4A64B193F268A00954CEC /* QSFeatureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A4A649193F268A00954CEC /* QSFeatureCell.m */; };
-		E8A4A64C193F268A00954CEC /* QSFeatureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8A4A64A193F268A00954CEC /* QSFeatureCell.xib */; };
 		EBEE0855F6364F1DB52111C9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 821862826D504810AC01F608 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -173,9 +169,9 @@
 		07295DF2193F2B7300BC1EAD /* QSSprintCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSSprintCell.h; sourceTree = SOURCE_ROOT; };
 		07295DF3193F2B7300BC1EAD /* QSSprintCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSSprintCell.m; sourceTree = SOURCE_ROOT; };
 		07295DF4193F2B7300BC1EAD /* QSSprintCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSSprintCell.xib; sourceTree = SOURCE_ROOT; };
-		07295DF9193F3AEA00BC1EAD /* QSFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSFilterViewController.h; sourceTree = SOURCE_ROOT; };
-		07295DFA193F3AEA00BC1EAD /* QSFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSFilterViewController.m; sourceTree = SOURCE_ROOT; };
-		07295DFB193F3AEA00BC1EAD /* QSFilterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSFilterViewController.xib; sourceTree = SOURCE_ROOT; };
+		07295DF9193F3AEA00BC1EAD /* QSFilterViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSFilterViewController_iPhone.h; sourceTree = SOURCE_ROOT; };
+		07295DFA193F3AEA00BC1EAD /* QSFilterViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSFilterViewController_iPhone.m; sourceTree = SOURCE_ROOT; };
+		07295DFB193F3AEA00BC1EAD /* QSFilterViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSFilterViewController_iPhone.xib; sourceTree = SOURCE_ROOT; };
 		0774260C1945C18300688697 /* QSFilterService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSFilterService.h; sourceTree = SOURCE_ROOT; };
 		0774260D1945C18300688697 /* QSFilterService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSFilterService.m; sourceTree = SOURCE_ROOT; };
 		07EB6062194016BA008E68A0 /* QSSprintModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSSprintModel.h; sourceTree = SOURCE_ROOT; };
@@ -299,12 +295,6 @@
 		28D08DCE193DBFD800B6B18F /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		28D08DCF193DBFD800B6B18F /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
 		821862826D504810AC01F608 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		E8A4A643193F092100954CEC /* QSFeatureListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSFeatureListViewController.h; sourceTree = SOURCE_ROOT; };
-		E8A4A644193F092100954CEC /* QSFeatureListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSFeatureListViewController.m; sourceTree = SOURCE_ROOT; };
-		E8A4A645193F092200954CEC /* QSFeatureListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSFeatureListViewController.xib; sourceTree = SOURCE_ROOT; };
-		E8A4A648193F268A00954CEC /* QSFeatureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSFeatureCell.h; sourceTree = SOURCE_ROOT; };
-		E8A4A649193F268A00954CEC /* QSFeatureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSFeatureCell.m; sourceTree = SOURCE_ROOT; };
-		E8A4A64A193F268A00954CEC /* QSFeatureCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSFeatureCell.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -335,18 +325,8 @@
 		0701CD781941625700BF8A80 /* FilterPopoverView */ = {
 			isa = PBXGroup;
 			children = (
-				0701CDA21941756600BF8A80 /* QSFilterTableViewController_iPad.h */,
-				0701CDA31941756600BF8A80 /* QSFilterTableViewController_iPad.m */,
-				0701CDA41941756600BF8A80 /* QSFilterTableViewController_iPad.xib */,
-				0701CDAC194175B500BF8A80 /* QSFilterTableViewCell_iPad.h */,
-				0701CDAD194175B500BF8A80 /* QSFilterTableViewCell_iPad.m */,
-				0701CDAE194175B500BF8A80 /* QSFilterTableViewCell_iPad.xib */,
-				0701CDB119419CA400BF8A80 /* QSFilterTableViewCell_iPhone.h */,
-				0701CDB219419CA400BF8A80 /* QSFilterTableViewCell_iPhone.m */,
-				0701CDB319419CA400BF8A80 /* QSFilterTableViewCell_iPhone.xib */,
-				0701CDB619419D9A00BF8A80 /* QSFilterTableViewController_iPhone.h */,
-				0701CDB719419D9A00BF8A80 /* QSFilterTableViewController_iPhone.m */,
-				0701CDB819419D9A00BF8A80 /* QSFilterTableViewController_iPhone.xib */,
+				07CA9E5D19469A8600F406C7 /* iPad */,
+				07CA9E5C19469A7800F406C7 /* iPhone */,
 			);
 			name = FilterPopoverView;
 			sourceTree = "<group>";
@@ -354,27 +334,10 @@
 		0701CD79194162A000BF8A80 /* MorePopoverView */ = {
 			isa = PBXGroup;
 			children = (
-				0701CD7A194162F600BF8A80 /* QSMoreViewController_iPhone.h */,
-				0701CD7B194162F600BF8A80 /* QSMoreViewController_iPhone.m */,
-				0701CD7C194162F600BF8A80 /* QSMoreViewController_iPhone.xib */,
-				0701CD7F1941632800BF8A80 /* QSMoreViewCell_iPhone.h */,
-				0701CD801941632800BF8A80 /* QSMoreViewCell_iPhone.m */,
-				0701CD811941632800BF8A80 /* QSMoreViewCell_iPhone.xib */,
-				0701CD8E1941712000BF8A80 /* QSMoreViewCell_iPad.h */,
-				0701CD8F1941712000BF8A80 /* QSMoreViewCell_iPad.m */,
-				0701CD901941712000BF8A80 /* QSMoreViewCell_iPad.xib */,
-				0701CD981941718F00BF8A80 /* QSMoreViewController_iPad.h */,
-				0701CD991941719000BF8A80 /* QSMoreViewController_iPad.m */,
-				0701CD9A1941719000BF8A80 /* QSMoreViewController_iPad.xib */,
+				07CA9E5B194699FB00F406C7 /* iPad */,
+				07CA9E5A194699F000F406C7 /* iPhone */,
 			);
 			name = MorePopoverView;
-			sourceTree = "<group>";
-		};
-		0701CDBB1941A0AA00BF8A80 /* FilterResult */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = FilterResult;
 			sourceTree = "<group>";
 		};
 		07295DEA193F2ACC00BC1EAD /* Sprint */ = {
@@ -412,16 +375,8 @@
 		07295DF8193F39FC00BC1EAD /* Filter */ = {
 			isa = PBXGroup;
 			children = (
-				0701CDBB1941A0AA00BF8A80 /* FilterResult */,
-				07EB606119400D9B008E68A0 /* FilterPopover */,
-				07295DF9193F3AEA00BC1EAD /* QSFilterViewController.h */,
-				07295DFA193F3AEA00BC1EAD /* QSFilterViewController.m */,
-				07295DFB193F3AEA00BC1EAD /* QSFilterViewController.xib */,
-				07EB6062194016BA008E68A0 /* QSSprintModel.h */,
-				07EB6063194016BA008E68A0 /* QSSprintModel.m */,
-				0701CD84194169D800BF8A80 /* QSFilterViewController_iPad.h */,
-				0701CD85194169D800BF8A80 /* QSFilterViewController_iPad.m */,
-				0701CD86194169D800BF8A80 /* QSFilterViewController_iPad.xib */,
+				07CA9E58194699A300F406C7 /* Filter View */,
+				07CA9E571946997300F406C7 /* Filter View Controller */,
 			);
 			name = Filter;
 			sourceTree = "<group>";
@@ -433,6 +388,88 @@
 				0774260D1945C18300688697 /* QSFilterService.m */,
 			);
 			name = Service;
+			sourceTree = "<group>";
+		};
+		07CA9E571946997300F406C7 /* Filter View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				07295DF9193F3AEA00BC1EAD /* QSFilterViewController_iPhone.h */,
+				07295DFA193F3AEA00BC1EAD /* QSFilterViewController_iPhone.m */,
+				07295DFB193F3AEA00BC1EAD /* QSFilterViewController_iPhone.xib */,
+				0701CD84194169D800BF8A80 /* QSFilterViewController_iPad.h */,
+				0701CD85194169D800BF8A80 /* QSFilterViewController_iPad.m */,
+				0701CD86194169D800BF8A80 /* QSFilterViewController_iPad.xib */,
+			);
+			name = "Filter View Controller";
+			sourceTree = "<group>";
+		};
+		07CA9E58194699A300F406C7 /* Filter View */ = {
+			isa = PBXGroup;
+			children = (
+				07EB606119400D9B008E68A0 /* FilterPopover */,
+			);
+			name = "Filter View";
+			sourceTree = "<group>";
+		};
+		07CA9E59194699C100F406C7 /* Business Model */ = {
+			isa = PBXGroup;
+			children = (
+				07EB6062194016BA008E68A0 /* QSSprintModel.h */,
+				07EB6063194016BA008E68A0 /* QSSprintModel.m */,
+			);
+			name = "Business Model";
+			sourceTree = "<group>";
+		};
+		07CA9E5A194699F000F406C7 /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				0701CD7A194162F600BF8A80 /* QSMoreViewController_iPhone.h */,
+				0701CD7B194162F600BF8A80 /* QSMoreViewController_iPhone.m */,
+				0701CD7C194162F600BF8A80 /* QSMoreViewController_iPhone.xib */,
+				0701CD7F1941632800BF8A80 /* QSMoreViewCell_iPhone.h */,
+				0701CD801941632800BF8A80 /* QSMoreViewCell_iPhone.m */,
+				0701CD811941632800BF8A80 /* QSMoreViewCell_iPhone.xib */,
+			);
+			name = iPhone;
+			sourceTree = "<group>";
+		};
+		07CA9E5B194699FB00F406C7 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				0701CD8E1941712000BF8A80 /* QSMoreViewCell_iPad.h */,
+				0701CD8F1941712000BF8A80 /* QSMoreViewCell_iPad.m */,
+				0701CD901941712000BF8A80 /* QSMoreViewCell_iPad.xib */,
+				0701CD981941718F00BF8A80 /* QSMoreViewController_iPad.h */,
+				0701CD991941719000BF8A80 /* QSMoreViewController_iPad.m */,
+				0701CD9A1941719000BF8A80 /* QSMoreViewController_iPad.xib */,
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
+		07CA9E5C19469A7800F406C7 /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				0701CDB119419CA400BF8A80 /* QSFilterTableViewCell_iPhone.h */,
+				0701CDB219419CA400BF8A80 /* QSFilterTableViewCell_iPhone.m */,
+				0701CDB319419CA400BF8A80 /* QSFilterTableViewCell_iPhone.xib */,
+				0701CDB619419D9A00BF8A80 /* QSFilterTableViewController_iPhone.h */,
+				0701CDB719419D9A00BF8A80 /* QSFilterTableViewController_iPhone.m */,
+				0701CDB819419D9A00BF8A80 /* QSFilterTableViewController_iPhone.xib */,
+			);
+			name = iPhone;
+			sourceTree = "<group>";
+		};
+		07CA9E5D19469A8600F406C7 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				0701CDA21941756600BF8A80 /* QSFilterTableViewController_iPad.h */,
+				0701CDA31941756600BF8A80 /* QSFilterTableViewController_iPad.m */,
+				0701CDA41941756600BF8A80 /* QSFilterTableViewController_iPad.xib */,
+				0701CDAC194175B500BF8A80 /* QSFilterTableViewCell_iPad.h */,
+				0701CDAD194175B500BF8A80 /* QSFilterTableViewCell_iPad.m */,
+				0701CDAE194175B500BF8A80 /* QSFilterTableViewCell_iPad.xib */,
+			);
+			name = iPad;
 			sourceTree = "<group>";
 		};
 		07EB606119400D9B008E68A0 /* FilterPopover */ = {
@@ -530,6 +567,7 @@
 		28D08D5A193DBFD800B6B18F /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				07CA9E59194699C100F406C7 /* Business Model */,
 				0774260B1945C15A00688697 /* Service */,
 			);
 			path = Business;
@@ -689,7 +727,6 @@
 			children = (
 				07295DF8193F39FC00BC1EAD /* Filter */,
 				07295DEA193F2ACC00BC1EAD /* Sprint */,
-				E8A4A642193F08EA00954CEC /* FeatureList */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -747,19 +784,6 @@
 				28D08DCF193DBFD800B6B18F /* logo@2x.png */,
 			);
 			path = IMG;
-			sourceTree = "<group>";
-		};
-		E8A4A642193F08EA00954CEC /* FeatureList */ = {
-			isa = PBXGroup;
-			children = (
-				E8A4A643193F092100954CEC /* QSFeatureListViewController.h */,
-				E8A4A644193F092100954CEC /* QSFeatureListViewController.m */,
-				E8A4A645193F092200954CEC /* QSFeatureListViewController.xib */,
-				E8A4A648193F268A00954CEC /* QSFeatureCell.h */,
-				E8A4A649193F268A00954CEC /* QSFeatureCell.m */,
-				E8A4A64A193F268A00954CEC /* QSFeatureCell.xib */,
-			);
-			name = FeatureList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -853,7 +877,7 @@
 				28D08E06193DBFD800B6B18F /* bt_sort@2x.png in Resources */,
 				0701CDB519419CA400BF8A80 /* QSFilterTableViewCell_iPhone.xib in Resources */,
 				28D08E05193DBFD800B6B18F /* bt_sort.png in Resources */,
-				07295DFD193F3AEA00BC1EAD /* QSFilterViewController.xib in Resources */,
+				07295DFD193F3AEA00BC1EAD /* QSFilterViewController_iPhone.xib in Resources */,
 				28D08E07193DBFD800B6B18F /* btn_close.png in Resources */,
 				28D08E08193DBFD800B6B18F /* btn_close@2x.png in Resources */,
 				07295DEF193F2B1000BC1EAD /* QSSprintListViewController.xib in Resources */,
@@ -873,7 +897,6 @@
 				0701CDBA19419D9A00BF8A80 /* QSFilterTableViewController_iPhone.xib in Resources */,
 				28D08E11193DBFD800B6B18F /* icon_check.png in Resources */,
 				28D08E17193DBFD800B6B18F /* logo.png in Resources */,
-				E8A4A64C193F268A00954CEC /* QSFeatureCell.xib in Resources */,
 				28D08E18193DBFD800B6B18F /* logo@2x.png in Resources */,
 				28D08E09193DBFD800B6B18F /* btn_report.png in Resources */,
 				28D08E0E193DBFD800B6B18F /* btn_task@2x.png in Resources */,
@@ -884,7 +907,6 @@
 				28D08DF7193DBFD800B6B18F /* arrow_title_screen_up.png in Resources */,
 				0701CD88194169D800BF8A80 /* QSFilterViewController_iPad.xib in Resources */,
 				28D08E12193DBFD800B6B18F /* icon_check@2x.png in Resources */,
-				E8A4A647193F092200954CEC /* QSFeatureListViewController.xib in Resources */,
 				28D08D3D193DBD4200B6B18F /* Images.xcassets in Resources */,
 				28D08E0B193DBFD800B6B18F /* btn_service.png in Resources */,
 				28D08DFF193DBFD800B6B18F /* bt_drawer.png in Resources */,
@@ -957,7 +979,6 @@
 				28D08DEF193DBFD800B6B18F /* UILabel+FrameCaculation.m in Sources */,
 				28D08DEA193DBFD800B6B18F /* SBRandomizeUtil.m in Sources */,
 				0701CD8C19416B7800BF8A80 /* QSSprintCell_iPad.m in Sources */,
-				E8A4A646193F092200954CEC /* QSFeatureListViewController.m in Sources */,
 				28D08DE3193DBFD800B6B18F /* NSArray+Sort.m in Sources */,
 				28D08DD5193DBFD800B6B18F /* QSPopoverMenuTableViewController.m in Sources */,
 				28D08DE7193DBFD800B6B18F /* NSFileManager+DIS.m in Sources */,
@@ -978,7 +999,7 @@
 				28D08DED193DBFD800B6B18F /* UIColor+DIS.m in Sources */,
 				28D08DE5193DBFD800B6B18F /* NSData+DIS.m in Sources */,
 				28D08DE1193DBFD800B6B18F /* Lib.m in Sources */,
-				07295DFC193F3AEA00BC1EAD /* QSFilterViewController.m in Sources */,
+				07295DFC193F3AEA00BC1EAD /* QSFilterViewController_iPhone.m in Sources */,
 				28D08DDA193DBFD800B6B18F /* QSStatusControl.m in Sources */,
 				0701CDA51941756600BF8A80 /* QSFilterTableViewController_iPad.m in Sources */,
 				0701CD821941632800BF8A80 /* QSMoreViewCell_iPhone.m in Sources */,
@@ -992,7 +1013,6 @@
 				28D08DD1193DBFD800B6B18F /* BackButton.m in Sources */,
 				28D08DEE193DBFD800B6B18F /* UIImage+DIS.m in Sources */,
 				28D08DDD193DBFD800B6B18F /* DISPhoneCallUtil.m in Sources */,
-				E8A4A64B193F268A00954CEC /* QSFeatureCell.m in Sources */,
 				28D08DE9193DBFD800B6B18F /* NSString+DIS.m in Sources */,
 				28D08DD3193DBFD800B6B18F /* QSMatricTitleView.m in Sources */,
 				07EB6064194016BA008E68A0 /* QSSprintModel.m in Sources */,
@@ -1121,6 +1141,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Project Managerment/Project Managerment-Prefix.pch";
 				INFOPLIST_FILE = "Project Managerment/Project Managerment-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1135,6 +1156,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Project Managerment/Project Managerment-Prefix.pch";
 				INFOPLIST_FILE = "Project Managerment/Project Managerment-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

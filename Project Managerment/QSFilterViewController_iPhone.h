@@ -14,7 +14,7 @@
 #import "QSFilterService.h"
 
 //@interface QSFilterViewController : UIViewController <UIActionSheetDelegate>
-@interface QSFilterViewController : UIViewController
+@interface QSFilterViewController_iPhone : UIViewController
 //<QSFilterTableViewController_iPhoneDelegate>
 
 @property (nonatomic, weak) UIActionSheet *actionSheet;

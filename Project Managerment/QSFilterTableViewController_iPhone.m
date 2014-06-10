@@ -36,12 +36,9 @@
     self.titleOptions = @[@"View All",@"View Progess",@"View In Pending", @"View Complete"];
     [self.filterOptionView registerNib:[UINib nibWithNibName:@"QSFilterTableViewCell_iPhone" bundle:nil] forCellReuseIdentifier:@"QSFilterTableViewCell_iPhone"];
     
-    //Get location of cell in table
+    //Get location of cell in table, cell 1, cell 2, ....
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnTableViewScreenCell:)];
     [self.filterOptionView addGestureRecognizer:tap];
-    
-//    self.filterNumber = @"absnbda";
-//    [self.delegate didSelectViewController:self filterType:self.filterNumber];
     
 }
 -(void) didTapOnTableViewScreenCell:(UIGestureRecognizer*) recognizer {
@@ -69,6 +66,8 @@
     }
     [[self myDelegate]sendValue:self.filterNumber];
 }
+
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -85,26 +84,20 @@
 {
     QSFilterTableViewCell_iPhone *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([QSFilterTableViewCell_iPhone class])];
     
-    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class])];
     if (cell == nil) {
         cell = [[QSFilterTableViewCell_iPhone alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([QSFilterTableViewCell_iPhone class])];
     }
     
-
-    //cell.titleLabel.text = _array[indexPath.row];
     cell.titleLabel.text = self.titleOptions[indexPath.row];
-    //cell.textLabel.text = self.titleOptions[indexPath.row];
     
     if ([self.checkedIndex isEqual:indexPath]) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }
-    else
-    {
+    else{
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     return cell;
 }

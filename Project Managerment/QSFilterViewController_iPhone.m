@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Cừu Lười. All rights reserved.
 //
 
-#import "QSFilterViewController.h"
+#import "QSFilterViewController_iPhone.h"
 #import "QSSprintModel.h"
 #import "QSSprintCell.h"
 #import "WYPopoverController.h"
@@ -15,13 +15,19 @@
 #import "QSFilterTableViewController_iPhone.h"
 #import "QSMoreViewController_iPhone.h"
 
-@interface QSFilterViewController () <UIPopoverControllerDelegate, QSFilterTableViewController_iPhoneDelegate>
+@interface QSFilterViewController_iPhone () <UIPopoverControllerDelegate, QSFilterTableViewController_iPhoneDelegate>
 
-@property (nonatomic, weak) UIBarButtonItem *filterButton;
+//@property (nonatomic, weak) UIBarButtonItem *filterButton;
 @property (nonatomic, strong) NSArray *sprintList;
 @property (nonatomic, strong) NSArray *currentSprint;
-@property (nonatomic, strong) NSString *options;
+//@property (nonatomic, strong) NSString *options;
 @property (nonatomic, strong) QSFilterTableViewController_iPhone *filterView;
+@property (nonatomic, strong) NSArray *listName;
+@property (nonatomic, strong) NSArray *listStatus;
+@property (nonatomic, strong) NSArray *listDesc;
+@property (nonatomic, strong) NSArray *listScreen;
+@property (nonatomic, strong) NSArray *listAssignee;
+
 
 
 - (void)createNavigationItem;
@@ -33,7 +39,7 @@
 @end
 
 
-@implementation QSFilterViewController
+@implementation QSFilterViewController_iPhone
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -76,10 +82,10 @@
     UIBarButtonItem *more_action = [[UIBarButtonItem alloc] initWithImage:bt_more_action landscapeImagePhone:bt_more_action style:UIBarButtonItemStylePlain target:self action:@selector(moreActionPopover:)];
     // Button for filter
     UIImage *filterImage = [UIImage imageNamed:@"bt_sort"];
-    UIBarButtonItem *righItem = [[UIBarButtonItem alloc] initWithImage:filterImage landscapeImagePhone:filterImage style:UIBarButtonItemStylePlain target:self action:@selector(filterPopover:)];
+    UIBarButtonItem *filterButton = [[UIBarButtonItem alloc] initWithImage:filterImage landscapeImagePhone:filterImage style:UIBarButtonItemStylePlain target:self action:@selector(filterPopover:)];
     
     [arrayButton addObject:more_action];
-    [arrayButton addObject:righItem];
+    [arrayButton addObject:filterButton];
     
     self.navigationItem.rightBarButtonItems = arrayButton;
     
@@ -103,6 +109,8 @@
     // create table view in popover
     QSFilterTableViewController_iPhone *tableViewInPop = [[QSFilterTableViewController_iPhone alloc] initWithNibName:@"QSFilterTableViewController_iPhone" bundle:nil];
     //self.filterView = tableViewInPop;
+    
+    // comuniacation by delegate
     tableViewInPop.myDelegate = self;
     
     
@@ -113,11 +121,11 @@
     [self.popController presentPopoverFromBarButtonItem:sender permittedArrowDirections:WYPopoverArrowDirectionDown animated:YES];
     }
 
-- (void)didSelectViewcontroller:(QSFilterTableViewController_iPhone *)controller department:(NSString *)department
-{
-    [controller dismissViewControllerAnimated:YES completion:nil];
-    self.options = department;
-}
+//- (void)didSelectViewcontroller:(QSFilterTableViewController_iPhone *)controller department:(NSString *)department
+//{
+//    [controller dismissViewControllerAnimated:YES completion:nil];
+//    self.options = department;
+//}
 
 - (void)moreActionPopover:(id)sender
 {
@@ -137,54 +145,61 @@
 {
     NSLog(@"Back button touched !!");
 }
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+
+// fake data
 - (void)fakeModel
 {
+    self.listName = @[@"List staffs",@"View default role", @"List roles", @"View staff detail"];
+    self.listStatus = @[@"IN PROGESS", @"IN PENDING", @"COMPLETE", @"IN PENDING"];
+    self.listDesc = @[@"In oder to view all staffs on a company",
+                      @"There are role were created by DIS and dealer could not edit or delete them",
+                      @"In order to view all of role list for staff in one company including default roles that be created by DIS",
+                      @"Apple just unveiled iOS 8 at the Developer's Conference, and it has a lot of exciting features to play around with."];
+    
     NSMutableArray *array = [NSMutableArray array];
     for (NSInteger index = 0; index < 4; index++) {
         QSSprintModel *sprintModel = [[QSSprintModel alloc] init];
-        sprintModel.name = [NSString stringWithFormat:@"Sprint  %li", (long)index];
-        sprintModel.status = @"CONTINUE";
-        sprintModel.desc = @"Apple just unveiled iOS 8 at the Developer's Conference, and it has a lot of exciting features to play around with.";
+        sprintModel.name = self.listName[index];
+        sprintModel.status = self.listStatus[index];
+        sprintModel.desc = self.listDesc[index];
         sprintModel.screen = @"4_Role";
         sprintModel.assignee = @"hungtv";
         [array addObject:sprintModel];
     }
-    QSSprintModel * model = [[QSSprintModel alloc]init];
-    model.name = @"Sale Box";
-    model.status = @"IN PROGESS";
-    model.desc = @"Information about Salebox";
-    model.screen = @"screen";
-    model.assignee =@"assignee";
-    [array addObject:model];
-    QSSprintModel * model1 = [[QSSprintModel alloc]init];
-    model1.name = @"List Staff";
-    model1.status = @"COMPLETE";
-    model1.desc = @"View all staff";
-    model1.screen = @"1_Staff_List";
-    model1.assignee =@"abc";
-    [array addObject:model1];
     
     self.sprintList = [array copy];
     self.currentSprint = [array copy];
     
 }
 
+// number of cell in table
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.currentSprint.count;
 }
 
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    return 140;
+//}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 140;
+    CGSize constraintSize = CGSizeMake(tableView.frame.size.width, tableView.frame.size.height);
+    CGSize nameSize = [[self.listName objectAtIndex:indexPath.row] sizeWithFont:[UIFont boldSystemFontOfSize:17.0] constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
+    CGSize statusSize = [[self.listStatus objectAtIndex:indexPath.row] sizeWithFont:[UIFont boldSystemFontOfSize:17.0] constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
+    CGSize descSize = [[self.listDesc objectAtIndex:indexPath.row] sizeWithFont:[UIFont boldSystemFontOfSize:17.0] constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
+    return ceilf(nameSize.height + descSize.height + statusSize.height + 50);
+    
 }
-
+// define cell in table
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     QSSprintCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([QSSprintCell class])];
@@ -193,6 +208,7 @@
     return cell;
 }
 
+// get message from delegate
 -(void)sendValue:(NSString *)value
 {
     [self.popController dismissPopoverAnimated:YES];
@@ -207,7 +223,7 @@
     }else if ([value isEqualToString:@"2"]) {
         for (NSInteger index = 0; index < self.sprintList.count; index ++) {
             QSSprintModel * model  = [self.sprintList objectAtIndex:index];
-            if ([model.status isEqualToString:@"CONTINUE"]) {
+            if ([model.status isEqualToString:@"IN PENDING"]) {
                 [array addObject:model];
             }
         }

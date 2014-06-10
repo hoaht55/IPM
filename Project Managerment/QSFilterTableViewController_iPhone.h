@@ -11,6 +11,7 @@
 @protocol QSFilterTableViewController_iPhoneDelegate <NSObject>
 -(void)sendValue:(NSString *)value;
 @end
+
 @class QSFilterTableViewController_iPhone;
 
 

@@ -6,34 +6,33 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QSFilterViewController_iPad">
             <connections>
-                <outlet property="tableView" destination="kXr-uP-a8F" id="vkf-pt-7xT"/>
+                <outlet property="tableView" destination="isg-bb-wvp" id="GH4-S8-6uW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="kXr-uP-a8F">
-                    <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="isg-bb-wvp">
+                    <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="tPJ-iR-YxA"/>
-                        <outlet property="delegate" destination="-1" id="tBc-NP-bie"/>
+                        <outlet property="dataSource" destination="-1" id="ZhA-7n-2FK"/>
+                        <outlet property="delegate" destination="-1" id="gmg-UV-uEe"/>
                     </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="kXr-uP-a8F" secondAttribute="trailing" constant="10" id="NsY-QZ-PvU"/>
-                <constraint firstAttribute="bottom" secondItem="kXr-uP-a8F" secondAttribute="bottom" constant="10" id="R71-TA-ljV"/>
-                <constraint firstItem="kXr-uP-a8F" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="epM-Ld-3qI"/>
-                <constraint firstItem="kXr-uP-a8F" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="wjK-Zy-GnM"/>
+                <constraint firstItem="isg-bb-wvp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="63c-YZ-74l"/>
+                <constraint firstItem="isg-bb-wvp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="WuY-yu-WqF"/>
+                <constraint firstAttribute="bottom" secondItem="isg-bb-wvp" secondAttribute="bottom" id="XdG-jx-07K"/>
+                <constraint firstAttribute="trailing" secondItem="isg-bb-wvp" secondAttribute="trailing" id="gW8-4y-mN9"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-            <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
         </view>
     </objects>
 </document>

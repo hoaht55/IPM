@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "WYPopoverController.h"
 #import "WYStoryboardPopoverSegue.h"
+#import "QSFilterTableViewController_iPad.h"
+
 @interface QSFilterViewController_iPad : UIViewController
 @property (nonatomic, strong) WYPopoverController *popController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 
 @end

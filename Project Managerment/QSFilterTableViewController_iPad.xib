@@ -6,40 +6,27 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QSFilterTableViewController_iPad">
             <connections>
+                <outlet property="filterOptionView" destination="5BA-GR-76I" id="x1v-ag-QIg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="HOs-a6-985">
-                    <rect key="frame" x="-9" y="0.0" width="1024" height="768"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5BA-GR-76I">
+                    <rect key="frame" x="0.0" y="6" width="748" height="286"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="heC-jU-XS1"/>
-                        <outlet property="delegate" destination="-1" id="8aV-oA-1Jy"/>
+                        <outlet property="dataSource" destination="-1" id="6Qg-Et-GgS"/>
+                        <outlet property="delegate" destination="-1" id="WXc-zQ-c8D"/>
                     </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="HOs-a6-985" secondAttribute="trailing" constant="10" id="3fV-6G-Sad"/>
-                <constraint firstItem="HOs-a6-985" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="5CP-xh-orB"/>
-                <constraint firstAttribute="bottom" secondItem="HOs-a6-985" secondAttribute="bottom" constant="10" id="5TT-Ne-6qe"/>
-                <constraint firstAttribute="bottom" secondItem="HOs-a6-985" secondAttribute="bottom" id="Ci8-7K-Jlk"/>
-                <constraint firstItem="HOs-a6-985" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="FYD-n5-ql1"/>
-                <constraint firstItem="HOs-a6-985" firstAttribute="top" relation="lessThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="Hsj-Fa-5nd"/>
-                <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="HOs-a6-985" secondAttribute="trailing" constant="20" id="MFm-Kp-sxC"/>
-                <constraint firstItem="HOs-a6-985" firstAttribute="top" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="ctg-Xm-1FM"/>
-                <constraint firstItem="HOs-a6-985" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="fRf-Vl-3Wv"/>
-                <constraint firstItem="HOs-a6-985" firstAttribute="leading" relation="lessThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="r6Y-yV-lzL"/>
-                <constraint firstAttribute="trailing" secondItem="HOs-a6-985" secondAttribute="trailing" constant="10" id="tf0-Ix-1C6"/>
-            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-            <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
         </view>
     </objects>
 </document>

@@ -7,9 +7,8 @@
 //
 
 #import "QSAppDelegate.h"
-#import "QSFeatureListViewController.h"
 #import "QSSprintListViewController.h"
-#import "QSFilterViewController.h"
+#import "QSFilterViewController_iPhone.h"
 #import "QSAppPreference.h"
 #import "QSFilterViewController_iPad.h"
 #define IS_IPAD [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad
@@ -42,7 +41,7 @@
         
         [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:30.0], NSForegroundColorAttributeName:[UIColor whiteColor]}];
     }else{
-        QSFilterViewController *viewController = [[QSFilterViewController alloc] init];
+        QSFilterViewController_iPhone *viewController = [[QSFilterViewController_iPhone alloc] init];
         UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
         [self.window setRootViewController:navigationController];
         
