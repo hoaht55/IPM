@@ -14,10 +14,10 @@
 
 @interface QSAddAndEditViewController () <UITextViewDelegate, UITextFieldDelegate>
 
-//- (void)addObserver;
+- (void)addObserver;
 @property (nonatomic) NSInteger *allisFilled;
-- (void)keyboardDidShowOrHide:(NSNotification *)notification;
-@property NSInteger allIsFilled;
+@property (nonatomic) BOOL isAddFeature;
+//- (void)keyboardDidShowOrHide:(NSNotification *)notification;
 @end
 
 @implementation QSAddAndEditViewController
@@ -34,30 +34,31 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShowOrHide:) name:UITextFieldTextDidChangeNotification object:nil];
+//     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShowOrHide:) name:UITextFieldTextDidChangeNotification object:nil];
     // Do any additional setup after loading the view from its nib.
-    NSLog(@"%d", _allIsFilled);
+    [self validateCase:@"4765635gfdg35"];
     [self.addAndEditTable registerNib:[UINib nibWithNibName:@"QSLabelTextFieldCell" bundle:nil] forCellReuseIdentifier:@"QSLabelTextFieldCell"];
     [self.addAndEditTable registerNib:[UINib nibWithNibName:@"QSLabelTextViewCell" bundle:nil] forCellReuseIdentifier:@"QSLabelTextViewCell"];
-    [self createNavigationItem];    
-    //[self addObserver];
+    [self createNavigationItem];
+    [self addObserver];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnTableViewScreenCell:)];
     [self.addAndEditTable addGestureRecognizer:tap];
 
 }
 
-//- (void)addObserver
-//{
+- (void)addObserver
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldDidChange:) name:UITextFieldTextDidChangeNotification object:nil];
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShowOrHide:) name:UIKeyboardDidHideNotification object:nil];
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShowOrHide:) name:UIKeyboardDidShowNotification object:nil];
-//    
-//}
-//
-//- (void)dealloc
-//{
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UITextFieldTextDidChangeNotification object:nil];
 //    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidHideNotification object:nil];
 //    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
-//}
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -67,6 +68,14 @@
 
 - (void)createNavigationItem
 {
+    if (_isAddFeature) {
+        NSString *title = @"Add Feature";
+        self.navigationItem.title = title;
+    } else {
+        NSString *title = @"Edit";
+        self.navigationItem.title = title;
+    }
+    
     UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(cancel:)];
     [leftButton setTintColor:[UIColor whiteColor]];
     self.navigationItem.leftBarButtonItem = leftButton;
@@ -75,9 +84,6 @@
     [rightButton setTintColor:[UIColor whiteColor]];
     self.navigationItem.rightBarButtonItem = rightButton;
     [self.navigationItem.rightBarButtonItem setEnabled:NO];
-    
-    NSString *title = @"Add Feature";
-    self.navigationItem.title = title;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -90,7 +96,7 @@
     if (indexPath.row == 0 || indexPath.row == 2 || indexPath.row == 3 || indexPath.row == 1) {
         return 50;
     }
-    return 460;
+    return 300;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -101,21 +107,23 @@
         if (indexPath.row == 0) {
             [labelTextFieldCell.titleLabel setText:@"Name"];
             [labelTextFieldCell.inputText setTag:1];
-                    } else if (indexPath.row == 2) {
+        } else if (indexPath.row == 2) {
             [labelTextFieldCell.titleLabel setText:@"Auto case"];
-            [labelTextFieldCell.inputText setTag:2];
+            [labelTextFieldCell.inputText setTag:3];
             [labelTextFieldCell.inputText setKeyboardType:UIKeyboardTypeNumberPad];
         } else if (indexPath.row == 1) {
             [labelTextFieldCell.titleLabel setText:@"Screens"];
+            [labelTextFieldCell.inputText setTag:2];
             [labelTextFieldCell.inputText setEnabled:NO];
         } else {
             [labelTextFieldCell.titleLabel setText:@"Manual case"];
-            [labelTextFieldCell.inputText setTag:3];
+            [labelTextFieldCell.inputText setTag:4];
             [labelTextFieldCell.inputText setKeyboardType:UIKeyboardTypeNumberPad];
         }
         return labelTextFieldCell;
     } else {
         QSLabelTextViewCell *labelTextViewCell = [self.addAndEditTable dequeueReusableCellWithIdentifier:@"QSLabelTextViewCell"];
+        [labelTextViewCell.textView setTag:5];
         labelTextViewCell.textView.delegate = self;
         [labelTextViewCell.titleLabel setText:@"Description"];
         return labelTextViewCell;
@@ -139,6 +147,7 @@
 //    NSValue *keyboardFrameValue = [notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
 //    CGRect keyboardFrame = keyboardFrameValue.CGRectValue;
 //    CGRect viewFrame = self.view.frame;
+//    CGRect tableFrame = self.addAndEditTable.frame;
 //    CGFloat keyboardHeight = CGRectGetHeight(keyboardFrame);
 //    UIScreen *mainScreen = [UIScreen mainScreen];
 //    CGFloat currentScreenHeight = CGRectGetHeight(mainScreen.bounds);
@@ -148,10 +157,13 @@
 //    }
 //    if ([notification.name isEqualToString:UIKeyboardDidHideNotification]) {
 //        viewFrame.size.height = currentScreenHeight + keyboardHeight;
+//        tableFrame.origin.x = tableFrame.origin.x + keyboardHeight;
 //    } else {
 //        viewFrame.size.height = currentScreenHeight - keyboardHeight;
+//         tableFrame.origin.x = tableFrame.origin.x - keyboardHeight;
 //    }
 //    self.view.frame = viewFrame;
+//    self.addAndEditTable.frame = tableFrame;
 //}
 
 -(void) didTapOnTableViewScreenCell:(UIGestureRecognizer*) recognizer {
@@ -162,9 +174,6 @@
         QSChooseScreenViewController *chooseScreen = [[QSChooseScreenViewController alloc] init];
         chooseScreen.delegate = self;
         [self.navigationController pushViewController:chooseScreen animated:YES];
-    } else if (indexPath.row > 2) {
-        NSIndexPath *indexPathScroll = [NSIndexPath indexPathForRow:indexPath.row inSection:0];
-        [self.addAndEditTable scrollToRowAtIndexPath:indexPathScroll atScrollPosition:UITableViewScrollPositionTop animated:YES];
     }
 }
 
@@ -175,63 +184,79 @@
 
 - (void)textViewDidChange:(UITextView *)textView
 {
-    NSLog(@"test");
-}
-
-
-- (void)textFieldDidEndEditing:(UITextField *)textField{
-    if ([self checkALlTextFields]) {
-         [self.navigationItem.rightBarButtonItem setEnabled:YES];
+    if ([self checkAllTextFields]) {
+        [self.navigationItem.rightBarButtonItem setEnabled:YES];
     } else
-         [self.navigationItem.rightBarButtonItem setEnabled:NO];
-    [self checkTextField:textField];
-    
+        [self.navigationItem.rightBarButtonItem setEnabled:NO];
 }
 
-- (BOOL)checkALlTextFields
+- (void)textFieldDidChange:(NSNotification *)notification
 {
-     NSString * text1 = [(UITextField *)[self.view viewWithTag:1] text];
-     NSString * text2 = [(UITextField *)[self.view viewWithTag:2] text];
-     NSString * text3 = [(UITextField *)[self.view viewWithTag:3] text];
-    if (![text1 isEqualToString:@""] && ![text2 isEqualToString:@""]&& ![text3 isEqualToString:@""]) {
+    if ([self checkAllTextFields]) {
+        [self.navigationItem.rightBarButtonItem setEnabled:YES];
+    } else
+        [self.navigationItem.rightBarButtonItem setEnabled:NO];
+}
+
+- (BOOL)checkAllTextFields
+{
+    NSString * name = [(UITextField *)[self.view viewWithTag:1] text];
+    NSString * screen = [(UITextField *)[self.view viewWithTag:2] text];
+    NSString * autoCase = [(UITextField *)[self.view viewWithTag:3] text];
+    NSString * manualCase = [(UITextField *)[self.view viewWithTag:4] text];
+    NSString * description = [(UITextView *)[self.view viewWithTag:5] text];
+
+    if (![name isEqualToString:@""] && ![screen isEqualToString:@""] && ![autoCase isEqualToString:@""]
+        && ![manualCase isEqualToString:@""] && ![description isEqualToString:@""]) {
         return YES;
     }
     return NO;
-    
-}
-
-- (void)checkTextField:(UITextField *)textField
-{
-    if (_allIsFilled>=0 && _allIsFilled<=4) {
-        if (![textField.text isEqualToString:@""] && _allIsFilled !=4) {
-            _allIsFilled++;
-        } else if (_allIsFilled != 0) {
-            _allIsFilled--;
-        }
-    }
-   
-    if (_allIsFilled == 4) {
-        [self.navigationItem.rightBarButtonItem setEnabled:YES];
-    } else {
-        [self.navigationItem.rightBarButtonItem setEnabled:NO];
-    }
-//    if ([textField.text isEqualToString:@""]) {
-//        _allIsFilled--;
-//        NSLog(@"%d", _allIsFilled);
-//    } else if (_allIsFilled<3 && ![textField.text isEqualToString:@""]) {
-//        _allIsFilled++;
-//        NSLog(@"%d", _allIsFilled);
-//    } else if (_allIsFilled == 3) {
-//        [self.navigationItem.rightBarButtonItem setEnabled:YES];
-//       NSLog(@"%d", _allIsFilled);
-//    }
-    NSLog(@"%d", _allIsFilled);
 }
 
 - (void)sendDataToMainScreen:(NSString *)screen
 {
-    NSLog(@"%@", screen);
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
     ((QSLabelTextFieldCell *)[self.addAndEditTable cellForRowAtIndexPath:indexPath]).inputText.text = screen;
+    if ([self checkAllTextFields]) {
+        [self.navigationItem.rightBarButtonItem setEnabled:YES];
+    } else
+        [self.navigationItem.rightBarButtonItem setEnabled:NO];
+    NSString *title = @"Add Feature";
+    self.navigationItem.title = title;
+}
+
+- (void) textFieldDidBeginEditing:(UITextField *)textField
+{
+    UITableViewCell *cell = (UITableViewCell *) textField.superview.superview.superview;
+    [self.addAndEditTable scrollToRowAtIndexPath:[self.addAndEditTable indexPathForCell:cell] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+}
+
+- (void) textViewDidBeginEditing:(UITextView *)textView
+{
+    UITableViewCell *cell = (UITableViewCell *) textView.superview.superview.superview;
+    [self.addAndEditTable scrollToRowAtIndexPath:[self.addAndEditTable indexPathForCell:cell] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    if (([textField tag] == 3 || [textField tag] == 4) && ![textField.text isEqualToString:@""]) {
+        if (![self validateCase:textField.text]) {
+            NSLog(@"Ok men");
+        }
+    }
+}
+
+- (BOOL)validateCase:(NSString *)caseString
+{
+    NSString *regExPattern = @"^\[0-9]{1,50}$";
+    
+    NSRegularExpression *regEx = [[NSRegularExpression alloc] initWithPattern:regExPattern options:NSRegularExpressionCaseInsensitive error:nil];
+    NSUInteger regExMatches = [regEx numberOfMatchesInString:caseString options:0 range:NSMakeRange(0, [caseString length])];
+    
+    if (regExMatches == 0) {
+        return NO;
+    } else {
+        return YES;
+    }
 }
 @end

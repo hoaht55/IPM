@@ -65,13 +65,14 @@
     CGSize constraintSize = CGSizeMake(tableView.frame.size.width, MAXFLOAT);
     
     CGSize labelSize = [[self.data objectAtIndex:indexPath.row] sizeWithFont:[UIFont boldSystemFontOfSize:18.0] constrainedToSize:constraintSize lineBreakMode:NSLineBreakByTruncatingMiddle];
-    return labelSize.height + 10;
+    return labelSize.height + 30;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [self.screensTable dequeueReusableCellWithIdentifier:@"screenCell"];
     cell.textLabel.text = [self.data objectAtIndex:indexPath.row];
+    [cell.textLabel setTextColor:[UIColor grayColor]];
     [cell.textLabel setNumberOfLines:0];
     return cell;
 }

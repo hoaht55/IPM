@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface QSAddAndEditViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
+@interface QSAddAndEditViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *addAndEditTable;
 - (void)createNavigationItem;
 
