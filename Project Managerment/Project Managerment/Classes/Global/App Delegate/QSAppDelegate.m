@@ -6,19 +6,20 @@
 //  Copyright (c) 2014 Cừu Lười. All rights reserved.
 //
 
-#import "QSAppDelegate.h"
 #import "QSSprintListViewController.h"
 #import "QSFilterViewController_iPhone.h"
 #import "QSAppPreference.h"
 #import "QSFilterViewController_iPad.h"
+#import "QSAppPreference.h"
+#import "QSAddAndEditViewController.h"
+#import "QSAppPreference.h"
+#import "QSAppDelegate.h"
 #define IS_IPAD [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad
-
 @implementation QSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
     
 //    QSFilterViewController *viewController = [[QSFilterViewController alloc] init];
 //    UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
@@ -40,7 +41,7 @@
         [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
         
         [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:30.0], NSForegroundColorAttributeName:[UIColor whiteColor]}];
-    }else{
+    } else {
         QSFilterViewController_iPhone *viewController = [[QSFilterViewController_iPhone alloc] init];
         UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
         [self.window setRootViewController:navigationController];
@@ -52,11 +53,24 @@
     }
     
     
-    
-    
+//
+//    if (IS_IPAD) {
+//        QSAddAndEditViewController *viewController = [[QSAddAndEditViewController alloc] initWithNibName:@"QSAddAndEditViewController_iPad" bundle:nil];
+//        UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+//        [self.window setRootViewController:navigationController];
+//    } else {
+//        QSAddAndEditViewController *viewController = [[QSAddAndEditViewController alloc] initWithNibName:@"QSAddAndEditViewController_iPhone" bundle:nil];
+//        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+//        [self.window setRootViewController:navigationController];
+//    }
+//    
+//    [[UINavigationBar appearance] setBarTintColor:[QSAppPreference blueColor]];
+//    [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName:[QSAppPreference boldFontWithSize:17], NSForegroundColorAttributeName:[UIColor whiteColor]}];
+//
+//>>>>>>> FeatureList
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    return YES;
+   return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

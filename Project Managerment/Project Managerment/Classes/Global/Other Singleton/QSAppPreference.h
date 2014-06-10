@@ -7,6 +7,8 @@
 //
 #import <UIKit/UIKit.h>
 
+#define Is_In_Landscape_Mode UIInterfaceOrientationIsLandscape([QSAppPreference currentOrientation])
+
 @interface QSAppPreference : NSObject
 
 + (UIColor *)blueColor;
@@ -19,5 +21,7 @@
 + (UIFont *)boldFontWithSize:(CGFloat)size;
 + (UIFont *)regularFontWithSize:(CGFloat)size;
 + (UIFont *)italicFontWithSize:(CGFloat)size;
+
++ (UIInterfaceOrientation)currentOrientation;
 
 @end
