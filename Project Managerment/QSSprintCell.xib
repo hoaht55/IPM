@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
@@ -72,6 +73,13 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFA-C4-CrN">
+                        <rect key="frame" x="416" y="9" width="38" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" image="bt_more_actions.png">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="gLD-Ee-8Pg" firstAttribute="centerY" secondItem="VvH-z5-Vdv" secondAttribute="centerY" id="122-E4-8uL"/>
@@ -91,9 +99,12 @@
                     <constraint firstItem="RdY-eC-2E3" firstAttribute="top" secondItem="gLD-Ee-8Pg" secondAttribute="bottom" constant="1" id="iVN-bj-mA8"/>
                     <constraint firstItem="gLD-Ee-8Pg" firstAttribute="leading" secondItem="QlQ-6c-jF0" secondAttribute="leading" id="lSp-Za-bJe"/>
                     <constraint firstItem="HLn-wE-k19" firstAttribute="leading" secondItem="Ipb-Pi-yrT" secondAttribute="leading" id="nWX-gk-ZCs"/>
+                    <constraint firstAttribute="trailing" secondItem="xFA-C4-CrN" secondAttribute="trailing" constant="20" id="qHM-vJ-TVR"/>
                     <constraint firstItem="QlQ-6c-jF0" firstAttribute="centerY" secondItem="Ipb-Pi-yrT" secondAttribute="centerY" id="w8P-Mw-3PH"/>
                     <constraint firstItem="RdY-eC-2E3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="22" id="xin-T8-bl4"/>
                     <constraint firstItem="HLn-wE-k19" firstAttribute="trailing" secondItem="Ipb-Pi-yrT" secondAttribute="trailing" id="yqq-gM-aGO"/>
+                    <constraint firstItem="RdY-eC-2E3" firstAttribute="top" secondItem="xFA-C4-CrN" secondAttribute="bottom" constant="24" id="yvb-Se-Zr4"/>
+                    <constraint firstItem="xFA-C4-CrN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="9" id="zAj-to-DzM"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -107,5 +118,6 @@
     </objects>
     <resources>
         <image name="arrow_form.png" width="8" height="12"/>
+        <image name="bt_more_actions.png" width="30" height="21"/>
     </resources>
 </document>

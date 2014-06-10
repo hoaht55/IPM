@@ -15,6 +15,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *screenLabel;
 @property (weak, nonatomic) IBOutlet UILabel *assigneeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descLabel;
+@property (weak, nonatomic) IBOutlet UIButton *moreAction;
+
+- (IBAction)moreAction:(id)sender;
 
 @property (nonatomic, strong) QSSprintModel *sprintModel;
 

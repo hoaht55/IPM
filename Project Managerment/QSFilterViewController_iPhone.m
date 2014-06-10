@@ -15,6 +15,8 @@
 #import "QSFilterTableViewController_iPhone.h"
 #import "QSMoreViewController_iPhone.h"
 
+#define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+
 @interface QSFilterViewController_iPhone () <UIPopoverControllerDelegate, QSFilterTableViewController_iPhoneDelegate>
 
 //@property (nonatomic, weak) UIBarButtonItem *filterButton;
@@ -140,6 +142,37 @@
 
 }
 
+- (void)showActionSheet:(UIButton *)sender
+{
+    NSLog(@"button index: %li", (long)sender.tag);
+    NSString *edit= @"Edit";
+    NSString *delete = @"Delete";
+    NSString *cancelTitle = @"Cancel";
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]
+                                  initWithTitle:nil
+                                  delegate:self
+                                  cancelButtonTitle:cancelTitle
+                                  destructiveButtonTitle:nil
+                                  otherButtonTitles:edit, delete, nil];
+    if (IS_IPAD) {
+        actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
+        [actionSheet addButtonWithTitle:@"Cancel"];
+    }
+    [actionSheet showInView:self.view];
+}
+//Action Sheets process
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 0) {
+        NSLog(@"Edit tap");
+    }
+    else if (buttonIndex == 1){
+        NSLog(@"Delete tap");
+    }
+    else NSLog(@"Cancel tap");
+}
+
 
 - (void)back:(id)sender
 {
@@ -206,7 +239,23 @@
     QSSprintModel *sprintModel = [self.currentSprint objectAtIndex:indexPath.row];
     [cell setModel:sprintModel];
     return cell;
+    
+//    if (IS_IPAD) {
+//        //action Sheet when tap button
+//        cell.moreAction.tag = indexPath.row;
+//        [cell.moreAction addTarget:self action:@selector(showActionSheet:) forControlEvents:UIControlEventTouchUpInside];
+//        return cell;
+//    }
+//    else{
+    
+        //action Sheet when tap button
+        //cell.moreAction.tag = indexPath.row;
+        //[cell.moreAction addTarget:self action:@selector(showActionSheet:) forControlEvents:UIControlEventTouchUpInside];
+    
+    //}
+
 }
+
 
 // get message from delegate
 -(void)sendValue:(NSString *)value
