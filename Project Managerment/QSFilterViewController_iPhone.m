@@ -185,20 +185,20 @@
     return self.currentSprint.count;
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    return 140;
-//}
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CGSize constraintSize = CGSizeMake(tableView.frame.size.width, tableView.frame.size.height);
-    CGSize nameSize = [[self.listName objectAtIndex:indexPath.row] sizeWithFont:[UIFont boldSystemFontOfSize:17.0] constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
-    CGSize statusSize = [[self.listStatus objectAtIndex:indexPath.row] sizeWithFont:[UIFont boldSystemFontOfSize:17.0] constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
-    CGSize descSize = [[self.listDesc objectAtIndex:indexPath.row] sizeWithFont:[UIFont boldSystemFontOfSize:17.0] constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
-    return ceilf(nameSize.height + descSize.height + statusSize.height + 50);
-    
+    return 140;
 }
+
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    CGSize constraintSize = CGSizeMake(tableView.frame.size.width, tableView.frame.size.height);
+//    CGSize nameSize = [[self.listName objectAtIndex:indexPath.row] sizeWithFont:[UIFont boldSystemFontOfSize:17.0] constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
+//    CGSize statusSize = [[self.listStatus objectAtIndex:indexPath.row] sizeWithFont:[UIFont boldSystemFontOfSize:17.0] constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
+//    CGSize descSize = [[self.listDesc objectAtIndex:indexPath.row] sizeWithFont:[UIFont boldSystemFontOfSize:17.0] constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
+//    return ceilf(nameSize.height + descSize.height + statusSize.height + 50);
+//    
+//}
 // define cell in table
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
