@@ -29,9 +29,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [super.addAndEditTable registerNib:[UINib nibWithNibName:@"QSLabelTextFieldCell_iPad" bundle:nil] forCellReuseIdentifier:@"QSLabelTextFieldCell_iPad"];
     
-    // Do any additional setup after loading the view from its nib.
-    [self validateCase:@"4765635gfdg35"];
+    // Do any additional setup after loading the view from its nib.gh
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,32 +51,21 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
     if (([textField tag] == 3 || [textField tag] == 4) && ![textField.text isEqualToString:@""]) {
-        if (![self validateCase:textField.text]) {
-            
+        if (![super validateCase:textField.text]) {
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:([textField tag]-1) inSection:0];
+            ((QSLabelTextFieldCell_iPad *)[super.addAndEditTable cellForRowAtIndexPath:indexPath]).warningCase.text = @"Must be numbers";
+        } else {
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:([textField tag]-1) inSection:0];
+            ((QSLabelTextFieldCell_iPad *)[super.addAndEditTable cellForRowAtIndexPath:indexPath]).warningCase.text = @"";
         }
     }
 }
-
-- (BOOL)validateCase:(NSString *)caseString
-{
-    NSString *regExPattern = @"^\[0-9]{1,50}$";
-    
-    NSRegularExpression *regEx = [[NSRegularExpression alloc] initWithPattern:regExPattern options:NSRegularExpressionCaseInsensitive error:nil];
-    NSUInteger regExMatches = [regEx numberOfMatchesInString:caseString options:0 range:NSMakeRange(0, [caseString length])];
-    
-    if (regExMatches == 0) {
-        return NO;
-    } else {
-        return YES;
-    }
-}
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 0 || indexPath.row == 2 || indexPath.row == 3 || indexPath.row == 1) {
         QSLabelTextFieldCell_iPad *labelTextFieldCell = [self.addAndEditTable dequeueReusableCellWithIdentifier:@"QSLabelTextFieldCell_iPad"];
-      //  labelTextFieldCell.inputText.delegate = self;
+        labelTextFieldCell.inputText.delegate = self;
         if (indexPath.row == 0) {
             [labelTextFieldCell.titleLabel setText:@"Name"];
             [labelTextFieldCell.inputText setTag:1];
@@ -96,20 +85,13 @@
         }
         return labelTextFieldCell;
     } else {
-        QSLabelTextViewCell *labelTextViewCell = [self.addAndEditTable dequeueReusableCellWithIdentifier:@"QSLabelTextViewCell"];
+        QSLabelTextViewCell *labelTextViewCell = [super.addAndEditTable dequeueReusableCellWithIdentifier:@"QSLabelTextViewCell"];
         [labelTextViewCell.textView setTag:5];
-    //    labelTextViewCell.textView.delegate = self;
+        labelTextViewCell.textView.delegate = self;
         [labelTextViewCell.titleLabel setText:@"Description"];
         return labelTextViewCell;
     }
     return nil;
 }
-
-- (void)textFieldDidBeginEditing:(UITextField *)textField
-{
-    
-}
-
-
 
 @end

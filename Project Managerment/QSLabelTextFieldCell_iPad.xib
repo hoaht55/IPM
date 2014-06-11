@@ -14,14 +14,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fdz-wY-5G9">
-                        <rect key="frame" x="70" y="7" width="159" height="30"/>
+                        <rect key="frame" x="70" y="7" width="117" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="textColor" red="0.3868613139" green="0.42427007300000003" blue="0.44434306569999998" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                     <label opaque="NO" clipsSubviews="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KEz-Eu-ecE">
-                        <rect key="frame" x="14" y="10" width="48" height="23"/>
+                        <rect key="frame" x="15" y="10" width="48" height="23"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <gestureRecognizers/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -29,10 +29,10 @@
                         <color key="highlightedColor" red="0.67335766419999998" green="0.69981751820000004" blue="0.71167883210000005" alpha="1" colorSpace="calibratedRGB"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrj-fy-jQ7">
-                        <rect key="frame" x="229" y="11" width="83" height="21"/>
+                        <rect key="frame" x="195" y="11" width="117" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="83" id="hUc-Cx-Ifz"/>
+                            <constraint firstAttribute="width" constant="117" id="V1z-cQ-xvF"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.95985401459854014" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -40,10 +40,11 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="nrj-fy-jQ7" firstAttribute="leading" secondItem="Fdz-wY-5G9" secondAttribute="trailing" id="5re-xf-qKL"/>
                     <constraint firstItem="KEz-Eu-ecE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="GFJ-qu-gFk"/>
+                    <constraint firstItem="KEz-Eu-ecE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="RAh-BT-Dix"/>
                     <constraint firstAttribute="trailing" secondItem="nrj-fy-jQ7" secondAttribute="trailing" constant="8" id="RwT-ws-hEg"/>
-                    <constraint firstItem="KEz-Eu-ecE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="ZSf-ye-26f"/>
+                    <constraint firstAttribute="centerY" secondItem="KEz-Eu-ecE" secondAttribute="centerY" id="dAs-OL-8Tb"/>
+                    <constraint firstItem="nrj-fy-jQ7" firstAttribute="leading" secondItem="Fdz-wY-5G9" secondAttribute="trailing" constant="8" id="gge-MR-ir2"/>
                     <constraint firstItem="Fdz-wY-5G9" firstAttribute="leading" secondItem="KEz-Eu-ecE" secondAttribute="trailing" constant="14" id="xEp-PB-QnN"/>
                 </constraints>
             </tableViewCellContentView>

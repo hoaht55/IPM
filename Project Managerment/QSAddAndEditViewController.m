@@ -36,7 +36,6 @@
 //     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShowOrHide:) name:UITextFieldTextDidChangeNotification object:nil];
     // Do any additional setup after loading the view from its nib.
     [self.addAndEditTable registerNib:[UINib nibWithNibName:@"QSLabelTextFieldCell" bundle:nil] forCellReuseIdentifier:@"QSLabelTextFieldCell"];
-    [self.addAndEditTable registerNib:[UINib nibWithNibName:@"QSLabelTextFieldCell_iPad" bundle:nil] forCellReuseIdentifier:@"QSLabelTextFieldCell_iPad"];
     [self.addAndEditTable registerNib:[UINib nibWithNibName:@"QSLabelTextViewCell" bundle:nil] forCellReuseIdentifier:@"QSLabelTextViewCell"];
     [self createNavigationItem];
     [self addObserver];
@@ -199,7 +198,10 @@
     NSString * autoCase = [(UITextField *)[self.view viewWithTag:3] text];
     NSString * manualCase = [(UITextField *)[self.view viewWithTag:4] text];
     NSString * description = [(UITextView *)[self.view viewWithTag:5] text];
-
+    
+    if (![self validateCase:autoCase] || ![self validateCase:manualCase]) {
+        return NO;
+    }
     if (![name isEqualToString:@""] && ![screen isEqualToString:@""] && ![autoCase isEqualToString:@""]
         && ![manualCase isEqualToString:@""] && ![description isEqualToString:@""]) {
         return YES;
@@ -236,5 +238,19 @@
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
     return [UIView new];
+}
+
+- (BOOL)validateCase:(NSString *)caseString
+{
+    NSString *regExPattern = @"^\[0-9]{1,50}$";
+    
+    NSRegularExpression *regEx = [[NSRegularExpression alloc] initWithPattern:regExPattern options:NSRegularExpressionCaseInsensitive error:nil];
+    NSUInteger regExMatches = [regEx numberOfMatchesInString:caseString options:0 range:NSMakeRange(0, [caseString length])];
+    
+    if (regExMatches == 0) {
+        return NO;
+    } else {
+        return YES;
+    }
 }
 @end
