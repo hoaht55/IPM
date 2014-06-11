@@ -119,15 +119,8 @@
     // Open Filter Popover
     self.popController = [[WYPopoverController alloc] initWithContentViewController:tableViewInPop];
     self.popController.popoverContentSize = CGSizeMake(300, 180);
-    //[self.popController presentPopoverFromBarButtonItem:sender permittedArrowDirections:WYPopoverArrowDirectionDown animated:YES];
     [self.popController presentPopoverFromBarButtonItem:sender permittedArrowDirections:WYPopoverArrowDirectionDown animated:YES];
     }
-
-//- (void)didSelectViewcontroller:(QSFilterTableViewController_iPhone *)controller department:(NSString *)department
-//{
-//    [controller dismissViewControllerAnimated:YES completion:nil];
-//    self.options = department;
-//}
 
 - (void)moreActionPopover:(id)sender
 {
@@ -136,7 +129,7 @@
     
     QSMoreViewController_iPhone *moreViewInPop = [[QSMoreViewController_iPhone alloc] initWithNibName:NSStringFromClass([QSMoreViewController_iPhone class]) bundle:nil];
     WYPopoverController *popController = [[WYPopoverController alloc] initWithContentViewController:moreViewInPop];
-    popController.popoverContentSize = CGSizeMake(300, 145);
+    popController.popoverContentSize = CGSizeMake(300, 140);
     self.popController = popController;
     [self.popController presentPopoverFromBarButtonItem:sender permittedArrowDirections:WYPopoverArrowDirectionDown animated:YES];
 
@@ -233,9 +226,7 @@
     CGFloat height = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
     height += 1.0f;
     return height;
-//    //return 140;
-
-    
+    //return 140;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -260,9 +251,9 @@
 //    [cell setModel:sprintModel];
 //    return cell;
 
-//    NSString *reuseIdentifier = NSStringFromClass([QSSprintCell class]);
-//    QSSprintCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
-    QSSprintCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([QSSprintCell class])];
+    NSString *reuseIdentifier = NSStringFromClass([QSSprintCell class]);
+    QSSprintCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+    //QSSprintCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([QSSprintCell class])];
     QSSprintModel *model = [self.currentSprint objectAtIndex:indexPath.row];
     [cell setModel:model];
     [cell setNeedsUpdateConstraints];
