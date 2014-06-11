@@ -13,6 +13,11 @@
 @property (nonatomic, strong) QSSprintModel * model;
 @property (nonatomic, strong) NSArray *sprintList;
 @property (nonatomic, strong) NSArray *currentSprint;
-
+@property (nonatomic, strong) NSArray *listName;
+@property (nonatomic, strong) NSArray *listStatus ;
+@property (nonatomic, strong) NSArray *listDesc;
+@property (nonatomic, strong) NSArray *listData;
 - (NSArray *)filterSprint:(NSString *)value;
+- (void)fakeModel;
+- (NSArray *)getAllData;
 @end

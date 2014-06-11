@@ -13,6 +13,7 @@
 #import "QSFilterTableViewController_iPhone.h"
 #import "QSFilterService.h"
 #import "QSSprintCell.h"
+#import "QSFilterService.h"
 //@interface QSFilterViewController : UIViewController <UIActionSheetDelegate>
 @interface QSFilterViewController_iPhone : UIViewController
 //<QSFilterTableViewController_iPhoneDelegate>
@@ -23,5 +24,5 @@
 @property (nonatomic, strong) WYPopoverController *popController;
 @property (nonatomic, strong) NSIndexPath *lastIndex;
 @property (nonatomic, strong) QSSprintCell *sprintCell;
-
+@property (nonatomic, strong)QSFilterService *service;
 @end

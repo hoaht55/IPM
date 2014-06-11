@@ -13,26 +13,31 @@
 
 - (void)fakeModel
 {
+    self.listName = @[@"List staffs",@"View default role", @"List roles", @"View staff detail"];
+    self.listStatus = @[@"IN PROGESS", @"IN PENDING", @"COMPLETE", @"IN PENDING"];
+    self.listDesc = @[@"In oder to view all staffs on a company",
+                      @"There are role were created by DIS and dealer could not edit or delete them",
+                      @"In order to view all of role list for staff in one company including default roles that be created by DISIn order to view all of role list for staff in one company including default roles that be created by DISIn order to view all of role list for staff in one company including default roles that be created by DIS",
+                      @"Apple just unveiled iOS 8 at the Developer's Conference, and it has a lot of exciting features to play around with."];
+    
     NSMutableArray *array = [NSMutableArray array];
-    for (NSInteger index = 0; index < 10; index++) {
+    for (NSInteger index = 0; index < 4; index++) {
         QSSprintModel *sprintModel = [[QSSprintModel alloc] init];
-        sprintModel.name = [NSString stringWithFormat:@"Filter  %li", (long)index];
-        sprintModel.status = @"CONTINUE";
-        sprintModel.desc = @"Apple just unveiled iOS 8 at the Developer's Conference, and it has a lot of exciting features to play around with.";
-        sprintModel.screen = @"4_Role";
-        sprintModel.assignee = @"hungtv";
+        sprintModel.name = self.listName[index];
+        sprintModel.status = self.listStatus[index];
+        sprintModel.desc = self.listDesc[index];
+        sprintModel.screen = @"4_Role\n4_Role";
+        sprintModel.assignee = @"hungt\nabc";
         [array addObject:sprintModel];
     }
-    QSSprintModel * model = [[QSSprintModel alloc]init];
-    model.name = @"Sale";
-    model.status = @"IN PROGESS";
-    model.desc = @"vnexpress.net";
-    model.screen = @"screen";
-    model.assignee =@"assignee";
-    [array addObject:model];
-    self.sprintList = [array copy];
-    self.currentSprint = [array copy];
-    
+    self.listData = [array copy];
+    //self.sprintList = [array copy];
+    //self.currentSprint = [array copy];
+}
+-(NSArray *)getAllData
+{
+    [self fakeModel];
+    return self.listData;
 }
 - (NSArray *)filterSprint:(NSString *)value
 {
@@ -44,14 +49,19 @@
                 [array addObject:model];
             }
         }
-    }else if ([value isEqualToString:@"2"]) {
-            NSLog(@"Demo 2");
+    }
+    else if ([value isEqualToString:@"2"])
+    {
+        NSLog(@"Demo 2");
             
-    }else if ([value isEqualToString:@"3"]) {
-                NSLog(@"Demo 3");
-    }else{
-                array = [self.sprintList copy];
-
+    }
+    else if ([value isEqualToString:@"3"])
+    {
+        NSLog(@"Demo 3");
+    }
+    else
+    {
+        array = [self.sprintList copy];
     }
     return array;
 }
