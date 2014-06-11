@@ -7,7 +7,9 @@
 //
 
 #import "QSProjectViewController.h"
+@class QSProjectCell_IPhone;
 
 @interface QSProjectViewController_IPhone : QSProjectViewController
+@property (strong, nonatomic) QSProjectCell_IPhone *projectCellIPhone;
 
 @end

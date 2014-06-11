@@ -95,6 +95,7 @@
 		77A596F719404C9E00E4104C /* QSProjectViewController_IPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77A596F519404C9E00E4104C /* QSProjectViewController_IPhone.xib */; };
 		77A596FB19404D4600E4104C /* QSProjectViewController_IPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A596F919404D4600E4104C /* QSProjectViewController_IPad.m */; };
 		77A596FC19404D4600E4104C /* QSProjectViewController_IPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77A596FA19404D4600E4104C /* QSProjectViewController_IPad.xib */; };
+		77B0619019415B8800F6E93F /* divide.png in Resources */ = {isa = PBXBuildFile; fileRef = 77B0618F19415B8800F6E93F /* divide.png */; };
 		77F9A6A4193F04F0000BABF4 /* QSProjectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F9A6A2193F04F0000BABF4 /* QSProjectCell.m */; };
 		77F9A6A8193F0531000BABF4 /* QSProjectCell_IPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F9A6A7193F0531000BABF4 /* QSProjectCell_IPhone.m */; };
 		77F9A6AC193F05BE000BABF4 /* QSProjectCell_IPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77F9A6AB193F05BE000BABF4 /* QSProjectCell_IPhone.xib */; };
@@ -241,6 +242,7 @@
 		77A596F819404D4600E4104C /* QSProjectViewController_IPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSProjectViewController_IPad.h; sourceTree = SOURCE_ROOT; };
 		77A596F919404D4600E4104C /* QSProjectViewController_IPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSProjectViewController_IPad.m; sourceTree = SOURCE_ROOT; };
 		77A596FA19404D4600E4104C /* QSProjectViewController_IPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSProjectViewController_IPad.xib; sourceTree = SOURCE_ROOT; };
+		77B0618F19415B8800F6E93F /* divide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = divide.png; path = ../../../../../Desktop/divide.png; sourceTree = "<group>"; };
 		77F9A6A1193F04F0000BABF4 /* QSProjectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSProjectCell.h; sourceTree = SOURCE_ROOT; };
 		77F9A6A2193F04F0000BABF4 /* QSProjectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSProjectCell.m; sourceTree = SOURCE_ROOT; };
 		77F9A6A6193F0531000BABF4 /* QSProjectCell_IPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSProjectCell_IPhone.h; sourceTree = SOURCE_ROOT; };
@@ -544,6 +546,7 @@
 		28D08DA7193DBFD800B6B18F /* IMG */ = {
 			isa = PBXGroup;
 			children = (
+				77B0618F19415B8800F6E93F /* divide.png */,
 				28D08DA8193DBFD800B6B18F /* arrow_form.png */,
 				28D08DA9193DBFD800B6B18F /* arrow_form@2x.png */,
 				28D08DAA193DBFD800B6B18F /* arrow_indication.png */,
@@ -784,6 +787,7 @@
 				28D08DF3193DBFD800B6B18F /* arrow_indication.png in Resources */,
 				28D08DFC193DBFD800B6B18F /* bt_add@2x.png in Resources */,
 				28D08DF9193DBFD800B6B18F /* boundaryLine.png in Resources */,
+				77B0619019415B8800F6E93F /* divide.png in Resources */,
 				28D08DFD193DBFD800B6B18F /* bt_back.png in Resources */,
 				28D08D35193DBD4200B6B18F /* InfoPlist.strings in Resources */,
 				28D08E11193DBFD800B6B18F /* icon_check.png in Resources */,

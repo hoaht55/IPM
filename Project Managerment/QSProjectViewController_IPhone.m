@@ -7,26 +7,20 @@
 //
 
 #import "QSProjectViewController_IPhone.h"
-<<<<<<< HEAD
 #import "QSProjectModel.h"
 #import "QSProjectCell_IPhone.h"
-=======
->>>>>>> c60851267268b4cad40f4ca598120ca374f76efe
-
 @interface QSProjectViewController_IPhone ()
 
 @end
 
 @implementation QSProjectViewController_IPhone
 
+@synthesize projectCellIPhone = _projectCellIPhone;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-<<<<<<< HEAD
-=======
-        // Custom initialization
->>>>>>> c60851267268b4cad40f4ca598120ca374f76efe
     }
     return self;
 }
@@ -34,12 +28,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-<<<<<<< HEAD
    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([QSProjectCell_IPhone class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([QSProjectCell_IPhone class])];
     
-=======
     // Do any additional setup after loading the view from its nib.
->>>>>>> c60851267268b4cad40f4ca598120ca374f76efe
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,21 +38,47 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-<<<<<<< HEAD
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 120;
-}
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+//    return 8;
+//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    QSProjectCell_IPhone *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([QSProjectCell_IPhone class])];
+    
     QSProjectModel *model = [self.items objectAtIndex:indexPath.row];
+
+    QSProjectCell_IPhone *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([QSProjectCell_IPhone class])];
+    if (!cell) {
+        return nil;
+    }
     [cell setModel:model];
     [cell setNeedsUpdateConstraints];
     [cell updateConstraintsIfNeeded];
     
     return cell;
 }
-=======
->>>>>>> c60851267268b4cad40f4ca598120ca374f76efe
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    QSProjectModel *model = [self.items objectAtIndex:indexPath.row];
+    QSProjectCell_IPhone * cell = (QSProjectCell_IPhone *)self.projectCellIPhone;
+    [cell setModel:model];
+    [cell setNeedsUpdateConstraints];
+    [cell updateConstraintsIfNeeded];
+    cell.bounds = CGRectMake(0.0f, 0.0f, CGRectGetWidth(tableView.bounds), CGRectGetHeight(cell.bounds));
+    [cell setNeedsLayout];
+    [cell layoutIfNeeded];
+    
+    CGFloat height = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
+    height += 1.0f;
+    
+    return height;
+}
+
+- (QSProjectCell_IPhone *) projectCellIPhone {
+    if (!_projectCellIPhone) {
+        _projectCellIPhone = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([QSProjectCell_IPhone class]) owner:self options:nil] firstObject];
+    }
+    return _projectCellIPhone;
+}
 
 @end

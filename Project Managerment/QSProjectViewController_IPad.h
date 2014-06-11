@@ -8,6 +8,9 @@
 
 #import "QSProjectViewController.h"
 
+#import "QSProjectCell_IPad.h"
+
 @interface QSProjectViewController_IPad : QSProjectViewController
+@property (strong, nonatomic) QSProjectCell_IPad *projectCellIPad;
 
 @end
