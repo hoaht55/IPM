@@ -8,6 +8,7 @@
 
 #import "QSMoreViewController_iPhone.h"
 #import "QSMoreViewCell_iPhone.h"
+#import "QSAddAndEditViewController.h"
 
 @interface QSMoreViewController_iPhone ()
 @property (strong, nonatomic) NSArray *array;
@@ -46,10 +47,7 @@
     
     self.checkedIndex = indexPath;
     [tableView reloadData];
-    
 }
-
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

@@ -21,5 +21,6 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) WYPopoverController *popController;
+- (IBAction)touchAddFeature:(id)sender;
 
 @end

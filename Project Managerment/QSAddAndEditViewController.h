@@ -11,5 +11,6 @@
 @interface QSAddAndEditViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *addAndEditTable;
 - (void)createNavigationItem;
+@property (nonatomic) BOOL isAddFeature;
 
 @end

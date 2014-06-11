@@ -19,6 +19,5 @@
 @property (nonatomic, assign) id delegate;
 
 - (void)createNavigationItem;
-- (void)backToAddFeature:(id)sender;
 
 @end

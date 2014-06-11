@@ -14,6 +14,9 @@
 #import "QSAddAndEditViewController.h"
 #import "QSAppPreference.h"
 #import "QSAppDelegate.h"
+#import "QSMoreViewController_iPhone.h"
+#import "QSAddAndEditViewController_iPhone.h"
+#import "QSAddAndEditViewController_iPad.h"
 #define IS_IPAD [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad
 @implementation QSAppDelegate
 
@@ -21,53 +24,38 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-//    QSFilterViewController *viewController = [[QSFilterViewController alloc] init];
-//    UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
-//    [self.window setRootViewController:navigationController];
-//    [[UINavigationBar appearance] setBarTintColor:[QSAppPreference blueColor]];
-//    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-//
-//    [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17.0], NSForegroundColorAttributeName:[UIColor whiteColor]}];
-    
-//    QSFilterPopoverTableViewController_iPhone *rootView = [[QSFilterPopoverTableViewController_iPhone alloc] init];
-//    self.window.rootViewController = rootView;
-    //[self.window setRootViewController:rootView];
     if (IS_IPAD) {
         QSFilterViewController_iPad *viewController = [[QSFilterViewController_iPad alloc] init];
         UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
         [self.window setRootViewController:navigationController];
-        
-        [[UINavigationBar appearance] setBarTintColor:[QSAppPreference blueColor]];
-        [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-        
-        [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:30.0], NSForegroundColorAttributeName:[UIColor whiteColor]}];
     } else {
         QSFilterViewController_iPhone *viewController = [[QSFilterViewController_iPhone alloc] init];
         UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+
         [self.window setRootViewController:navigationController];
-        
-        [[UINavigationBar appearance] setBarTintColor:[QSAppPreference blueColor]];
-        [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-        
-        [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:17.0], NSForegroundColorAttributeName:[UIColor whiteColor]}];
     }
+    
+    
+    [[UINavigationBar appearance] setBarTintColor:[QSAppPreference blueColor]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:17.0], NSForegroundColorAttributeName:[UIColor whiteColor]}];
     
     
 //
 //    if (IS_IPAD) {
-//        QSAddAndEditViewController *viewController = [[QSAddAndEditViewController alloc] initWithNibName:@"QSAddAndEditViewController_iPad" bundle:nil];
+//        QSAddAndEditViewController_iPad *viewController = [[QSAddAndEditViewController_iPad alloc] initWithNibName:@"QSAddAndEditViewController_iPad" bundle:nil];
 //        UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
 //        [self.window setRootViewController:navigationController];
 //    } else {
-//        QSAddAndEditViewController *viewController = [[QSAddAndEditViewController alloc] initWithNibName:@"QSAddAndEditViewController_iPhone" bundle:nil];
+//        QSAddAndEditViewController_iPhone *viewController = [[QSAddAndEditViewController_iPhone alloc] initWithNibName:@"QSAddAndEditViewController_iPhone" bundle:nil];
 //        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
 //        [self.window setRootViewController:navigationController];
 //    }
 //    
 //    [[UINavigationBar appearance] setBarTintColor:[QSAppPreference blueColor]];
 //    [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName:[QSAppPreference boldFontWithSize:17], NSForegroundColorAttributeName:[UIColor whiteColor]}];
-//
-//>>>>>>> FeatureList
+
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
    return YES;

@@ -23,5 +23,6 @@
 + (UIFont *)italicFontWithSize:(CGFloat)size;
 
 + (UIInterfaceOrientation)currentOrientation;
++ (BOOL)isIpad;
 
 @end

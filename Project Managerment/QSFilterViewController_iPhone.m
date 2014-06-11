@@ -14,6 +14,8 @@
 #import "QSFilterPopoverBackground.h"
 #import "QSFilterTableViewController_iPhone.h"
 #import "QSMoreViewController_iPhone.h"
+#import "QSAddAndEditViewController_iPhone.h"
+
 
 #define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
@@ -291,6 +293,13 @@
     self.currentSprint = [array copy];
     [self.tableView reloadData];
     
+}
+- (IBAction)touchAddFeature:(id)sender
+{
+    QSAddAndEditViewController_iPhone *addFeatureViewController = [[QSAddAndEditViewController_iPhone alloc] init];
+  //  [self presentViewController:[[UINavigationController alloc] initWithRootViewController:addFeatureViewController] animated:YES completion:nil];
+    addFeatureViewController.isAddFeature = YES;
+    [self.navigationController pushViewController:addFeatureViewController animated:YES];
 }
 @end
 
