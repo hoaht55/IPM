@@ -14,6 +14,7 @@
 #define MAX_LENGTH_INPUT 20
 #define IS_IPAD [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad
 #define IS_LANDCAPES UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)
+#define is4Inch  ([[UIScreen mainScreen] bounds].size.height == 568)?TRUE:FALSE
 
 @interface QSLoginViewController () <UITextFieldDelegate>
 - (void)addObserver;
@@ -40,8 +41,8 @@
     [self.notificationLogin setText:@""];
     [self addObserver];
     self.service = [[QSLoginService alloc]init];
-
 }
+// add observer for hide or show keyboard
 - (void)addObserver
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShowOrHide:) name:UIKeyboardDidHideNotification object:nil];
@@ -121,20 +122,19 @@
     [self WhenAllTextFieldExistOrNot];
 }
 
-
+// Move root view for entering characters to input field
 - (void)keyboardDidShowOrHide:(NSNotification *)notification
 {
+    CGRect frame = self.view.frame;
     if(IS_LANDCAPES){
         if ([notification.name isEqualToString:UIKeyboardDidShowNotification]){
-            CGRect frame = self.view.frame;
-            frame.origin.y -= 70;
-            self.view.frame = frame;
+            frame.origin.y -= 50;
+           
         }else
-        {
-            CGRect frame = self.view.frame;
-            frame.origin.y += 70;
-            self.view.frame = frame;
-        }
+            frame.origin.y += 50;
     }
+    [UIView animateWithDuration:0.5 animations:^{
+        self.view.frame = frame;
+    }];
 }
 @end
