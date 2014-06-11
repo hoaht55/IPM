@@ -20,4 +20,7 @@
 + (UIFont *)regularFontWithSize:(CGFloat)size;
 + (UIFont *)italicFontWithSize:(CGFloat)size;
 
+
+
+
 @end
