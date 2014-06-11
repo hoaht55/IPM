@@ -64,9 +64,7 @@
 {
     [super didReceiveMemoryWarning];
 }
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-//    return 8;
-//}
+
 
 - (QSProjectCell_IPad *) projectCellIPad {
     if (!_projectCellIPad) {

@@ -10,6 +10,7 @@
 #import "QSProjectModel.h"
 #import "QSProjectCell_IPhone.h"
 #import "QSProjectCell.h"
+#import "QSAppPreference.h"
 @interface QSProjectViewController ()
 @end
 
@@ -66,8 +67,10 @@
 {
     [super viewDidLoad];
     [self fakeData];
+    self.navigationController.navigationBarHidden = NO;
+    self.navigationController.navigationBar.barTintColor = [QSAppPreference blueColor];
+    self.navigationItem.hidesBackButton = YES;
 }
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -93,17 +96,7 @@
     
     UIAlertView *messageAlert = [[UIAlertView alloc]
                                 initWithTitle:@"Row Selected" message:@"You've selected a row " delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    
     // Display Alert Message
     [messageAlert show];
-    NSLog(@"Row: %d",self.row);
 }
-
-//- (QSProjectCell *) projectCell {
-//    if (!_projectCell) {
-//        _projectCell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([QSProjectCell class]) owner:self options:nil] firstObject];
-//    }
-//    return _projectCell;
-//}
-
 @end

@@ -10,11 +10,12 @@
 #import "QSLoginService.h"
 #import "QSUserModel.h"
 #import "QSAppPreference.h"
+#import "QSProjectViewController_IPhone.h"
+#import "QSProjectViewController_IPad.h"
 
 #define MAX_LENGTH_INPUT 20
 #define IS_IPAD [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad
 #define IS_LANDCAPES UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)
-#define is4Inch  ([[UIScreen mainScreen] bounds].size.height == 568)?TRUE:FALSE
 
 @interface QSLoginViewController () <UITextFieldDelegate>
 - (void)addObserver;
@@ -83,17 +84,15 @@
     [model setPassword:self.passLabel.text];
     if ([self.service checkEmailExists:model]) {
         if ([self.service checkLogin:model]) {
-            NSLog(@"Login Sucess!");
-            /* With project List View
+            // With project List View
             if(!IS_IPAD){
-                QSProjectViewController_iPhone * project = [[QSProjectViewController_iPhone alloc]init];
+                QSProjectViewController_IPhone * project = [[QSProjectViewController_IPhone alloc]init];
                 [self.navigationController pushViewController:project animated:YES];
             }else
             {
-                QSProjectController_iPad * project = [[QSProjectViewController_iPad alloc]init];
+                QSProjectViewController_IPad * project = [[QSProjectViewController_IPad alloc]init];
                 [self.navigationController pushViewController:project animated:YES];
             }
-             */
         }else
         [self.notificationLogin setText:@"Password is wrong !"];
     }else
