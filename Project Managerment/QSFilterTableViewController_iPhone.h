@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *filterOptionView;
 @property (nonatomic, strong) NSArray *array;
 @property (nonatomic, retain) NSIndexPath *checkedIndex;
+@property (nonatomic, retain) NSIndexPath *currentCheckedIndex;
+@property (nonatomic, retain) NSIndexPath *lastIndex;
 @property (nonatomic, retain) NSIndexPath *option;
 
 @end

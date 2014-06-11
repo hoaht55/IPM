@@ -33,7 +33,6 @@
 @property (nonatomic, strong) NSArray *listAssignee;
 
 
-
 - (void)createNavigationItem;
 - (void)fakeModel;
 - (void)filterPopover:(id)sender;
@@ -44,6 +43,7 @@
 
 
 @implementation QSFilterViewController_iPhone
+//@synthesize sprintCell = _sprintCell;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -138,7 +138,7 @@
     
     QSMoreViewController_iPhone *moreViewInPop = [[QSMoreViewController_iPhone alloc] initWithNibName:NSStringFromClass([QSMoreViewController_iPhone class]) bundle:nil];
     WYPopoverController *popController = [[WYPopoverController alloc] initWithContentViewController:moreViewInPop];
-    popController.popoverContentSize = CGSizeMake(300, 100);
+    popController.popoverContentSize = CGSizeMake(300, 145);
     self.popController = popController;
     [self.popController presentPopoverFromBarButtonItem:sender permittedArrowDirections:WYPopoverArrowDirectionDown animated:YES];
 
@@ -195,7 +195,7 @@
     self.listStatus = @[@"IN PROGESS", @"IN PENDING", @"COMPLETE", @"IN PENDING"];
     self.listDesc = @[@"In oder to view all staffs on a company",
                       @"There are role were created by DIS and dealer could not edit or delete them",
-                      @"In order to view all of role list for staff in one company including default roles that be created by DIS",
+                      @"In order to view all of role list for staff in one company including default roles that be created by DISIn order to view all of role list for staff in one company including default roles that be created by DISIn order to view all of role list for staff in one company including default roles that be created by DIS",
                       @"Apple just unveiled iOS 8 at the Developer's Conference, and it has a lot of exciting features to play around with."];
     
     NSMutableArray *array = [NSMutableArray array];
@@ -204,8 +204,8 @@
         sprintModel.name = self.listName[index];
         sprintModel.status = self.listStatus[index];
         sprintModel.desc = self.listDesc[index];
-        sprintModel.screen = @"4_Role";
-        sprintModel.assignee = @"hungtv";
+        sprintModel.screen = @"4_Role\n4_Role";
+        sprintModel.assignee = @"hungt\nabc";
         [array addObject:sprintModel];
     }
     
@@ -222,7 +222,27 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 140;
+
+    QSSprintModel *model = [self.currentSprint objectAtIndex:indexPath.row];
+    QSSprintCell * cell = (QSSprintCell *)[self sprintCell];
+    [cell setModel:model];
+    [cell setNeedsUpdateConstraints];
+    [cell updateConstraintsIfNeeded];
+    cell.bounds = CGRectMake(0.0f,0.0f, CGRectGetWidth(tableView.frame), CGRectGetHeight(cell.bounds));
+    [cell setNeedsLayout];
+    [cell layoutIfNeeded];
+    
+    CGFloat height = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
+    height += 1.0f;
+    return height;
+//    //return 140;
+
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 44;
 }
 
 //- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -237,9 +257,19 @@
 // define cell in table
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+//    QSSprintCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([QSSprintCell class])];
+//    QSSprintModel *sprintModel = [self.currentSprint objectAtIndex:indexPath.row];
+//    [cell setModel:sprintModel];
+//    return cell;
+
+//    NSString *reuseIdentifier = NSStringFromClass([QSSprintCell class]);
+//    QSSprintCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     QSSprintCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([QSSprintCell class])];
-    QSSprintModel *sprintModel = [self.currentSprint objectAtIndex:indexPath.row];
-    [cell setModel:sprintModel];
+    QSSprintModel *model = [self.currentSprint objectAtIndex:indexPath.row];
+    [cell setModel:model];
+    [cell setNeedsUpdateConstraints];
+    [cell updateConstraintsIfNeeded];
+    
     return cell;
     
 //    if (IS_IPAD) {
@@ -294,6 +324,7 @@
     [self.tableView reloadData];
     
 }
+
 - (IBAction)touchAddFeature:(id)sender
 {
     QSAddAndEditViewController_iPhone *addFeatureViewController = [[QSAddAndEditViewController_iPhone alloc] init];
@@ -301,6 +332,12 @@
     addFeatureViewController.isAddFeature = YES;
     [self.navigationController pushViewController:addFeatureViewController animated:YES];
 }
+
+- (QSSprintCell *) sprintCell{
+    _sprintCell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([QSSprintCell class]) owner:self options:nil] firstObject];
+    return _sprintCell;
+}
+
 @end
 
 

@@ -7,6 +7,9 @@
 //
 
 #import "QSAddAndEditViewController_iPad.h"
+#import "QSLabelTextFieldCell_iPad.h"
+#import "QSLabelTextViewCell.h"
+#import "QSAppPreference.h"
 
 @interface QSAddAndEditViewController_iPad ()
 
@@ -49,7 +52,7 @@
 {
     if (([textField tag] == 3 || [textField tag] == 4) && ![textField.text isEqualToString:@""]) {
         if (![self validateCase:textField.text]) {
-            NSLog(@"Ok men");
+            
         }
     }
 }
@@ -67,5 +70,46 @@
         return YES;
     }
 }
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 0 || indexPath.row == 2 || indexPath.row == 3 || indexPath.row == 1) {
+        QSLabelTextFieldCell_iPad *labelTextFieldCell = [self.addAndEditTable dequeueReusableCellWithIdentifier:@"QSLabelTextFieldCell_iPad"];
+      //  labelTextFieldCell.inputText.delegate = self;
+        if (indexPath.row == 0) {
+            [labelTextFieldCell.titleLabel setText:@"Name"];
+            [labelTextFieldCell.inputText setTag:1];
+        } else if (indexPath.row == 2) {
+            [labelTextFieldCell.titleLabel setText:@"Auto case"];
+            [labelTextFieldCell.inputText setTag:3];
+           // [labelTextFieldCell.warningCase setText:@"Must be numbers"];
+            [labelTextFieldCell.inputText setKeyboardType:UIKeyboardTypeNumberPad];
+        } else if (indexPath.row == 1) {
+            [labelTextFieldCell.titleLabel setText:@"Screens"];
+            [labelTextFieldCell.inputText setTag:2];
+            [labelTextFieldCell.inputText setEnabled:NO];
+        } else {
+            [labelTextFieldCell.titleLabel setText:@"Manual case"];
+            [labelTextFieldCell.inputText setTag:4];
+            [labelTextFieldCell.inputText setKeyboardType:UIKeyboardTypeNumberPad];
+        }
+        return labelTextFieldCell;
+    } else {
+        QSLabelTextViewCell *labelTextViewCell = [self.addAndEditTable dequeueReusableCellWithIdentifier:@"QSLabelTextViewCell"];
+        [labelTextViewCell.textView setTag:5];
+    //    labelTextViewCell.textView.delegate = self;
+        [labelTextViewCell.titleLabel setText:@"Description"];
+        return labelTextViewCell;
+    }
+    return nil;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    
+}
+
+
 
 @end

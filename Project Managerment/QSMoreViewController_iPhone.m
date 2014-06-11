@@ -29,7 +29,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    _array = @[@"Add",@"Show More Info"];
+    _array = @[@"Service Schedule",@"Edit", @"Delete"];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([QSMoreViewCell_iPhone class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([QSMoreViewCell_iPhone class])];
 }
 

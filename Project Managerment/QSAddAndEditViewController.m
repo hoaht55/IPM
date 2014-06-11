@@ -36,6 +36,7 @@
 //     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShowOrHide:) name:UITextFieldTextDidChangeNotification object:nil];
     // Do any additional setup after loading the view from its nib.
     [self.addAndEditTable registerNib:[UINib nibWithNibName:@"QSLabelTextFieldCell" bundle:nil] forCellReuseIdentifier:@"QSLabelTextFieldCell"];
+    [self.addAndEditTable registerNib:[UINib nibWithNibName:@"QSLabelTextFieldCell_iPad" bundle:nil] forCellReuseIdentifier:@"QSLabelTextFieldCell_iPad"];
     [self.addAndEditTable registerNib:[UINib nibWithNibName:@"QSLabelTextViewCell" bundle:nil] forCellReuseIdentifier:@"QSLabelTextViewCell"];
     [self createNavigationItem];
     [self addObserver];
