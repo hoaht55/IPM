@@ -14,12 +14,11 @@
 #import "QSFilterPopoverBackground.h"
 #import "QSFilterTableViewController_iPhone.h"
 #import "QSMoreViewController_iPhone.h"
-<<<<<<< HEAD
+
 #import "QSFilterService.h"
-=======
+
 #import "QSAddAndEditViewController_iPhone.h"
 
->>>>>>> 3d0de11eacbd7ec851ef09267e04f7b1fdc486f2
 
 #define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 

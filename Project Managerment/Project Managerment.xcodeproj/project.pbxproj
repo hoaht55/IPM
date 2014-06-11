@@ -311,10 +311,6 @@
 		28D08DCE193DBFD800B6B18F /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		28D08DCF193DBFD800B6B18F /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
 		821862826D504810AC01F608 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-<<<<<<< HEAD
-		E8A5D78F1946BAF00091B5E4 /* QSAddFeatureModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSAddFeatureModel.m; sourceTree = SOURCE_ROOT; };
-=======
->>>>>>> 3d0de11eacbd7ec851ef09267e04f7b1fdc486f2
 		E8A5D7921946BB770091B5E4 /* QSChooseScreenModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSChooseScreenModel.m; sourceTree = SOURCE_ROOT; };
 		E8A5F7D91948057D00980C1B /* QSAddAndEditViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSAddAndEditViewController_iPhone.h; sourceTree = SOURCE_ROOT; };
 		E8A5F7DA1948057D00980C1B /* QSAddAndEditViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSAddAndEditViewController_iPhone.m; sourceTree = SOURCE_ROOT; };
