@@ -119,8 +119,13 @@
 		28D08E16193DBFD800B6B18F /* icon_password@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28D08DCD193DBFD800B6B18F /* icon_password@2x.png */; };
 		28D08E17193DBFD800B6B18F /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 28D08DCE193DBFD800B6B18F /* logo.png */; };
 		28D08E18193DBFD800B6B18F /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28D08DCF193DBFD800B6B18F /* logo@2x.png */; };
-		E8A5D7901946BAF00091B5E4 /* QSAddFeatureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A5D78F1946BAF00091B5E4 /* QSAddFeatureModel.m */; };
 		E8A5D7931946BB770091B5E4 /* QSChooseScreenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A5D7921946BB770091B5E4 /* QSChooseScreenModel.m */; };
+		E8A5F7DB1948057D00980C1B /* QSAddAndEditViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A5F7DA1948057D00980C1B /* QSAddAndEditViewController_iPhone.m */; };
+		E8A5F7DE1948059700980C1B /* QSAddAndEditViewController_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A5F7DD1948059700980C1B /* QSAddAndEditViewController_iPad.m */; };
+		E8A5F7E319484FAF00980C1B /* QSAddFeatureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A5F7E219484FAF00980C1B /* QSAddFeatureModel.m */; };
+		E8A5F7E61948509600980C1B /* QSScreensModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A5F7E51948509600980C1B /* QSScreensModel.m */; };
+		E8E828481948575400DA46F7 /* QSLabelTextFieldCell_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E828461948575400DA46F7 /* QSLabelTextFieldCell_iPad.m */; };
+		E8E828491948575400DA46F7 /* QSLabelTextFieldCell_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8E828471948575400DA46F7 /* QSLabelTextFieldCell_iPad.xib */; };
 		E8EF7AB41940250A00776A3E /* QSChooseScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8EF7AB21940250A00776A3E /* QSChooseScreenViewController.m */; };
 		E8EF7AB51940250A00776A3E /* QSChooseScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8EF7AB31940250A00776A3E /* QSChooseScreenViewController.xib */; };
 		E8EF7AC51940722E00776A3E /* QSAddAndEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8EF7AC31940722E00776A3E /* QSAddAndEditViewController.m */; };
@@ -306,8 +311,23 @@
 		28D08DCE193DBFD800B6B18F /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		28D08DCF193DBFD800B6B18F /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
 		821862826D504810AC01F608 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+<<<<<<< HEAD
 		E8A5D78F1946BAF00091B5E4 /* QSAddFeatureModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSAddFeatureModel.m; sourceTree = SOURCE_ROOT; };
+=======
+>>>>>>> 3d0de11eacbd7ec851ef09267e04f7b1fdc486f2
 		E8A5D7921946BB770091B5E4 /* QSChooseScreenModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSChooseScreenModel.m; sourceTree = SOURCE_ROOT; };
+		E8A5F7D91948057D00980C1B /* QSAddAndEditViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSAddAndEditViewController_iPhone.h; sourceTree = SOURCE_ROOT; };
+		E8A5F7DA1948057D00980C1B /* QSAddAndEditViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSAddAndEditViewController_iPhone.m; sourceTree = SOURCE_ROOT; };
+		E8A5F7DC1948059700980C1B /* QSAddAndEditViewController_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSAddAndEditViewController_iPad.h; sourceTree = SOURCE_ROOT; };
+		E8A5F7DD1948059700980C1B /* QSAddAndEditViewController_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSAddAndEditViewController_iPad.m; sourceTree = SOURCE_ROOT; };
+		E8A5F7DF1948174100980C1B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E8A5F7E119484FAF00980C1B /* QSAddFeatureModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSAddFeatureModel.h; sourceTree = SOURCE_ROOT; };
+		E8A5F7E219484FAF00980C1B /* QSAddFeatureModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSAddFeatureModel.m; sourceTree = SOURCE_ROOT; };
+		E8A5F7E41948509600980C1B /* QSScreensModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSScreensModel.h; sourceTree = SOURCE_ROOT; };
+		E8A5F7E51948509600980C1B /* QSScreensModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSScreensModel.m; sourceTree = SOURCE_ROOT; };
+		E8E828451948575400DA46F7 /* QSLabelTextFieldCell_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSLabelTextFieldCell_iPad.h; sourceTree = SOURCE_ROOT; };
+		E8E828461948575400DA46F7 /* QSLabelTextFieldCell_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSLabelTextFieldCell_iPad.m; sourceTree = SOURCE_ROOT; };
+		E8E828471948575400DA46F7 /* QSLabelTextFieldCell_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSLabelTextFieldCell_iPad.xib; sourceTree = SOURCE_ROOT; };
 		E8EF7AB11940250A00776A3E /* QSChooseScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSChooseScreenViewController.h; sourceTree = SOURCE_ROOT; };
 		E8EF7AB21940250A00776A3E /* QSChooseScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSChooseScreenViewController.m; sourceTree = SOURCE_ROOT; };
 		E8EF7AB31940250A00776A3E /* QSChooseScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSChooseScreenViewController.xib; sourceTree = SOURCE_ROOT; };
@@ -442,6 +462,10 @@
 			children = (
 				07EB6062194016BA008E68A0 /* QSSprintModel.h */,
 				07EB6063194016BA008E68A0 /* QSSprintModel.m */,
+				E8A5F7E119484FAF00980C1B /* QSAddFeatureModel.h */,
+				E8A5F7E219484FAF00980C1B /* QSAddFeatureModel.m */,
+				E8A5F7E41948509600980C1B /* QSScreensModel.h */,
+				E8A5F7E51948509600980C1B /* QSScreensModel.m */,
 			);
 			name = "Business Model";
 			sourceTree = "<group>";
@@ -530,6 +554,7 @@
 		28D08D29193DBD4200B6B18F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E8A5F7DF1948174100980C1B /* QuartzCore.framework */,
 				28D08D2A193DBD4200B6B18F /* Foundation.framework */,
 				28D08D2C193DBD4200B6B18F /* CoreGraphics.framework */,
 				28D08D2E193DBD4200B6B18F /* UIKit.framework */,
@@ -836,7 +861,11 @@
 			children = (
 				E8EF7AC21940722E00776A3E /* QSAddAndEditViewController.h */,
 				E8EF7AC31940722E00776A3E /* QSAddAndEditViewController.m */,
+				E8A5F7D91948057D00980C1B /* QSAddAndEditViewController_iPhone.h */,
+				E8A5F7DA1948057D00980C1B /* QSAddAndEditViewController_iPhone.m */,
 				E8EF7AC41940722E00776A3E /* QSAddAndEditViewController_iPhone.xib */,
+				E8A5F7DC1948059700980C1B /* QSAddAndEditViewController_iPad.h */,
+				E8A5F7DD1948059700980C1B /* QSAddAndEditViewController_iPad.m */,
 				E8EF7AC71940728100776A3E /* QSAddAndEditViewController_iPad.xib */,
 			);
 			name = MainScreen;
@@ -885,6 +914,9 @@
 				E8EF7AD119407ECF00776A3E /* QSLabelTextViewCell.h */,
 				E8EF7AD219407ECF00776A3E /* QSLabelTextViewCell.m */,
 				E8EF7AD319407ECF00776A3E /* QSLabelTextViewCell.xib */,
+				E8E828451948575400DA46F7 /* QSLabelTextFieldCell_iPad.h */,
+				E8E828461948575400DA46F7 /* QSLabelTextFieldCell_iPad.m */,
+				E8E828471948575400DA46F7 /* QSLabelTextFieldCell_iPad.xib */,
 			);
 			name = AddAndEditFeatureCells;
 			sourceTree = "<group>";
@@ -1023,6 +1055,7 @@
 				28D08DFB193DBFD800B6B18F /* bt_add.png in Resources */,
 				28D08E13193DBFD800B6B18F /* icon_email.png in Resources */,
 				28D08E14193DBFD800B6B18F /* icon_email@2x.png in Resources */,
+				E8E828491948575400DA46F7 /* QSLabelTextFieldCell_iPad.xib in Resources */,
 				28D08DF8193DBFD800B6B18F /* arrow_title_screen_up@2x.png in Resources */,
 				E8EF7AB51940250A00776A3E /* QSChooseScreenViewController.xib in Resources */,
 				28D08DD4193DBFD800B6B18F /* QSMatricTitleView.xib in Resources */,
@@ -1087,7 +1120,9 @@
 				E8A5D7931946BB770091B5E4 /* QSChooseScreenModel.m in Sources */,
 				28D08DEF193DBFD800B6B18F /* UILabel+FrameCaculation.m in Sources */,
 				28D08DEA193DBFD800B6B18F /* SBRandomizeUtil.m in Sources */,
+				E8A5F7DB1948057D00980C1B /* QSAddAndEditViewController_iPhone.m in Sources */,
 				0701CD8C19416B7800BF8A80 /* QSSprintCell_iPad.m in Sources */,
+				E8A5F7DE1948059700980C1B /* QSAddAndEditViewController_iPad.m in Sources */,
 				28D08DE3193DBFD800B6B18F /* NSArray+Sort.m in Sources */,
 				28D08DD5193DBFD800B6B18F /* QSPopoverMenuTableViewController.m in Sources */,
 				28D08DE7193DBFD800B6B18F /* NSFileManager+DIS.m in Sources */,
@@ -1095,6 +1130,7 @@
 				28D08DD0193DBFD800B6B18F /* QSAppDelegate.m in Sources */,
 				28D08DD9193DBFD800B6B18F /* SBTextMenuPopOver.m in Sources */,
 				0701CD7D194162F600BF8A80 /* QSMoreViewController_iPhone.m in Sources */,
+				E8E828481948575400DA46F7 /* QSLabelTextFieldCell_iPad.m in Sources */,
 				28D08DE0193DBFD800B6B18F /* DISTakePhotoUtil.m in Sources */,
 				0701CD9B1941719000BF8A80 /* QSMoreViewController_iPad.m in Sources */,
 				28D08DDE193DBFD800B6B18F /* DISSendEmailUtil.m in Sources */,
@@ -1106,9 +1142,10 @@
 				28D08DE4193DBFD800B6B18F /* NSAttributedString+DIS.m in Sources */,
 				0774260E1945C18300688697 /* QSFilterService.m in Sources */,
 				28D08DED193DBFD800B6B18F /* UIColor+DIS.m in Sources */,
+				E8A5F7E61948509600980C1B /* QSScreensModel.m in Sources */,
 				28D08DE5193DBFD800B6B18F /* NSData+DIS.m in Sources */,
-				E8A5D7901946BAF00091B5E4 /* QSAddFeatureModel.m in Sources */,
 				28D08DE1193DBFD800B6B18F /* Lib.m in Sources */,
+				E8A5F7E319484FAF00980C1B /* QSAddFeatureModel.m in Sources */,
 				07295DFC193F3AEA00BC1EAD /* QSFilterViewController_iPhone.m in Sources */,
 				28D08DDA193DBFD800B6B18F /* QSStatusControl.m in Sources */,
 				0701CDA51941756600BF8A80 /* QSFilterTableViewController_iPad.m in Sources */,
@@ -1255,7 +1292,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Project Managerment/Project Managerment-Prefix.pch";
 				INFOPLIST_FILE = "Project Managerment/Project Managerment-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1270,7 +1307,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Project Managerment/Project Managerment-Prefix.pch";
 				INFOPLIST_FILE = "Project Managerment/Project Managerment-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

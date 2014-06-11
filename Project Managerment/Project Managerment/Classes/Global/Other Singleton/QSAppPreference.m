@@ -96,6 +96,11 @@
     return font;
 }
 
++ (BOOL)isIpad
+{
+    return [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad;
+}
+
 + (UIInterfaceOrientation)currentOrientation
 {
     return [UIApplication sharedApplication].statusBarOrientation;

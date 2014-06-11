@@ -22,6 +22,9 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) WYPopoverController *popController;
+
+- (IBAction)touchAddFeature:(id)sender;
+
 @property (nonatomic, strong) NSIndexPath *lastIndex;
 @property (nonatomic, strong) QSSprintCell *sprintCell;
 @property (nonatomic, strong)QSFilterService *service;

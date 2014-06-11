@@ -15,8 +15,6 @@
 @interface QSAddAndEditViewController () <UITextViewDelegate, UITextFieldDelegate>
 
 - (void)addObserver;
-@property (nonatomic) NSInteger *allisFilled;
-@property (nonatomic) BOOL isAddFeature;
 //- (void)keyboardDidShowOrHide:(NSNotification *)notification;
 @end
 
@@ -34,9 +32,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+     self.addAndEditTable.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 //     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShowOrHide:) name:UITextFieldTextDidChangeNotification object:nil];
     // Do any additional setup after loading the view from its nib.
-    [self validateCase:@"4765635gfdg35"];
     [self.addAndEditTable registerNib:[UINib nibWithNibName:@"QSLabelTextFieldCell" bundle:nil] forCellReuseIdentifier:@"QSLabelTextFieldCell"];
     [self.addAndEditTable registerNib:[UINib nibWithNibName:@"QSLabelTextViewCell" bundle:nil] forCellReuseIdentifier:@"QSLabelTextViewCell"];
     [self createNavigationItem];
@@ -69,11 +67,9 @@
 - (void)createNavigationItem
 {
     if (_isAddFeature) {
-        NSString *title = @"Add Feature";
-        self.navigationItem.title = title;
+        [self.navigationItem setTitle:@"Add Feature"];
     } else {
-        NSString *title = @"Edit";
-        self.navigationItem.title = title;
+        [self.navigationItem setTitle:@"Edit"];
     }
     
     UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(cancel:)];
@@ -94,7 +90,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 0 || indexPath.row == 2 || indexPath.row == 3 || indexPath.row == 1) {
-        return 50;
+        return 44;
     }
     return 300;
 }
@@ -133,13 +129,14 @@
 
 - (void)cancel:(id)sender
 {
-    [self.view endEditing:YES];
-    NSLog(@"Cancel");
+    [self.navigationController popViewControllerAnimated:YES];
+    // [self dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
 - (void)save:(id)sender
 {
-    NSLog(@"Save");
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 //- (void)keyboardDidShowOrHide:(NSNotification *)notification
@@ -166,7 +163,7 @@
 //    self.addAndEditTable.frame = tableFrame;
 //}
 
--(void) didTapOnTableViewScreenCell:(UIGestureRecognizer*) recognizer {
+- (void) didTapOnTableViewScreenCell:(UIGestureRecognizer*) recognizer {
     CGPoint tapLocation = [recognizer locationInView:self.addAndEditTable];
     NSIndexPath *indexPath = [self.addAndEditTable indexPathForRowAtPoint:tapLocation];
     
@@ -175,11 +172,7 @@
         chooseScreen.delegate = self;
         [self.navigationController pushViewController:chooseScreen animated:YES];
     }
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    // This will create a "invisible" footer
-    return 0.01f;
+    self.addAndEditTable.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 - (void)textViewDidChange:(UITextView *)textView
@@ -205,7 +198,10 @@
     NSString * autoCase = [(UITextField *)[self.view viewWithTag:3] text];
     NSString * manualCase = [(UITextField *)[self.view viewWithTag:4] text];
     NSString * description = [(UITextView *)[self.view viewWithTag:5] text];
-
+    
+    if (![self validateCase:autoCase] || ![self validateCase:manualCase]) {
+        return NO;
+    }
     if (![name isEqualToString:@""] && ![screen isEqualToString:@""] && ![autoCase isEqualToString:@""]
         && ![manualCase isEqualToString:@""] && ![description isEqualToString:@""]) {
         return YES;
@@ -221,8 +217,6 @@
         [self.navigationItem.rightBarButtonItem setEnabled:YES];
     } else
         [self.navigationItem.rightBarButtonItem setEnabled:NO];
-    NSString *title = @"Add Feature";
-    self.navigationItem.title = title;
 }
 
 - (void) textFieldDidBeginEditing:(UITextField *)textField
@@ -237,13 +231,13 @@
     [self.addAndEditTable scrollToRowAtIndexPath:[self.addAndEditTable indexPathForCell:cell] atScrollPosition:UITableViewScrollPositionTop animated:YES];
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)textField
+- (CGFloat) tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.01f;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
-    if (([textField tag] == 3 || [textField tag] == 4) && ![textField.text isEqualToString:@""]) {
-        if (![self validateCase:textField.text]) {
-            NSLog(@"Ok men");
-        }
-    }
+    return [UIView new];
 }
 
 - (BOOL)validateCase:(NSString *)caseString

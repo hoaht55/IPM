@@ -14,6 +14,7 @@
 @interface QSFilterViewController_iPad : UIViewController
 @property (nonatomic, strong) WYPopoverController *popController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+- (IBAction)touchAddFeature:(id)sender;
 
 
 @end

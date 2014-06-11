@@ -15,6 +15,7 @@
 #import "QSMoreViewController_iPad.h"
 #import "QSSprintCell_iPad.h"
 #import "QSFilterTableViewController_iPad.h"
+#import "QSAddAndEditViewController_iPad.h"
 
 @interface QSFilterViewController_iPad () <QSFilterTableViewController_iPadDelegate>
 
@@ -227,6 +228,12 @@
     self.currentSprint = [array copy];
     [self.tableView reloadData];
     
+}
+- (IBAction)touchAddFeature:(id)sender
+{
+    QSAddAndEditViewController_iPad *addFeatureViewController = [[QSAddAndEditViewController_iPad alloc] init];
+    addFeatureViewController.isAddFeature = YES;
+    [self.navigationController pushViewController:addFeatureViewController animated:YES];
 }
 @end
 
