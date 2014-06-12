@@ -36,35 +36,35 @@
     [self.filterOptionView registerNib:[UINib nibWithNibName:NSStringFromClass([QSFilterTableViewCell_iPad class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([QSFilterTableViewCell_iPad class])];
     
     //Get location of cell in table, cell 1, cell 2, ....
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnTableViewScreenCell:)];
-    [self.filterOptionView addGestureRecognizer:tap];
+    //UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnTableViewScreenCell:)];
+    //[self.filterOptionView addGestureRecognizer:tap];
     
 }
--(void) didTapOnTableViewScreenCell:(UIGestureRecognizer*) recognizer {
-    // get location touched
-    CGPoint tapLocation = [recognizer locationInView:self.filterOptionView];
-    NSIndexPath *indexPath = [self.filterOptionView indexPathForRowAtPoint:tapLocation];
-    
-    
-    if (indexPath.row == 0) {
-        NSLog(@"View all");
-        self.filterNumber = @"0";
-        
-    }
-    if (indexPath.row == 1) {
-        NSLog(@"View Progess ");
-        self.filterNumber = @"1";
-    }
-    if(indexPath.row == 2){
-        NSLog(@"View In Pending");
-        self.filterNumber = @"2";
-    }
-    if (indexPath.row == 3) {
-        NSLog(@"View Complete");
-        self.filterNumber = @"3";
-    }
-    [[self myDelegate]sendValue:self.filterNumber];
-}
+//-(void) didTapOnTableViewScreenCell:(UIGestureRecognizer*) recognizer {
+//    // get location touched
+//    CGPoint tapLocation = [recognizer locationInView:self.filterOptionView];
+//    NSIndexPath *indexPath = [self.filterOptionView indexPathForRowAtPoint:tapLocation];
+//    
+//    
+//    if (indexPath.row == 0) {
+//        NSLog(@"View all");
+//        self.filterNumber = @"0";
+//        
+//    }
+//    if (indexPath.row == 1) {
+//        NSLog(@"View Progess ");
+//        self.filterNumber = @"1";
+//    }
+//    if(indexPath.row == 2){
+//        NSLog(@"View In Pending");
+//        self.filterNumber = @"2";
+//    }
+//    if (indexPath.row == 3) {
+//        NSLog(@"View Complete");
+//        self.filterNumber = @"3";
+//    }
+//    [[self myDelegate]sendValue:self.filterNumber];
+//}
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -100,9 +100,48 @@
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
     
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    //[tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView cellForRowAtIndexPath:indexPath].accessoryType=UITableViewCellAccessoryCheckmark;
+    
+    self.checkedIndex = indexPath;
+    [tableView reloadData];
+    NSLog(@"check index is %d", self.checkedIndex.row);
+    
+    if (self.checkedIndex.row == 0) {
+        NSLog(@"View all");
+        self.filterNumber = @"0";
+        
+    }
+    if (self.checkedIndex.row == 1) {
+        NSLog(@"View Progess ");
+        self.filterNumber = @"1";
+    }
+    if(self.checkedIndex.row == 2){
+        NSLog(@"View In Pending");
+        self.filterNumber = @"2";
+    }
+    if (self.checkedIndex.row == 3) {
+        NSLog(@"View Complete");
+        self.filterNumber = @"3";
+    }
+    [[self myDelegate]sendValue:self.filterNumber];
+    
+    //checkmark for cell checked index
+    if(self.checkedIndex)
+    {
+        UITableViewCell* uncheckCell = [tableView
+                                        cellForRowAtIndexPath:self.checkedIndex];
+        uncheckCell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    self.checkedIndex = indexPath;
+    
+    [tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning

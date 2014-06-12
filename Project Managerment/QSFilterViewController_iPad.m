@@ -25,7 +25,6 @@
 
 
 - (void)createNavigationItem;
-- (void)fakeModel;
 - (void)filterPopover:(id)sender;
 - (void)moreActionPopover:(id)sender;
 
@@ -58,8 +57,15 @@
     [[self navigationController] pushViewController:self.filterView animated:YES];
     
     // add data
-    [self fakeModel];
-    
+    //[self fakeModel];
+    self.service = [[QSFilterService alloc]init];
+    self.currentSprint = [[self.service getAllData] copy];
+    self.sprintList = [[self.service getAllData] copy];
+}
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 - (void)createNavigationItem
@@ -71,7 +77,7 @@
     // Button in the right
     // Button for action
     NSMutableArray *arrayButton = [NSMutableArray array];
-    UIImage *bt_more_action = [UIImage imageNamed:@"bt_more_actions"];
+    UIImage *bt_more_action = [UIImage imageNamed:@"bt_more_menu"];
     UIBarButtonItem *more_action = [[UIBarButtonItem alloc] initWithImage:bt_more_action landscapeImagePhone:bt_more_action style:UIBarButtonItemStylePlain target:self action:@selector(moreActionPopover:)];
     // Button for filter
     UIImage *filterImage = [UIImage imageNamed:@"bt_sort"];
@@ -96,19 +102,21 @@
     //        return;
     //    }
     
-    UIViewController *content = [[UIViewController alloc] init];
-    content.view.backgroundColor = [UIColor whiteColor];
+  
     
-    // create table view in popover
-    QSFilterTableViewController_iPad *tableViewInPop = [[QSFilterTableViewController_iPad alloc] initWithNibName:NSStringFromClass([QSFilterTableViewController_iPad class]) bundle:nil];
-    //self.filterView = tableViewInPop;
-    
-    // comuniacation by delegate
-    tableViewInPop.myDelegate = self;
-    
-    
+    if (!_filterView) {
+        
+        // create table view in popover
+        _filterView = [[QSFilterTableViewController_iPad alloc] initWithNibName:@"QSFilterTableViewController_iPad" bundle:nil];
+        _filterView.view.backgroundColor = [UIColor whiteColor];
+        
+        // comuniacation by delegate
+        //self.filterView = tableViewInPop;
+        _filterView.myDelegate = self;
+    }
+
     // Open Filter Popover
-    self.popController = [[WYPopoverController alloc] initWithContentViewController:tableViewInPop];
+    self.popController = [[WYPopoverController alloc] initWithContentViewController:_filterView];
     self.popController.popoverContentSize = CGSizeMake(768, 290);
     
     [self.popController presentPopoverFromBarButtonItem:sender permittedArrowDirections:WYPopoverArrowDirectionDown animated:YES];
@@ -121,7 +129,7 @@
     
     QSMoreViewController_iPad *moreViewInPop = [[QSMoreViewController_iPad alloc] initWithNibName:NSStringFromClass([QSMoreViewController_iPad class]) bundle:nil];
     WYPopoverController *popController = [[WYPopoverController alloc] initWithContentViewController:moreViewInPop];
-    popController.popoverContentSize = CGSizeMake(768, 160);
+    popController.popoverContentSize = CGSizeMake(768, 240);
     self.popController = popController;
     [self.popController presentPopoverFromBarButtonItem:sender permittedArrowDirections:WYPopoverArrowDirectionDown animated:YES];
     
@@ -133,46 +141,6 @@
     NSLog(@"Back button touched !!");
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-// fake data
-- (void)fakeModel
-{
-    NSMutableArray *array = [NSMutableArray array];
-    for (NSInteger index = 0; index < 4; index++) {
-        QSSprintModel *sprintModel = [[QSSprintModel alloc] init];
-        sprintModel.name = [NSString stringWithFormat:@"Filter %li", (long)index];
-        sprintModel.status = @"IN PENDING";
-        sprintModel.desc = @"Apple just unveiled iOS 8 at the Developer's Conference, and it has a lot of exciting features to play around with.";
-        sprintModel.screen = @"4_Role";
-        sprintModel.assignee = @"hungtv";
-        [array addObject:sprintModel];
-    }
-    QSSprintModel * model = [[QSSprintModel alloc]init];
-    model.name = @"Sale Box";
-    model.status = @"IN PROGESS";
-    model.desc = @"Information about Salebox";
-    model.screen = @"screen";
-    model.assignee =@"assignee";
-    [array addObject:model];
-    
-    QSSprintModel * model1 = [[QSSprintModel alloc]init];
-    model1.name = @"List Staff";
-    model1.status = @"COMPLETE";
-    model1.desc = @"View all staff";
-    model1.screen = @"1_Staff_List";
-    model1.assignee =@"abc";
-    [array addObject:model1];
-    
-    self.sprintList = [array copy];
-    self.currentSprint = [array copy];
-    
-}
 
 // number of cell in table
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -180,10 +148,30 @@
     return self.currentSprint.count;
 }
 
+- (QSSprintCell_iPad *) sprintCell{
+    _sprintCell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([QSSprintCell_iPad class]) owner:self options:nil] firstObject];
+    return _sprintCell;
+}
+
+// caculate heigth for cell
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 220;
+    
+    QSSprintModel *model = [self.currentSprint objectAtIndex:indexPath.row];
+    QSSprintCell_iPad * cell = (QSSprintCell_iPad *)[self sprintCell];
+    [cell setModel:model];
+    [cell setNeedsUpdateConstraints];
+    [cell updateConstraintsIfNeeded];
+    cell.bounds = CGRectMake(0.0f, 0.0f, CGRectGetWidth(tableView.bounds), CGRectGetHeight(cell.bounds));
+    [cell setNeedsLayout];
+    [cell layoutIfNeeded];
+    
+    CGFloat height = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
+    height += 1.0f;
+    return height;
+    //return 140;
 }
+
 
 // define cell in table
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -191,8 +179,53 @@
     QSSprintCell_iPad *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([QSSprintCell_iPad class])];
     QSSprintModel *sprintModel = [self.currentSprint objectAtIndex:indexPath.row];
     [cell setModel:sprintModel];
+    [cell setNeedsUpdateConstraints];
+    [cell updateConstraintsIfNeeded];
+    
+    //action Sheet when tap button
+    NSLog(@"index path : %d", indexPath.row);
+    [cell.moreActionButton setTag: indexPath.row];
+    NSLog(@"more action tag : %d",cell.moreActionButton.tag);
+    [cell.moreActionButton addTarget:self
+                              action:@selector(showActionSheet:)
+                    forControlEvents:UIControlEventTouchUpInside];
+
+
     return cell;
 }
+
+- (void)showActionSheet:(UIButton *)sender
+{
+    NSLog(@"button index: %li", (long)sender.tag);
+    NSString *edit= @"Edit";
+    NSString *delete = @"Delete";
+    NSString *cancelTitle = @"Cancel";
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]
+                                  initWithTitle:nil
+                                  delegate:self
+                                  cancelButtonTitle:cancelTitle
+                                  destructiveButtonTitle:nil
+                                  otherButtonTitles:edit, delete, nil];
+    actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
+    [actionSheet addButtonWithTitle:@"Cancel"];
+
+    [actionSheet showInView:self.view];
+}
+////Action Sheets process
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 0) {
+        NSLog(@"Edit tap");
+        QSAddAndEditViewController_iPad *editView = [[QSAddAndEditViewController_iPad alloc] init];
+        [self.navigationController pushViewController:editView animated:YES];
+    }
+    else if (buttonIndex == 1){
+        NSLog(@"Delete tap");
+    }
+    else NSLog(@"Cancel tap");
+}
+
 
 // get message from delegate
 -(void)sendValue:(NSString *)value
@@ -229,38 +262,14 @@
     [self.tableView reloadData];
     
 }
+
 - (IBAction)touchAddFeature:(id)sender
 {
     QSAddAndEditViewController_iPad *addFeatureViewController = [[QSAddAndEditViewController_iPad alloc] init];
     addFeatureViewController.isAddFeature = YES;
     [self.navigationController pushViewController:addFeatureViewController animated:YES];
 }
+
 @end
-
-
-
-//- (void)moreAction:(id)sender
-//{
-//    NSString *edit = @"Edit";
-//    NSString *show = @"Show Detail";
-//    NSString *cancel = @"Cancel";
-//
-//    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:cancel destructiveButtonTitle:nil otherButtonTitles:show,edit, nil];
-//    [actionSheet showInView:self.view];
-//
-//}
-//
-//
-////UIActionSheet method
-//- (void)moreActionProcess:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-//{
-//    NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
-//    if ([buttonTitle isEqualToString:@"Edit"]){
-//        NSLog(@"Edit display");
-//    }
-//    if([buttonTitle isEqualToString:@"Show Detail"]){
-//        NSLog(@"Show detail");
-//    }
-//}
 
 

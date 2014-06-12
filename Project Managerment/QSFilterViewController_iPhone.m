@@ -128,24 +128,24 @@
 //        return;
 //    }
     
-    UIViewController *content = [[UIViewController alloc] init];
-    content.view.backgroundColor = [UIColor whiteColor];
+    if (!_filterView) {
+        
+        // create table view in popover
+        _filterView = [[QSFilterTableViewController_iPhone alloc] initWithNibName:@"QSFilterTableViewController_iPhone" bundle:nil];
+        _filterView.view.backgroundColor = [UIColor whiteColor];
+        
+        // comuniacation by delegate
+        //self.filterView = tableViewInPop;
+        _filterView.myDelegate = self;
+    }
     
-    // create table view in popover
-    QSFilterTableViewController_iPhone *tableViewInPop = [[QSFilterTableViewController_iPhone alloc]
-                                                    initWithNibName:@"QSFilterTableViewController_iPhone"
-                                                          bundle:nil];
-    // comuniacation by delegate
-    //self.filterView = tableViewInPop;
-    tableViewInPop.myDelegate = self;
-    
-    // Open Filter Popover
-    self.popController = [[WYPopoverController alloc] initWithContentViewController:tableViewInPop];
+        // Open Filter Popover
+    self.popController = [[WYPopoverController alloc] initWithContentViewController:_filterView];
     self.popController.popoverContentSize = CGSizeMake(300, 180);
     [self.popController presentPopoverFromBarButtonItem:sender
                                permittedArrowDirections:WYPopoverArrowDirectionDown
                                                animated:YES];
-    }
+}
 
 - (void)moreActionPopover:(id)sender
 {
@@ -263,6 +263,8 @@
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 0) {
         NSLog(@"Edit tap");
+        QSAddAndEditViewController_iPhone *editView = [[QSAddAndEditViewController_iPhone alloc] init];
+        [self.navigationController pushViewController:editView animated:YES];
     }
     else if (buttonIndex == 1){
         NSLog(@"Delete tap");
