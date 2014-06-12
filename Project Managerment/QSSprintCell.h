@@ -22,6 +22,7 @@
 @property (nonatomic, strong) QSSprintModel *sprintModel;
 
 - (void)setModel:(QSSprintModel *)sprintModel;
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;
 
 @end
