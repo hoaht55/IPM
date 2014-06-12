@@ -18,7 +18,6 @@
 @interface QSFilterViewController_iPhone : UIViewController
 //<QSFilterTableViewController_iPhoneDelegate>
 
-@property (nonatomic, weak) UIActionSheet *actionSheet;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) WYPopoverController *popController;

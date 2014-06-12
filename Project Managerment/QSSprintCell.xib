@@ -21,16 +21,13 @@
                         <color key="textColor" red="0.0" green="0.4323217862355449" blue="0.89334239130434778" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFA-C4-CrN">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFA-C4-CrN">
                         <rect key="frame" x="264" y="12" width="30" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <state key="normal" image="bt_more_actions.png">
                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
-                        <connections>
-                            <action selector="moreAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="cdn-aU-r58"/>
-                        </connections>
                     </button>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="status ijhkjhkjhkjhjkhkjhkj" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLD-Ee-8Pg">
                         <rect key="frame" x="16" y="43" width="141" height="22"/>
@@ -109,6 +106,7 @@
             <connections>
                 <outlet property="assigneeLabel" destination="Ipb-Pi-yrT" id="MVS-iH-San"/>
                 <outlet property="descLabel" destination="RdY-eC-2E3" id="lKs-y7-rQS"/>
+                <outlet property="moreActionButton" destination="xFA-C4-CrN" id="RM2-A5-vIP"/>
                 <outlet property="nameLabel" destination="3h3-9i-6dI" id="C6D-9r-OXl"/>
                 <outlet property="screenLabel" destination="HLn-wE-k19" id="X4U-bP-xSK"/>
                 <outlet property="statusLabel" destination="gLD-Ee-8Pg" id="gsp-30-qHy"/>

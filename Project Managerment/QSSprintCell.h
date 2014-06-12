@@ -15,13 +15,17 @@
 @property (weak, nonatomic) IBOutlet UILabel *screenLabel;
 @property (weak, nonatomic) IBOutlet UILabel *assigneeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descLabel;
-@property (weak, nonatomic) IBOutlet UIButton *moreAction;
+@property (weak, nonatomic) IBOutlet UIButton *moreActionButton;
 
-- (IBAction)moreAction:(id)sender;
+@property (strong, nonatomic) UIActionSheet *actionSheet;
+@property (nonatomic, strong) NSString *actionSheetOptions;
+
+
 
 @property (nonatomic, strong) QSSprintModel *sprintModel;
 
 - (void)setModel:(QSSprintModel *)sprintModel;
+//- (IBAction)moreAction:(id)sender;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;
 

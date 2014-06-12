@@ -22,7 +22,7 @@
 
 #define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
-@interface QSFilterViewController_iPhone () <UIPopoverControllerDelegate, QSFilterTableViewController_iPhoneDelegate>
+@interface QSFilterViewController_iPhone () <UIPopoverControllerDelegate, QSFilterTableViewController_iPhoneDelegate, UIActionSheetDelegate>
 
 //@property (nonatomic, weak) UIBarButtonItem *filterButton;
 @property (nonatomic, strong) NSArray *sprintList;
@@ -73,7 +73,13 @@
     self.service = [[QSFilterService alloc]init];
     self.sprintList = [[self.service getAllData] copy];
     self.currentSprint = [[self.service getAllData] copy];
+    self.sprintCell.actionSheet.delegate = self;
     
+}
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 - (void)createNavigationItem
@@ -86,10 +92,18 @@
     // Button for action
     NSMutableArray *arrayButton = [NSMutableArray array];
     UIImage *bt_more_action = [UIImage imageNamed:@"bt_more_actions"];
-    UIBarButtonItem *more_action = [[UIBarButtonItem alloc] initWithImage:bt_more_action landscapeImagePhone:bt_more_action style:UIBarButtonItemStylePlain target:self action:@selector(moreActionPopover:)];
+    UIBarButtonItem *more_action = [[UIBarButtonItem alloc] initWithImage:bt_more_action
+                                                      landscapeImagePhone:bt_more_action
+                                                                    style:UIBarButtonItemStylePlain
+                                                                   target:self
+                                                                   action:@selector(moreActionPopover:)];
     // Button for filter
     UIImage *filterImage = [UIImage imageNamed:@"bt_sort"];
-    UIBarButtonItem *filterButton = [[UIBarButtonItem alloc] initWithImage:filterImage landscapeImagePhone:filterImage style:UIBarButtonItemStylePlain target:self action:@selector(filterPopover:)];
+    UIBarButtonItem *filterButton = [[UIBarButtonItem alloc] initWithImage:filterImage
+                                                       landscapeImagePhone:filterImage
+                                                                     style:UIBarButtonItemStylePlain
+                                                                    target:self
+                                                                    action:@selector(filterPopover:)];
     
     [arrayButton addObject:more_action];
     [arrayButton addObject:filterButton];
@@ -99,7 +113,11 @@
     
     // Button in the left
     UIImage *backButton = [UIImage imageNamed:@"bt_back"];
-    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithImage:backButton landscapeImagePhone:backButton style:UIBarButtonItemStylePlain target:self action:@selector(back:)];
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithImage:backButton
+                                                   landscapeImagePhone:backButton
+                                                                 style:UIBarButtonItemStylePlain
+                                                                target:self
+                                                                action:@selector(back:)];
     self.navigationItem.leftBarButtonItem = leftItem;
 }
 
@@ -114,17 +132,19 @@
     content.view.backgroundColor = [UIColor whiteColor];
     
     // create table view in popover
-    QSFilterTableViewController_iPhone *tableViewInPop = [[QSFilterTableViewController_iPhone alloc] initWithNibName:@"QSFilterTableViewController_iPhone" bundle:nil];
-    //self.filterView = tableViewInPop;
-    
+    QSFilterTableViewController_iPhone *tableViewInPop = [[QSFilterTableViewController_iPhone alloc]
+                                                    initWithNibName:@"QSFilterTableViewController_iPhone"
+                                                          bundle:nil];
     // comuniacation by delegate
+    //self.filterView = tableViewInPop;
     tableViewInPop.myDelegate = self;
-    
     
     // Open Filter Popover
     self.popController = [[WYPopoverController alloc] initWithContentViewController:tableViewInPop];
     self.popController.popoverContentSize = CGSizeMake(300, 180);
-    [self.popController presentPopoverFromBarButtonItem:sender permittedArrowDirections:WYPopoverArrowDirectionDown animated:YES];
+    [self.popController presentPopoverFromBarButtonItem:sender
+                               permittedArrowDirections:WYPopoverArrowDirectionDown
+                                               animated:YES];
     }
 
 - (void)moreActionPopover:(id)sender
@@ -136,7 +156,86 @@
     WYPopoverController *popController = [[WYPopoverController alloc] initWithContentViewController:moreViewInPop];
     popController.popoverContentSize = CGSizeMake(300, 140);
     self.popController = popController;
-    [self.popController presentPopoverFromBarButtonItem:sender permittedArrowDirections:WYPopoverArrowDirectionDown animated:YES];
+    [self.popController presentPopoverFromBarButtonItem:sender
+                               permittedArrowDirections:WYPopoverArrowDirectionDown
+                                               animated:YES];
+
+}
+
+- (void)back:(id)sender
+{
+    NSLog(@"Back button touched !!");
+}
+
+
+// number of cell in table
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.currentSprint.count;
+}
+
+- (QSSprintCell *) sprintCell{
+    _sprintCell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([QSSprintCell class]) owner:self options:nil] firstObject];
+    return _sprintCell;
+}
+
+// caculate heigth for cell
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+    QSSprintModel *model = [self.currentSprint objectAtIndex:indexPath.row];
+    QSSprintCell * cell = (QSSprintCell *)[self sprintCell];
+    [cell setModel:model];
+    [cell setNeedsUpdateConstraints];
+    [cell updateConstraintsIfNeeded];
+    cell.bounds = CGRectMake(0.0f, 0.0f, CGRectGetWidth(tableView.frame), CGRectGetHeight(cell.bounds));
+    [cell setNeedsLayout];
+    [cell layoutIfNeeded];
+    
+    CGFloat height = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
+    height += 1.0f;
+    return height;
+    //return 140;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 44;
+}
+
+// define cell in table
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *reuseIdentifier = NSStringFromClass([QSSprintCell class]);
+    QSSprintCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+    //QSSprintCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([QSSprintCell class])];
+    QSSprintModel *model = [self.currentSprint objectAtIndex:indexPath.row];
+    [cell setModel:model];
+    [cell setNeedsUpdateConstraints];
+    [cell updateConstraintsIfNeeded];
+    
+    //action Sheet when tap button
+    NSLog(@"index path : %d", indexPath.row);
+    [cell.moreActionButton setTag: indexPath.row];
+    NSLog(@"more action tag : %d",cell.moreActionButton.tag);
+    [cell.moreActionButton addTarget:self
+                              action:@selector(showActionSheet:)
+                    forControlEvents:UIControlEventTouchUpInside];
+    return cell;
+    
+//    if (IS_IPAD) {
+//        //action Sheet when tap button
+//        cell.moreAction.tag = indexPath.row;
+//        [cell.moreAction addTarget:self action:@selector(showActionSheet:) forControlEvents:UIControlEventTouchUpInside];
+//        return cell;
+//    }
+//    else{
+    
+        //action Sheet when tap button
+        //cell.moreAction.tag = indexPath.row;
+        //[cell.moreAction addTarget:self action:@selector(showActionSheet:) forControlEvents:UIControlEventTouchUpInside];
+    
+    //}
 
 }
 
@@ -159,7 +258,7 @@
     }
     [actionSheet showInView:self.view];
 }
-//Action Sheets process
+////Action Sheets process
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 0) {
@@ -171,92 +270,7 @@
     else NSLog(@"Cancel tap");
 }
 
-
-- (void)back:(id)sender
-{
-    NSLog(@"Back button touched !!");
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-// number of cell in table
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return self.currentSprint.count;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-
-    QSSprintModel *model = [self.currentSprint objectAtIndex:indexPath.row];
-    QSSprintCell * cell = (QSSprintCell *)[self sprintCell];
-    [cell setModel:model];
-    [cell setNeedsUpdateConstraints];
-    [cell updateConstraintsIfNeeded];
-    cell.bounds = CGRectMake(0.0f,0.0f, CGRectGetWidth(tableView.frame), CGRectGetHeight(cell.bounds));
-    [cell setNeedsLayout];
-    [cell layoutIfNeeded];
-    
-    CGFloat height = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
-    height += 1.0f;
-    return height;
-    //return 140;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 44;
-}
-
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    CGSize constraintSize = CGSizeMake(tableView.frame.size.width, tableView.frame.size.height);
-//    CGSize nameSize = [[self.listName objectAtIndex:indexPath.row] sizeWithFont:[UIFont boldSystemFontOfSize:17.0] constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
-//    CGSize statusSize = [[self.listStatus objectAtIndex:indexPath.row] sizeWithFont:[UIFont boldSystemFontOfSize:17.0] constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
-//    CGSize descSize = [[self.listDesc objectAtIndex:indexPath.row] sizeWithFont:[UIFont boldSystemFontOfSize:17.0] constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
-//    return ceilf(nameSize.height + descSize.height + statusSize.height + 50);
-//    
-//}
-// define cell in table
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-//    QSSprintCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([QSSprintCell class])];
-//    QSSprintModel *sprintModel = [self.currentSprint objectAtIndex:indexPath.row];
-//    [cell setModel:sprintModel];
-//    return cell;
-
-    NSString *reuseIdentifier = NSStringFromClass([QSSprintCell class]);
-    QSSprintCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
-    //QSSprintCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([QSSprintCell class])];
-    QSSprintModel *model = [self.currentSprint objectAtIndex:indexPath.row];
-    [cell setModel:model];
-    [cell setNeedsUpdateConstraints];
-    [cell updateConstraintsIfNeeded];
-    
-    return cell;
-    
-//    if (IS_IPAD) {
-//        //action Sheet when tap button
-//        cell.moreAction.tag = indexPath.row;
-//        [cell.moreAction addTarget:self action:@selector(showActionSheet:) forControlEvents:UIControlEventTouchUpInside];
-//        return cell;
-//    }
-//    else{
-    
-        //action Sheet when tap button
-        //cell.moreAction.tag = indexPath.row;
-        //[cell.moreAction addTarget:self action:@selector(showActionSheet:) forControlEvents:UIControlEventTouchUpInside];
-    
-    //}
-
-}
-
-
-// get message from delegate
+// get value from filter popover by delegate
 -(void)sendValue:(NSString *)value
 {
     [self.popController dismissPopoverAnimated:YES];
@@ -300,10 +314,6 @@
     [self.navigationController pushViewController:addFeatureViewController animated:YES];
 }
 
-- (QSSprintCell *) sprintCell{
-    _sprintCell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([QSSprintCell class]) owner:self options:nil] firstObject];
-    return _sprintCell;
-}
 
 @end
 
