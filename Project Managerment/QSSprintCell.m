@@ -35,6 +35,35 @@
 
 
 - (IBAction)moreAction:(id)sender {
+    NSString *edit= @"Edit";
+    NSString *delete = @"Delete";
+    NSString *cancelTitle = @"Cancel";
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]
+                                  initWithTitle:nil
+                                  delegate:self
+                                  cancelButtonTitle:cancelTitle
+                                  destructiveButtonTitle:nil
+                                  otherButtonTitles:edit, delete, nil];
+
+    [actionSheet showFromRect:self.moreAction.frame inView:self animated:YES];
+}
+
+- (void)showActionSheet:(UIButton *)sender
+{
+    NSLog(@"button index: %li", (long)sender.tag);
     
 }
+//Action Sheets process
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 0) {
+        NSLog(@"Edit tap");
+    }
+    else if (buttonIndex == 1){
+        NSLog(@"Delete tap");
+    }
+    else NSLog(@"Cancel tap");
+}
+
 @end
