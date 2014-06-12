@@ -65,6 +65,13 @@
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGI-nf-2yB">
+                        <rect key="frame" x="702" y="17" width="30" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" backgroundImage="bt_more_actions.png">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="1Ra-jP-Ptn" firstAttribute="top" secondItem="6l6-VO-Iw5" secondAttribute="bottom" constant="17" id="0Ju-D2-QqK"/>
@@ -100,5 +107,6 @@
     </objects>
     <resources>
         <image name="arrow_form.png" width="8" height="12"/>
+        <image name="bt_more_actions.png" width="30" height="21"/>
     </resources>
 </document>

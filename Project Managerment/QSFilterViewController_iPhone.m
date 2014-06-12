@@ -91,7 +91,7 @@
     // Button in the right
     // Button for action
     NSMutableArray *arrayButton = [NSMutableArray array];
-    UIImage *bt_more_action = [UIImage imageNamed:@"bt_more_actions"];
+    UIImage *bt_more_action = [UIImage imageNamed:@"bt_more_menu"];
     UIBarButtonItem *more_action = [[UIBarButtonItem alloc] initWithImage:bt_more_action
                                                       landscapeImagePhone:bt_more_action
                                                                     style:UIBarButtonItemStylePlain
